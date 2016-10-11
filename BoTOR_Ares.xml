@@ -1,0 +1,1324 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TranscendenceModule>
+
+<!-- Chasm II Heavy Gunship -->
+	;The latest gunship in the Ares Fleet. Designed to be a force multiplier and anti-capital gunship
+	;Equipped with advanced and efficient targeting systems
+	;May be weaker than a Britannia II in a 1-on-1 fight but multiple Chasm IIs are pretty much unbeatable due to their Micronukes denying all enemy shots
+	
+	<ShipClass UNID="&scChasm2;"
+			manufacturer=		"Ares Orthodoxy"
+			class=				"Chasm II"
+			type=				"heavy gunship"
+			defaultSovereign=	"&svAres;"
+
+			attributes=			"ares,genericClass"
+			   
+			mass=				"210"
+			thrustRatio=		"6.5"
+			maxSpeed=			"24"
+			cargoSpace=			"50"
+			>
+
+		<Armor
+			armorID=			"&itHeavyTharsisPlate;"
+			count=				"4"
+			/>
+
+		<Devices>
+			<Device deviceID="&itAresArchcannon;" minFireArc="355" maxFireArc="5"/>
+			<Device deviceID="&itMicronukeCannon;" secondaryWeapon="true" />
+			<Device deviceID="&itCydonianHeavyShields;"/>
+		</Devices>
+
+		<Image imageID="&rsMediumShips2;" imageX="1024" imageY="0" imageWidth="64" imageHeight="64" rotationOffset="-8" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<Items>
+			<Item count="8d6+2" item="&itMicronuke;"/>
+		</Items>
+		
+		<Maneuver
+			rotationCount=		"20"
+			maxRotationRate=	"18.0"
+			rotationAccel=		"3.0"
+			/>
+		
+		<Effects>
+			<Effect type="thrustMain"		posAngle="160"	posRadius="16"	posZ="0"	rotation="180"/>
+			<Effect type="thrustMain"		posAngle="180"	posRadius="14"	posZ="0"	rotation="180"/>
+			<Effect type="thrustMain"		posAngle="-160"	posRadius="16"	posZ="0"	rotation="180"/>
+		</Effects>
+
+		<AISettings
+			fireRateAdj=		"10"
+			fireAccuracy=		"95"
+			ignoreShieldsDown=	"true"
+			perception=			"6"
+			noFriendlyFire="true"
+			/>	
+	</ShipClass>
+		
+	<!-- Phobos II Prototype -->
+	;A new Phobos with upgrades to counter it's predecessor's weaknesses, including multiple lightning cannons to fend off gunships, a new Plasma Cannon
+	;with a smaller profile and higher missile speed. It also features the new targeting system which is also used on Chasm IIs. This is a prototype.
+	
+		<ShipClass UNID="&scPhobos2Prototype;"
+			manufacturer=		"Ares Orthodoxy"
+			class=				"Phobos II"
+			type=				"dreadnought"
+			defaultSovereign=	"&svAres;"
+
+			attributes=			"ares, capitalShip, genericClass, majorShip"
+
+			size=				"290"
+			mass=				"61000"
+			thrustRatio=		"1"
+			maxSpeed=			"16"
+			cargoSpace=			"5000"
+
+			cyberDefenseLevel=	"10"
+			   
+			explosionType=		"&vtThermoExplosion3;"
+			>
+
+		<Armor
+			armorID=			"&itMassiveTharsisPlate;"
+			count=				"20"
+			/>
+
+		<Devices>
+			<Device deviceID="&itAresSpear;" posAngle="0" posRadius="100"/>
+			<Device deviceID="&itLightningTurret;" secondaryWeapon="true" posAngle="0" posRadius="40"/>
+			<Device deviceID="&itLightningTurret;" secondaryWeapon="true" posAngle="180" posRadius="80"/>
+		<!--<Device deviceID="&itLightningTurret;" secondaryWeapon="true"/>-->
+			<Device deviceID="&itLightningCannon;" secondaryWeapon="true" omnidirectional="true" posAngle="0" posRadius="40"/>
+			<Device deviceID="&itLightningCannon;" secondaryWeapon="true" omnidirectional="true" posAngle="180" posRadius="80"/>
+		<!--<Device deviceID="&itLightningCannon;" secondaryWeapon="true" omnidirectional="true"/>
+			<Device deviceID="&itAresArchCannon;" secondaryWeapon="true" omnidirectional="true" posAngle="0" posRadius="50"/> -->
+			<Device deviceID="&itAresLauncher;" secondaryWeapon="true"/>
+			<Device deviceID="&itKaidunShields;"/>
+		</Devices>
+		
+		 <Interior>
+                        <Compartment name="interior"
+                                        hitPoints=        "700"
+                                        />
+                        
+                        <Compartment name="main drive"
+                                        type=                "mainDrive"
+                                        hitPoints=        "250"
+
+                                        posX=                "-88"
+                                        posY=                "0"
+                                        sizeX=                "80"
+                                        sizeY=                "62"
+                                        />
+                </Interior>
+				
+		<Image imageID="&rsLargeShips2;" imageX="256" imageY="0" imageWidth="256" imageHeight="256" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<Items>
+			<Item				count="6d12"	item="&itPteracniumFuelRod;"/>
+			<Item				count="144"	item="&itMicronuke;"/>
+		</Items>
+		
+		<Maneuver
+			rotationCount=		"20"
+			maxRotationRate=	"4"
+			rotationAccel=		"1"
+			/>
+		
+		<Effects>
+			<Effect type="thrustMain"		posAngle="180"	posRadius="118"	posZ="-30"	rotation="180"	effect="&efMainThrusterLarge;"/>
+			<Effect type="thrustMain"		posAngle="170"	posRadius="118"	posZ="-15"	rotation="180"	effect="&efMainThrusterLarge;"/>
+			<Effect type="thrustMain"		posAngle="-170"	posRadius="118"	posZ="-15"	rotation="180"	effect="&efMainThrusterLarge;"/>
+			<Effect type="thrustMain"		posAngle="170"	posRadius="118"	posZ="15"	rotation="180"	effect="&efMainThrusterLarge;"/>
+			<Effect type="thrustMain"		posAngle="-170"	posRadius="118"	posZ="15"	rotation="180"	effect="&efMainThrusterLarge;"/>
+			<Effect type="thrustMain"		posAngle="180"	posRadius="118"	posZ="30"	rotation="180"	effect="&efMainThrusterLarge;"/>
+		</Effects>
+
+		<AISettings
+			fireRateAdj=		"10"
+			fireAccuracy=		"95"
+			ignoreShieldsDown=	"true"
+			noFriendlyFire="true"
+			perception=			"8"
+			/>
+
+	</ShipClass>
+	
+<!-- Polar class Carrier -->
+	;A polar freighter overhauled to mass deploy gunships; it lacks hangar/docking equipment
+		<ShipClass UNID="&scPolarCarrier;"
+            manufacturer=       "Ares Orthodoxy"
+            class=              "Polar"
+            type=               "carrier"
+			defaultSovereign=	"&svAres;"
+
+			size=				"180"
+			mass=				"15000"
+			cargoSpace=			"5000"
+			thrustRatio=		"0.3"
+			maxSpeed=			"8"
+
+			explosionType=		"&vtBlastExplosion4;"
+
+			attributes=			"ares, freighter, genericClass"
+			>
+                <Armor
+                        armorID=                        "&itTharsisPlate;"
+                        count=                                "20"
+                        />
+                
+                <Interior>
+			<Compartment name="interior"
+					hitPoints=	"120"
+					/>
+			
+			<Compartment name="main drive"
+					type=		"mainDrive"
+					hitPoints=	"90"
+
+					posX=		"-66"
+					posY=		"0"
+					sizeX=		"36"
+					sizeY=		"46"
+					/>
+			
+			<Compartment name="cargo contatiners"
+					type=		"cargo"
+					hitPoints=	"90"
+
+					posX=		"0"
+					posY=		"0"
+					sizeX=		"110"
+					sizeY=		"60"
+					/>
+		</Interior>
+
+				
+		<Devices>
+			<Device deviceID="&itLightningCannon;" secondaryWeapon="true" omnidirectional="true" posAngle="0" posRadius="75"/>
+			<Device deviceID="&itLightningCannon;" secondaryWeapon="true" omnidirectional="true" posAngle="180" posRadius="75"/>
+			<Device deviceID="&itCydonianHeavyShields;"/>
+		</Devices>
+		
+		<Maneuver
+			rotationCount=		"20"
+			maxRotationRate=	"2"
+			rotationAccel=		"0.2"
+			/>
+
+		<Image imageID="&rsPolarFreighter;" imageWidth="192" imageHeight="192" />
+
+		<Effects>
+			<Effect type="thrustMain"		posAngle="170"	posRadius="82"	posZ="-15"	rotation="180"	effect="&efMainThrusterLarge;"	sendToBack="*"/>
+			<Effect type="thrustMain"		posAngle="-170"	posRadius="82"	posZ="-15"	rotation="180"	effect="&efMainThrusterLarge;"	sendToBack="*"/>
+			
+			<Effect type="thrustMain"		posAngle="165"	posRadius="86"	posZ="0"	rotation="180"	effect="&efMainThrusterLarge;"/>
+			<Effect type="thrustMain"		posAngle="-165"	posRadius="86"	posZ="0"	rotation="180"	effect="&efMainThrusterLarge;"/>
+			
+			<Effect type="thrustMain"		posAngle="170"	posRadius="82"	posZ="15"	rotation="180"	effect="&efMainThrusterLarge;"	bringToFront="*"/>
+			<Effect type="thrustMain"		posAngle="-170"	posRadius="82"	posZ="15"	rotation="180"	effect="&efMainThrusterLarge;"	bringToFront="*"/>
+		</Effects>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"95"
+			perception=			"4"
+			combatStyle=		"standOff"
+				/>
+
+                <Events>     
+				
+						<Radar>
+							(block (target)
+							;We only send out our fighters if there is an enemy within 150 light seconds
+								(setq target (sysFindObject gSource "sTAE NN:150;"))
+								(if target
+								;; found a target, attack it	
+								(for i 1 6
+								(block (ship  roll shipType)
+								(setq roll (random 0 100))
+								(switch
+									;85% chance for a sandstorm
+									(leq roll 85)
+										(setq shipType &scSandstorm;)
+									
+									;15% chance for a sandstorm II
+									(leq roll 95)
+										(setq shipType &scSandstorm2;)
+									
+									;3% chance for a chasm
+									(leq roll 98)
+										(setq shipType &scChasm;)
+									
+									;2% chance for a tundra
+									(leq roll 100)
+										(setq shipType &scTundra;)
+									)
+									(setq ship (sysCreateShip shipType (objGetPos gSource) (objGetSovereign gSource)))
+									;(plyMessage gPlayer "Fighters Deployed!")
+									;;Send fighters
+									(shpOrder ship 'attack target)
+									(shpOrder ship 'attackNearestEnemy)
+								)
+							)
+						)
+					)
+					</Radar>
+
+                        <OnBehaviorControl>
+
+								 (block (targetObj)
+                                        ; Find an enemy in the system
+                                        (setq targetObj (sysFindObject gSource "sTAEN"))
+                                        (objSetObjRefData gSource "target" targetObj)
+										
+                                        ; Orbit the enemy
+                                        (shpCancelOrders gSource)
+                                        (shpOrder gSource 'orbit targetObj 50)
+										(shpOrder gSource 'wander)
+											)
+                        </OnBehaviorControl>
+
+                        <OnCreate>
+										(block Nil
+
+                                        ; Register timer event to control behavior
+                                        (sysAddObjRecurringTimerEvent 480 gSource "OnBehaviorControl")
+										(sysAddObjRecurringTimerEvent 450 gSource "Radar")
+										)
+                        </OnCreate>
+
+                </Events>
+
+        </ShipClass>
+		
+		 <!-- Sandstorm II Gunship -->
+		;Sandstorms upgraded to chase down enemy ships. They are piloted by trigger happy clones.
+        <ShipClass UNID="&scSandstorm2;"
+            manufacturer=		"Ares Orthodoxy"
+			class=				"Sandstorm II"
+			type=				"gunship"
+			defaultSovereign=	"&svAres;"
+
+			attributes=			"ares,genericClass"
+			   
+			mass=				"70"
+			thrustRatio=		"8"
+			maxSpeed=			"25"
+			cargoSpace=			"25"
+            >
+
+                <!-- Configuration -->
+                
+                <Armor
+                        armorID=                        "&itTharsisPlate;"
+                        count=                                "4"
+                        />
+                
+                <Devices>
+                        <Device deviceID="&itLightningCannon;"/>
+                </Devices>
+
+                <Maneuver
+				rotationCount=		"20"
+				maxRotationRate=	"18.0"
+				rotationAccel=		"5.0"
+				/>
+
+                <!-- Image and Effects -->
+
+                <Image imageID="&rsMediumShips1;" imageX="144" imageY="0" imageWidth="48" imageHeight="48"/>
+
+                <Effects>
+					<Effect type="thrustMain"		posAngle="150"	posRadius="8"	posZ="0"	rotation="180"/>
+					<Effect type="thrustMain"		posAngle="180"	posRadius="8"	posZ="0"	rotation="180"/>
+					<Effect type="thrustMain"		posAngle="-150"	posRadius="8"	posZ="0"	rotation="180"/>
+					<Effect type="rotateRight"		posAngle="115"	posRadius="19"	posZ="-3"	rotation="0"		sendToBack="*"/>
+					<Effect type="rotateRight"		posAngle="-140"	posRadius="24"	posZ="-3"	rotation="180"		sendToBack="*"/>
+					<Effect type="rotateLeft"		posAngle="-115"	posRadius="19"	posZ="-3"	rotation="0"		sendToBack="*"/>
+					<Effect type="rotateLeft"		posAngle="140"	posRadius="24"	posZ="-3"	rotation="180"		sendToBack="*"/>
+				</Effects>
+
+                <!-- AI and Behavior -->
+
+                <AISettings
+                        fireRateAdj=                "10"
+                        fireAccuracy=                "50"
+                        perception=                        "4"
+                        
+                        combatStyle=                "flyBy"
+                        />
+
+        </ShipClass>
+		
+		<!-- AEGIS3B's Chasm II -->
+	;Likely a defective clone
+	<ShipClass UNID="&scChasm2AEGIS3B;"
+			manufacturer=		"Ares Orthodoxy"
+			class=				"Chasm II"
+			type=				"heavy gunship"
+			defaultSovereign=	"&svAres;"
+
+			attributes=			"ares"
+			   
+			mass=				"210"
+			thrustRatio=		"5"
+			maxSpeed=			"24"
+			cargoSpace=			"50"
+			inherit=			"&baStdWingmanBase;"
+			
+			>
+
+		<Armor
+			armorID=			"&itHeavyTharsisPlate;" enhancement="0x0105" 
+			count=				"4"
+			/>
+			
+		<Devices>
+			<Device deviceID="&itAresArchcannon;" minFireArc="355" maxFireArc="5"/>
+			<Device deviceID="&itHecatesCannon;" minFireArc="350" maxFireArc="10" secondaryWeapon="true" />
+			<Device deviceID="&itKaidunShields;" enhancement="0x0105"/>
+			<Device deviceID="&itArmorRepairDevice;"/>
+			<Device deviceID="&itArmorRepairDevice;"/>
+			<Device deviceID="&itArmorRepairDevice;"/>
+		</Devices>
+
+		<Image imageID="&rsMediumShips2;" imageX="1024" imageY="0" imageWidth="64" imageHeight="64" rotationOffset="-8" imageFrameCount="0" imageTicksPerFrame="0"/>
+		
+		<Names noArticle="true" personalName="true">AEGIS 3B</Names>
+		
+		<Maneuver
+			rotationCount=		"20"
+			maxRotationRate=	"18.0"
+			rotationAccel=		"4.0"
+			/>
+		
+		<Effects>
+			<Effect type="thrustMain"		posAngle="160"	posRadius="16"	posZ="0"	rotation="180"/>
+			<Effect type="thrustMain"		posAngle="180"	posRadius="14"	posZ="0"	rotation="180"/>
+			<Effect type="thrustMain"		posAngle="-160"	posRadius="16"	posZ="0"	rotation="180"/>
+		</Effects>
+
+		<AISettings
+			fireRateAdj=		"10"
+			fireAccuracy=		"95"
+			ignoreShieldsDown=	"true"
+			perception=			"6"
+			noFriendlyFire="true"
+			/>
+		
+		<Language>
+			<Text id="ArmorRepaired">			"\"Ready\""</Text>
+			<Text id="AttackTargetAck">			"\"Destroying\""</Text>
+			<Text id="CancelAttackAck">			"\"Why do we flee?\""</Text>
+			<Text id="FormUpAck">				"\"Closing in\""</Text>
+			<Text id="IcantAttackFriends">		"\"You are an odd human\""</Text>
+			<Text id="IcantAttackMyself">		"\"I wish to die in battle\""</Text>
+			<Text id="ImFarFromHome">			""</Text>
+			<Text id="ImTooFarFromHome">		""</Text>
+			<Text id="ImGoingHome">				""</Text>
+			<Text id="ImRepairingArmor">		"AEGIS 3B docks to repair his armor"</Text>
+			<Text id="MyArmorNeedsRepair">		""</Text>
+			<Text id="NiceShooting">			"\"Our enemies will know fear\""</Text>
+			<Text id="NoTargetInRange">			"\"Check your vision, human\""</Text>
+			<Text id="Status100Percent">		"\"Do not bore me\""</Text>
+			<Text id="StatusAttackingTarget">	"\"In process of destroying the enemy\""</Text>
+			<Text id="StatusGoingHome">			""</Text>
+			<Text id="StatusRepairingArmor">	"\"Patching up\""</Text>
+			<Text id="StatusWaiting">			"\"Hurry up human!\""</Text>
+			<Text id="WaitAck">					"\"Hurry up human!\""</Text>
+			<Text id="WatchYourTargets">		"\"Let the blood spill\""</Text>
+			<Text id="WingmanJoined">			"\"Our enemies will know true fear!\""</Text>
+			<Text id="WingmanKilled">			"\"I shall die an honorable death\""</Text>
+		</Language>
+		
+		<Events>
+			<GetGlobalAchievements>
+				(block (theList status)
+					(setq status (typGetGlobalData &scChasm2AEGIS3B; "status"))
+
+					(if status
+						(setq theList (list
+							(list
+								(switch
+									(eq status 'joined) "Accepted AEGIS's offer"
+									(eq status 'declined) "Declined AEGIS's offer"
+									(eq status 'destroyed) "Lost AEGIS 3B"
+									(eq status 'destroyedByPlayer) "Killed AEGIS 3B"
+									(eq status 'returnedHome) "Accepted AEGIS3B's offer"
+									(cat "ERROR: AEGIS3B status: " status)
+									)
+								Nil
+								"achievements &amp; regrets"
+								)
+							))
+						)
+						
+					theList
+					)
+			</GetGlobalAchievements>
+		</Events>
+	</ShipClass>
+	
+	<!-- Overwrites -->
+	
+	<!-- Ares Research Outpost
+	
+	EXTRA DATA
+
+	status:				Status of the station
+							Nil						= Mission has not started yet
+							'introDone				= Player has been told about mission
+							'inProgress				= Mission in progress
+							'complete				= Mission is complete
+	-->
+
+	<StationType UNID="&stAresResearchHeretic;"
+			name=				"Ares research outpost"
+			sovereign=			"&svAresHeretic;"
+			abandonedScreen=	"&dsAbandonedStation;"
+			dockScreen=			"Main"
+			dockingPorts=		"8"
+			canAttack=			"true"
+			noBlacklist=		"true"
+
+			multiHull=			"true"
+			armorID=			"&itHeavyTharsisPlate;"
+			hitPoints=			"250"
+			fireRateAdj=		"20"
+			explosionType=		"&vtThermoExplosion1;"
+			ejectaType=			"&vtWreckEjecta;"
+
+			attributes=			"ares, hereticStation, neoHuman, populated"
+			
+			definiteArticle=	"true"
+			>
+
+		<Image			imageID="&rsStations7;" imageX="0" imageY="640" imageWidth="128" imageHeight="128"/>
+
+		<Devices>
+			<Device deviceID="&itLightningCannon;" omnidirectional="true"/>
+		</Devices>
+
+		<Ships>
+			<Ship		count="1d6"		class="&scSandstorm;" orders="guard"/>
+		</Ships>
+
+		<Reinforcements minShips="5">
+			<Ship		count="1d4"		class="&scSandstorm;" orders="guard"/>
+		</Reinforcements>
+
+		<Items>
+			<Table>
+				<Lookup chance="25" count="1d3" table="&trConsumables7;"/>
+				<Lookup chance="25" count="1"	table="&trConsumables8;"/>
+				<Lookup chance="25" count="1"	table="&trMinorItem7;"/>
+				<Lookup chance="15" count="1"	table="&trMinorItem8;"/>
+				<Lookup chance="10" count="1"	table="&trMajorItem7;"/>
+			</Table>
+		</Items>
+
+		<Events>
+			<OnDestroy>
+				(block Nil
+					(if (eq (herStatus 'currentMission) 'missionAres)
+						(herStatusClear 'currentMission)
+						)
+
+					(if (not (herStatus 'missionAres))
+						(herStatusSet 'missionAres 'failure)
+						)
+					)
+			</OnDestroy>
+			
+			<OnObjDestroyed>
+				(if (eq aObjDestroyed (objGetObjRefData gSource "theTarget"))
+					(block Nil
+						(objSetData gSource "status" 'complete)
+						
+						(shpCancelOrders gPlayerShip)
+						(shpOrder gPlayerShip 'dock gSource)
+						
+						(plyMessage gPlayer "Mission complete!")
+						)
+					)
+			</OnObjDestroyed>
+		</Events>
+
+		<DockScreens>
+			<Main>	
+				<InitialPane>
+					; If the player saves the Antarctica, then the Ares will be friendly
+					(block Nil
+						(switch
+								(and (not (typGetGlobalData &scChasm2AEGIS3B; "status"))
+                                          (eq (typGetGlobalData &scCSCTerra; "antarctica") "escaped")
+                                                                        )
+                                                                "AEGIS3BJoins"
+								(not (eq (typGetGlobalData &scCSCTerra; "antarctica") "escaped"))
+										"GetOut"
+										"Default"
+							)					
+						)							
+				</InitialPane>
+			<Panes>
+				<AEGIS3BJoins>
+						<OnPaneInit>
+						(scrSetDesc gScreen 
+						"You are docked at an Ares research outpost. A group of Ares warriors approaches you, the leader smirks. \n\n"
+						"\"You are not welcomed here human.\""
+							)		
+						</OnPaneInit>
+
+						<Actions>
+							<Actions name="Stare them down" default="1" key="S">
+								(scrShowPane gScreen "AEGIS3BJoins2")
+							</Actions>
+
+							<Actions name="I'll Leave" cancel="1" key="L">
+								(scrShowPane gScreen "AEGIS3BNotEncountered")
+							</Actions>
+						</Actions>
+					</AEGIS3BJoins>
+
+					<AEGIS3BJoins2>
+						<OnPaneInit>
+							(scrSetDesc gScreen
+								"You can see the leader's smirk fade. He looks like he is about to say something "
+									"but then decides not to. \n\n"
+									"\"We have better things to do then spending time with a human who is too afraid to talk. If you know what is best for you, then you'll leave this station and never return.\"\n\n"				
+									" You watch them go and see an Ares heavy gunship dock."		
+								)
+						</OnPaneInit>
+
+						<Actions>
+							<Actions name="Continue" default="1" key="C">
+								(scrShowPane gScreen "AEGIS3BJoins3")
+							</Actions>
+						</Actions>
+					</AEGIS3BJoins2>
+					
+					<AEGIS3BJoins3>
+						<OnPaneInit>
+							(scrSetDesc gScreen			
+									" The pilot; a tall Martian in a full bodysuit with a heavy blaster on his back approaches and takes off his orange helmet: \n\n"
+									"\"Greetings human, I am AEGIS 3B and I have heard tales of your journey. I know that you are heading to the core. I wish to join you and become your sword.\""
+								)
+						</OnPaneInit>
+
+						<Actions>
+							<Actions name="Accept" default="1" key="A">
+								(scrShowPane gScreen "AEGIS3BJoins4")
+							</Actions>
+							<Actions name="Decline" cancel="1" key="D">
+								(scrShowPane gScreen "AEGIS3BLeaves")
+							</Actions>
+						</Actions>
+					</AEGIS3BJoins3>
+					
+					<AEGIS3BJoins4>
+						<OnPaneInit>
+							(scrSetDesc gScreen
+								"AEGIS 3B smiles and gets back into his ship, waving away the repair crew. \n\n"
+									"\"Our enemies will tremble! They will know fear!\""				
+								)
+						</OnPaneInit>
+
+						<Actions>
+							<Actions name="Continue" default="1" cancel="1" key="C">
+								(block (ship)
+									(setq ship (sysCreateShip &scChasm2AEGIS3B; gSource &svAresHeretic;))
+									(objFireEvent ship "OrderJoinPlayer")
+									(scrShowPane gScreen "Default")
+									)
+							</Actions>
+						</Actions>
+					</AEGIS3BJoins4>
+
+					<AEGIS3BNotEncountered>
+						<OnPaneInit>
+							(scrSetDesc gScreen
+								"The group of Ares warriors laugh as you walk away."
+									"An Ares scientist shouts at them: \n\n"
+									"\"You stupid grunts! Do you not know that %name% is a friend?\""
+								)
+						</OnPaneInit>
+
+						<Actions>
+							<Action name="Continue" default="1" cancel="1" key="C">
+								(block Nil
+									(typSetGlobalData &scChasm2AEGIS3B; "status" 'declined)
+									(scrShowPane gScreen "Default")
+									)
+							</Action>
+						</Actions>
+					</AEGIS3BNotEncountered>
+					
+					<AEGIS3BLeaves>
+						<OnPaneInit>
+							(scrSetDesc gScreen
+								"\"Very well then human. \"\n\n"
+									"AEGIS 3B walks off into the corridors."				
+								)
+						</OnPaneInit>
+
+						<Actions>
+							<Action name="Continue" default="1" cancel="1" key="C">
+								(block Nil
+									(typSetGlobalData &scChasm2AEGIS3B; "status" 'declined)
+									(scrShowPane gScreen "Default")
+									)
+							</Action>
+						</Actions>
+					</AEGIS3BLeaves>
+				
+					<Default>
+						<OnPaneInit>
+							(scrSetDesc gScreen
+								"You are docked at an Ares research outpost. Ares warriors stare at you as you enter "
+								"the station."
+								)
+						</OnPaneInit>
+
+						<Actions>
+							<Action name="Command Center" default="1" key="C">
+								(block (status)
+									(setq status (objGetData gSource "status"))
+									
+									(switch
+										(herAttackInProgress gSource)
+											(scrShowPane gScreen "AttackInProgress")
+
+										(eq (herStatus 'missionAres) 'success)
+											(scrShowPane gScreen "MissionDone")
+											
+										(eq status 'complete)
+											(scrShowPane gScreen "MissionSucceeded")
+											
+										(not (sysFindObject Nil "TA +iocrymOutpost;"))
+											(scrShowPane gScreen "NothingToDo")
+											
+										(not status)
+											(if (herStatus 'currentMission)
+												(scrShowPane gScreen "DifferentMission")
+												(scrShowPane gScreen "Intro")
+												)
+											
+										(eq status 'introDone)
+											(if (herStatus 'currentMission)
+												(scrShowPane gScreen "DifferentMission")
+												(scrShowPane gScreen "Mission")
+												)
+											
+										(eq status 'inProgress)
+											(scrShowPane gScreen "MissionInProgress")
+										)
+									)
+							</Action>
+
+							<Action name="Undock" cancel="1" key="U">
+								<Exit/>
+							</Action>
+						</Actions>
+					</Default>
+					
+					<AttackInProgress>
+						<OnPaneInit>
+							(scrSetDesc gScreen
+								"An Ares scientist approaches you:\n\n"
+								"\"Help us, Human! The Iocrym are our common enemy! Defend us from their sentinels.\""
+								)
+						</OnPaneInit>
+						
+						<Actions>
+							<Action name="Done" default="1" cancel="1" key="D">
+								(scrShowPane gScreen "Default")
+							</Action>
+						</Actions>
+					</AttackInProgress>
+
+					<Intro>
+						<OnPaneInit>
+							(scrSetDesc gScreen
+								"An Ares scientist comes forward:"
+								"\"Welcome, Human! It is good that we can meet under peaceful circumstances. "
+								"Like you, we are studying the Iocrym, for they are as much a threat to us as they "
+								"are to you.\""
+								)
+						</OnPaneInit>
+						
+						<Actions>
+							<Action name="Continue" default="1" cancel="1" key="C">
+								(block Nil
+									(objSetData gSource "status" 'introDone)
+									(scrShowPane gScreen "Mission")
+									)
+							</Action>
+						</Actions>
+					</Intro>
+					
+					<Mission>
+						<OnPaneInit>
+							(scrSetDesc gScreen
+								"\"Our forescouts have detected a hidden Iocrym outpost inside the quarantine zone. "
+								"We ask that you destroy it so that we may understand its strengths and weaknesses. "
+								"Do you wish to accept this request?\""
+								)
+						</OnPaneInit>
+						
+						<Actions>
+							<Action name="Accept" default="1" key="A">
+								(block (theTarget)
+									; Find the Iocrym outpost to destroy
+									(setq theTarget (random (sysFindObject Nil "TA +iocrymOutpost;")))
+									
+									; Point the player
+									(shpCancelOrders gPlayerShip)
+									(shpOrder gPlayerShip 'attack theTarget)
+									
+									; Remember the target
+									(objSetObjRefData gSource "theTarget" theTarget)
+									(objRegisterForEvents gSource theTarget)
+									
+									; Give the player some help
+									
+									; Done
+									(objSetData gSource "status" 'inProgress)
+									(herStatusSet 'currentMission 'missionAres)
+									
+									(scrShowPane gScreen "MissionAccepted")
+									)
+							</Action>
+							
+							<Action name="Decline" cancel="1" key="D">
+								(scrShowPane gScreen "MissionDeclined")
+							</Action>
+						</Actions>
+					</Mission>
+					
+					<MissionAccepted>
+						<OnPaneInit>
+							(scrSetDesc gScreen
+								"\"You are strong, Human! We will repay your efforts by sharing all data that we "
+								"collect.\n\n"
+								"\"On Ares we would say, 'May you find water,' but in your honor, Human, we say 'Good luck'\""
+								)
+						</OnPaneInit>
+						
+						<Actions>
+							<Action name="Undock" default="1" cancel="1" key="U">
+								<Exit/>
+							</Action>
+						</Actions>
+					</MissionAccepted>
+					
+					<MissionDeclined>
+						<OnPaneInit>
+							(scrSetDesc gScreen
+								"\"Your weakness discredits your race! Return later if you wish to reclaim your honor.\""
+								)
+						</OnPaneInit>
+						
+						<Actions>
+							<Action name="Undock" default="1" cancel="1" key="U">
+								<Exit/>
+							</Action>
+						</Actions>
+					</MissionDeclined>
+					
+					<MissionInProgress>
+						<OnPaneInit>
+							(scrSetDesc gScreen
+								"\"Human! What are you doing here? Your task is out in deep space!\""
+								)
+						</OnPaneInit>
+						
+						<Actions>
+							<Action name="Undock" default="1" cancel="1" key="U">
+								<Exit/>
+							</Action>
+						</Actions>
+					</MissionInProgress>
+					
+					<MissionSucceeded>
+						<OnPaneInit>
+							(scrSetDesc gScreen
+								"\"Good fortune, Human! Based on your encounter with the Iocrym outpost we have "
+								"analyzed their defenses. Although their technology is far beyond ours, they are not "
+								"invincible. They are particularly vulnerable to antimatter weapons.\n\n"
+								"\"As promised, here is a ROM that contains the data we've gathered.\""
+								)
+						</OnPaneInit>
+						
+						<Actions>
+							<Action name="Done" default="1" cancel="1" key="D">
+								(block Nil
+									(objAddItem gPlayerShip (itmCreate &itHereticResearchROM; 1))
+									(herStatusClear 'currentMission)
+									(herStatusSet 'missionAres 'success)
+									
+									(shpCancelOrders gPlayerShip)
+									
+									(scrShowPane gScreen "Default")
+									)
+							</Action>
+						</Actions>
+					</MissionSucceeded>
+					
+					<MissionDone>
+						<OnPaneInit>
+							(scrSetDesc gScreen
+								"\"Welcome back, Human! Perhaps someday our two races will become friends.\""
+								)
+						</OnPaneInit>
+						
+						<Actions>
+							<Action name="Done" default="1" cancel="1" key="D">
+								(scrShowPane gScreen "Default")
+							</Action>
+						</Actions>
+					</MissionDone>
+
+					<NothingToDo>
+						<OnPaneInit>
+							(scrSetDesc gScreen
+								"An Ares scientist comes forward:\n\n"
+								"\"Welcome, Human! It is good that we can meet under peaceful circumstances. "
+								"We are studying the Iocrym, but unfortunately, there are no Iocrym stations in "
+								"the system for us to probe. Perhaps you will have better luck elsewhere.\""
+								)
+						</OnPaneInit>
+						
+						<Actions>
+							<Action name="Done" default="1" cancel="1" key="D">
+								(scrShowPane gScreen "Default")
+							</Action>
+						</Actions>
+					</NothingToDo>
+
+					<DifferentMission>
+						<OnPaneInit>
+							(scrSetDesc gScreen
+								"An Ares scientist comes forward:\n\n"
+								"\"Welcome, Human! We are studying the Iocrym just as you are now. Return "
+								"here when you task is complete and perhaps we can help each other.\""
+								)
+						</OnPaneInit>
+						
+						<Actions>
+							<Action name="Done" default="1" cancel="1" key="D">
+								(scrShowPane gScreen "Default")
+							</Action>
+						</Actions>
+					</DifferentMission>
+
+					<GetOut>
+						<OnPaneInit>
+							(scrSetDesc gScreen
+								"Ares warriors meet you at the airlock. Their weapons are pointed at you:\n\n"
+								"\"We don't want conflict, Human. Leave now and don't disturb our research.\""
+								)
+						</OnPaneInit>
+						
+						<Actions>
+							<Action name="Undock" default="1" cancel="1" key="U">
+								<Exit/>
+							</Action>
+						</Actions>
+					</GetOut>
+				</Panes>
+			</Main>
+
+		</DockScreens>
+	</StationType>
+	
+	<!-- Ares Commune -->
+
+	<StationType UNID="&stAresCommune;"
+			name=				"Ares commune"
+			sovereign=			"&svAres;"
+			abandonedScreen=	"&dsAbandonedStation;"
+			dockScreen=			"&dsAbandonedStation;"
+			dockingPorts=		"8"
+			canAttack=			"true"
+
+			multiHull=			"true"
+			armorID=			"&itTharsisPlate;"
+			hitPoints=			"2400"
+            regen=              "20"
+			explosionType=		"&vtThermoExplosion4;"
+			ejectaType=			"&vtWreckEjecta;"
+
+			attributes=			"ares, aresMajor, enemy, envAir, envEarth, envFire, envWater, generic, majorStation, neoHuman, populated"
+			levelFrequency=		"----- -vuur ----- ----- -----"
+			locationCriteria=	"-asteroids"
+			enemyExclusionRadius="60"
+			>
+
+		<Image			imageID="&rsStations7;" imageX="0" imageY="0" imageWidth="256" imageHeight="256"/>
+
+		<Ships>
+			<Ship		count="1d2"		class="&scTundra;" orders="guard"/>
+			<Ship		count="1d6"		class="&scSandstorm;" orders="patrol" patrolDist="5"/>
+		</Ships>
+
+		<Reinforcements minShips="6">
+			<Table>
+				<Ship chance="60"	count="1d4" class="&scSandstorm;" orders="patrol" patrolDist="5"/>
+				<Ship chance="15"	count="1d2" class="&scSandstorm2;" orders="patrol" patrolDist="5"/>
+				<Ship chance="25"	count="1" class="&scTundra;" orders="guard" />
+			</Table>
+		</Reinforcements>
+
+		<Items>
+			<Table count="1d6">
+				<Lookup chance="25" count="1d3" table="&trConsumables8;"/>
+				<Lookup chance="25" count="1"	table="&trConsumables9;"/>
+				<Lookup chance="25" count="1"	table="&trMinorItem8;"/>
+				<Lookup chance="15" count="1"	table="&trMinorItem9;"/>
+				<Lookup chance="10" count="1"	table="&trMajorItem8;"/>
+			</Table>
+		</Items>
+
+		<Satellites>
+			<Orbitals count="2d4" distance="12" angle="equidistant">
+				<Ship class="&scAresCannon;" count="1" sovereign="&svAres;" orders="hold"/>
+			</Orbitals>
+		</Satellites>
+
+		<Encounters frequency="common">
+			<Lookup table="&tbAresEncounters;"/>
+		</Encounters>
+
+	</StationType>
+
+	<!-- Ares Shipyard -->
+
+	<StationType UNID="&stAresShipyard;"
+			name=				"Ares shipyard"
+			sovereign=			"&svAres;"
+			abandonedScreen=	"&dsAbandonedStation;"
+			dockScreen=			"&dsAbandonedStation;"
+			dockingPorts=		"8"
+			canAttack=			"true"
+
+			multiHull=			"true"
+			armorID=			"&itMassiveTharsisPlate;"
+			hitPoints=			"3600"
+            regen=              "22"
+			explosionType=		"&vtPlasmaExplosion3;"
+			ejectaType=			"&vtWreckEjecta;"
+
+			attributes=			"ares, aresMajor, enemy, envAir, envEarth, envFire, envWater, generic, majorStation, neoHuman, populated"
+			levelFrequency=		"----- --vuu ----- ----- -----"
+			locationCriteria=	"-asteroids"
+			enemyExclusionRadius="100"
+			>
+
+		<Image			imageID="&rsStations9;" imageX="0" imageY="256" imageWidth="256" imageHeight="256"/>
+
+		<Ships>
+			<Ship		count="1d2"		class="&scTundra;" orders="guard"/>
+			<Ship		count="1d6"		class="&scSandstorm;" orders="patrol" patrolDist="5"/>
+			<Ship		chance= "25" count="1"		class="&scChasm2;" orders="guard"/>
+			<Table>
+				<Ship	chance="40"	count="1d4+2"	class="&scChasm;" orders="patrol" patrolDist="5"/>
+				<Ship	chance="40" count="1d2" class="&scDeimos;" orders="patrol" patrolDist="8"/>
+				<Ship	chance="10" count="4d6"	class="&scSandstorm;" orders="patrol" patrolDist="8"/>
+				<Ship	chance="10" count="1"	class="&scPhobos;"	orders="guard"/>
+			</Table>
+		</Ships>
+
+		<Construction constructionRate="500" maxConstruction="10">
+			<Table>
+				<Ship chance="30"	count="1"	class="&scSandstorm;"	 orders="patrol" patrolDist="5"/>
+				<Ship chance="10"	count="1"	class="&scSandstorm2;"	 orders="patrol" patrolDist="5"/>
+				<Ship chance="15"	count="1"	class="&scChasm;"		 orders="patrol" patrolDist="5"/>
+				<Ship chance="15"	count="1"	class="&scTundra;"		 orders="patrol" patrolDist="8"/>
+				<Ship chance="10"	count="1"	class="&scPolarCarrier;" orders="wander"/>
+				<Ship chance="10"	count="1"	class="&scDeimos;"		 orders="patrol" patrolDist="8"/>
+				<Ship chance="5"	count="1"	class="&scDeimos;"		 orders="wander"/>
+				<Ship chance="5"	count="1"	class="&scPhobos;"		 orders="patrol" patrolDist="150"/>
+			</Table>
+		</Construction>
+
+		<Items>
+			<Table count="3d4">
+				<Lookup chance="25" count="1d3" table="&trConsumables9;"/>
+				<Lookup chance="25" count="1"	table="&trConsumables10;"/>
+				<Lookup chance="25" count="1"	table="&trMinorItem9;"/>
+				<Lookup chance="15" count="1"	table="&trMinorItem10;"/>
+				<Lookup chance="10" count="1"	table="&trMajorItem9;"/>
+			</Table>
+		</Items>
+
+		<Satellites>
+			<Orbitals count="2d6" distance="12" angle="equidistant">
+				<Ship class="&scAresCannon;" count="1" sovereign="&svAres;" orders="hold"/>
+			</Orbitals>
+		</Satellites>
+
+		<Encounters frequency="common">
+			<Lookup table="&tbAresEncounters;"/>
+		</Encounters>
+
+	</StationType>
+	
+	 <ShipTable unid="&tbAresEncounters;">
+                <LevelTable>
+                        <Ship levelFrequency="----- ucur-" count="1"         class="&scSandstorm;" eventHandler="&evStdPatrolEncounterBehavior;">
+                                <Escorts>
+                                        <Ship                                           count="1d3-1" class="&scSandstorm;" orders="escort"/>
+                                </Escorts>
+                        </Ship>
+
+                        <Ship levelFrequency="----- -vuur" count="1"         class="&scSandstorm;" eventHandler="&evStdPatrolEncounterBehavior;">
+                                <Escorts>
+                                        <Ship                                           count="1d4-1" class="&scSandstorm;" orders="escort"/>
+                                </Escorts>
+                        </Ship>
+
+                        <Ship levelFrequency="----- --rrv" count="1"         class="&scTundra;" eventHandler="&evStdPatrolEncounterBehavior;">
+                                <Escorts>
+                                        <Ship                                           count="1d3"         class="&scSandstorm;" orders="escort"/>
+                                </Escorts>
+                        </Ship>
+
+                        <Ship levelFrequency="----- --vuu" count="1"         class="&scSandstorm;" eventHandler="&evStdPatrolEncounterBehavior;">
+                                <Escorts>
+                                        <Ship                                           count="1d6-1" class="&scSandstorm;" orders="escort"/>
+                                </Escorts>
+                        </Ship>
+
+                        <Ship levelFrequency="----- ---rr" count="1"         class="&scTundra;" eventHandler="&evStdPatrolEncounterBehavior;">
+                                <Escorts>
+                                        <Ship                                           count="1d6" class="&scSandstorm;" orders="escort"/>
+                                </Escorts>
+                        </Ship>
+
+                        <Ship levelFrequency="----- ---rr" count="1"         class="&scChasm;" eventHandler="&evStdPatrolEncounterBehavior;">
+                                <Escorts>
+                                        <Ship                                           count="1d6" class="&scSandstorm;" orders="escort"/>
+                                </Escorts>
+                        </Ship>
+
+                        <Ship levelFrequency="----- ruucu" count="1"         class="&scPolar;" eventHandler="&evStdConvoyEncounterBehavior;">
+                                <Items>
+                                        <Table>
+                                                <RandomItem chance="40" count="1d2" levelFrequency="----- ccurv" criteria="* +Ares;" />
+                                                <Item                chance="10" count="1d12" item="&itTetramiteOre;"/>
+                                                <Item                chance="10" count="3d12" item="&itXenotiteOre;"/>
+                                                <Item                chance="10" count="2d12" item="&itPteracniumOre;"/>
+                                                <Item                chance="10" count="3d12" item="&itPteracniumFuelRod;"/>
+                                                <Lookup chance="10" count="1d4" table="&trConsumables8;"/>
+                                                <Lookup chance="5" count="1" table="&trMinorItem8;"/>
+                                                <Lookup chance="5" count="1" table="&trMajorItem8;"/>
+                                        </Table>
+                                </Items>
+
+                                <Escorts>
+                                        <Ship                                           count="2d4"         class="&scSandstorm;" orders="escort"/>
+                                </Escorts>
+                        </Ship>
+						
+						<Ship levelFrequency="----- --vur" count="2d3"         class="&scSandstorm2;" eventHandler="&evStdPatrolEncounterBehavior;">
+                                <Escorts>
+                                        <Ship                                           count="1d6+1" class="&scSandstorm;" orders="escort"/>
+                                </Escorts>
+                        </Ship>
+						
+						<Ship levelFrequency="----- ---vv" count="1"         class="&scChasm2;" eventHandler="&evStdPatrolEncounterBehavior;">
+                                <Escorts>
+                                        <Ship                                           count="3d3" class="&scSandstorm2;" orders="escort"/>
+                                </Escorts>
+                        </Ship>
+						
+						<Ship levelFrequency="----- ---rv" count="1"         class="&scPolarCarrier;" eventHandler="&evStdPatrolEncounterBehavior;">
+                                <Escorts>
+                                        <Ship                                           count="1" class="&scDeimos;" orders="escort"/>
+                                </Escorts>
+                        </Ship>
+						
+						<Ship levelFrequency="----- ---vv" count="1"         class="&scDeimos;" eventHandler="&evStdPatrolEncounterBehavior;">
+                                <Escorts>
+                                        <Ship                                           count="1d3" class="&scChasm;" orders="escort"/>
+                                </Escorts>
+                        </Ship>
+		<!--				
+						<Ship levelFrequency="----- ----v" count="1"         class="&scPhobos;" eventHandler="&evStdPatrolEncounterBehavior;">
+                                <Escorts>
+                                        <Ship                                           count="3" class="&scDeimos;" orders="escort"/>
+                                </Escorts>
+                        </Ship> -->
+                </LevelTable>
+        </ShipTable>
+		
+		<ShipClass UNID="&scDeimos;"
+			manufacturer=		"Ares Orthodoxy"
+			class=				"Deimos"
+			type=				"destroyer"
+			defaultSovereign=	"&svAres;"
+
+			attributes=			"ares, capitalShip, genericClass"
+			   
+			size=				"140"
+			mass=				"12000"
+			thrustRatio=		"2"
+			maxSpeed=			"16"
+			cargoSpace=			"1000"
+
+			explosionType=		"&vtThermoExplosion2;"
+			>
+
+		<!-- Configuration -->
+		
+		<Armor
+			armorID=			"&itHeavyTharsisPlate;"
+			count=				"12"
+			/>
+		
+		<Devices>
+			<Device deviceID="&itHecatesCannon;" posAngle="0" posRadius="48" posZ="0" minFireArc="345" maxFireArc="15" />
+			<Device deviceID="&itLightningTurret;" secondaryWeapon="true"/>
+			<Device deviceID="&itLightningCannon;" posAngle="0" posRadius="48" posZ="0" secondaryWeapon= "True" omnidirectional="True" />
+			<Device deviceID="&itMicronukeCannon;" posAngle="0" posRadius="48" posZ="0" secondaryWeapon= "True"/>
+			<Device deviceID="&itCydonianHeavyShields;"/>
+			<Device deviceID="&it250MWReactor;"/>
+		</Devices>
+
+		<Maneuver
+			maxRotationRate=	"6"
+			rotationAccel=		"1"
+			/>
+
+		<Interior>
+			<Compartment name="interior"
+					hitPoints=	"300"
+					/>
+			
+			<Compartment name="main drive"
+					type=		"mainDrive"
+					hitPoints=	"150"
+
+					posX=		"-9"
+					posY=		"0"
+					sizeX=		"48"
+					sizeY=		"46"
+					/>
+		</Interior>
+
+		<Items>
+			<Item count="2d12"	item="&itPteracniumFuelRod;"/>
+			<Item count="10d12"	item="&itMicronuke;"/>
+		</Items>
+
+		<!-- Image and Effects -->
+		
+		<Image imageID="&rsDeimos;" imageWidth="170" imageHeight="170" rotationOffset="-30"/>
+
+		<Effects>
+			<Effect type="thrustMain"		posAngle="95"	posRadius="36"	posZ="0"	rotation="180"	effect="&efMainThrusterLarge;"/>
+			<Effect type="thrustMain"		posAngle="-95"	posRadius="36"	posZ="0"	rotation="180"	effect="&efMainThrusterLarge;"/>
+		</Effects>
+		
+		<!-- AI and Behavior -->
+
+		<AISettings
+			fireRateAdj=		"10"
+			fireAccuracy=		"90"
+			ignoreShieldsDown=	"true"
+			
+			perception=			"6"
+			/>
+
+	</ShipClass>
+		
+		<ShipClass UNID="&scPhobos;"
+			manufacturer=		"Ares Orthodoxy"
+			class=				"Phobos"
+			type=				"dreadnought"
+			defaultSovereign=	"&svAres;"
+
+			attributes=			"ares, capitalShip, genericClass, majorShip"
+
+			size=				"290"
+			mass=				"61000"
+			thrustRatio=		"1"
+			maxSpeed=			"16"
+			cargoSpace=			"5000"
+
+			cyberDefenseLevel=	"8"
+			   
+			explosionType=		"&vtPlasmaExplosion2;"
+			>
+
+		<!-- Configuration -->
+		
+		<Armor
+			armorID=			"&itMassiveTharsisPlate;"
+			count=				"16"
+			/>
+		
+		<Devices>
+			<Device deviceID="&itAresPlasmaCannon;" posAngle="0" posRadius="80" posZ="0"/>
+			<Device deviceID="&itMicronukeCannon;" secondaryWeapon="true" posAngle="0" posRadius="80" posZ="0" />
+			<Device deviceID="&itLightningTurret;" secondaryWeapon="true" posAngle="30"  posRadius="50" posZ="0"/>
+			<Device deviceID="&itLightningTurret;" secondaryWeapon="true" posAngle="330" posRadius="50" posZ="0"/>
+			<Device deviceID="&itKaidunShields;"/>
+		</Devices>
+
+		<Maneuver
+			maxRotationRate=	"3.6"
+			rotationAccel=		"0.6"
+			/>
+
+		<Interior>
+			<Compartment name="interior"
+					hitPoints=	"600"
+					/>
+			
+			<Compartment name="main drive"
+					type=		"mainDrive"
+					hitPoints=	"200"
+
+					posX=		"-88"
+					posY=		"0"
+					sizeX=		"80"
+					sizeY=		"62"
+					/>
+		</Interior>
+
+		<Items>
+			<Item				count="6d12"	item="&itPteracniumFuelRod;"/>
+			<Item 				count="20d12"	item="&itMicronuke;"/>
+		</Items>
+
+		<!-- Image and Effects -->
+		
+		<Image imageID="&rsLargeShips2;" imageX="256" imageY="0" imageWidth="256" imageHeight="256"/>
+		
+		<Effects>
+			<Effect type="thrustMain"		posAngle="180"	posRadius="118"	posZ="-30"	rotation="180"	effect="&efMainThrusterLarge;"/>
+			<Effect type="thrustMain"		posAngle="170"	posRadius="118"	posZ="-15"	rotation="180"	effect="&efMainThrusterLarge;"/>
+			<Effect type="thrustMain"		posAngle="-170"	posRadius="118"	posZ="-15"	rotation="180"	effect="&efMainThrusterLarge;"/>
+			<Effect type="thrustMain"		posAngle="170"	posRadius="118"	posZ="15"	rotation="180"	effect="&efMainThrusterLarge;"/>
+			<Effect type="thrustMain"		posAngle="-170"	posRadius="118"	posZ="15"	rotation="180"	effect="&efMainThrusterLarge;"/>
+			<Effect type="thrustMain"		posAngle="180"	posRadius="118"	posZ="30"	rotation="180"	effect="&efMainThrusterLarge;"/>
+		</Effects>
+
+		<!-- AI and Behavior -->
+
+		<AISettings
+			fireRateAdj=		"10"
+			fireAccuracy=		"95"
+			perception=			"6"
+			
+			ignoreShieldsDown=	"true"
+			/>
+
+	</ShipClass>
+</TranscendenceModule>

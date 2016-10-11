@@ -1,0 +1,3138 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TranscendenceModule>
+
+<!-- Britannia/M class Heavy Gunship -->
+	;Britannias upgraded by Point Minerva personnel
+        <ShipClass UNID="&scBritanniaM;"
+            manufacturer=       "Pacific Defense Corporation"
+            class=              "Britannia/M"
+            type=               "heavy gunship"
+			defaultSovereign=	"&svCommonwealthFleet;"
+
+			mass=				"120"
+			cargoSpace=			"50"
+			thrustRatio=		"9.0"
+			maxSpeed=			"22"
+
+            attributes=         "commonwealth,commonMilitary"
+            >
+
+                 <Armor
+				armorID=			"&itOrthosteel;"
+				count=				"4"
+			/>
+
+                <Devices> 
+			<Table>
+				<Device chance="50" item="&itStarCannon;"/>
+				<Device chance="15" item="&itAresArchcannon;"/>
+				<Device chance="25" item="&itHeavyIonBlaster;"/>
+				<Device chance="10" item="&itOmniIonBlaster;"/>
+			</Table>
+				
+			<Table>
+				<Device chance="50" item="&itR5BDeflector;"/>
+				<Device chance="15" item="&itMammoth100Deflector;"/>
+				<Device chance="5" item="&itPlasmaShieldGenerator;"/>
+				<Device chance="25" item="&itCydonianHeavyShields;"/>
+				<Device chance="5" item="&itIonReflector;"/>
+			</Table>
+				 <Table>
+							<Device chance="25" item="&itMicronukeCannon;" >
+									<Items>
+											<Item count="12" item="&itMicronuke;"/>
+											</Items>
+									</Device>
+									<Device chance="75" item="&itNM900MissilePod;" secondaryWeapon="true"/>
+							</Table>
+				<Device item="&itArmorRepairDevice;"/>
+		</Devices>
+
+                <Items>
+                        <Item count="2d6" item="&itHeliumAssembly;"/>
+                </Items>
+
+                <Image imageID="&rsBritannia;" imageWidth="80" imageHeight="80"/>
+				
+				<Maneuver
+					rotationCount=		"20"
+					maxRotationRate=	"10.0"
+					rotationAccel=		"2.5"
+					/>
+					
+				<Effects>
+					<Effect type="thrustMain"		posAngle="154"	posRadius="26"	posZ="0"	rotation="180"/>
+					<Effect type="thrustMain"		posAngle="-154"	posRadius="26"	posZ="0"	rotation="180"/>
+					<Effect type="rotateRight"		posAngle="82"	posRadius="23"	posZ="0"	rotation="0"/>
+					<Effect type="rotateRight"		posAngle="-98"	posRadius="23"	posZ="0"	rotation="180"/>
+					<Effect type="rotateLeft"		posAngle="-82"	posRadius="23"	posZ="0"	rotation="0"/>
+					<Effect type="rotateLeft"		posAngle="98"	posRadius="23"	posZ="0"	rotation="180"/>
+				</Effects>
+
+                <Events>
+                        <Reload>
+                                (block (theMissilePod)
+                                        (setq theMissilePod (item (objGetItems gSource "lI") 0))
+                                        (if theMissilePod
+                                                ; Tell the missile pod to reload itself
+                                                (objFireItemEvent gSource theMissilePod "Reload")
+                                                )
+                                        )
+                        </Reload>
+                </Events>
+
+                <AISettings
+                        fireRateAdj=                "15"
+                        fireAccuracy=                "90"
+                        perception=                        "4"
+                        
+                        combatStyle=                "advanced"
+                        />
+
+        </ShipClass> 
+		
+		<!-- Mark's Britannia II Heavy Gunship -->
+	;Refitted to have less dependence on missiles. Upgraded to be a swarm buster as the Ares in Deneb hugely outnumber Point Minerva's forces.
+
+	<ShipClass UNID="&scBritannia2Mark;"
+			manufacturer=		"Pacific Defense Corporation"
+			class=				"Britannia II"
+			type=				"heavy gunship"
+			defaultSovereign=	"&svCommonwealthFleet;"
+
+			mass=				"120"
+			cargoSpace=			"50"
+			thrustRatio=		"9.0"
+			maxSpeed=			"22"
+
+            attributes=         "commonwealth,commonMilitary"
+			inherit=			"&baStdWingmanBase;"
+			>
+
+		<Armor
+			armorID=			"&itP210HexphaseArmor;" enhancement="0x0105" 
+			count=				"4"
+			/>
+
+		<Devices>
+			<Device deviceID="&itIonFlameCannon;" posAngle="0" posRadius="20"/>
+			<Device deviceID="&itR9Deflector;" enhancement="0x0105"/>
+			<Device deviceID="&itStarCannon;" secondaryWeapon="true" posRadius="30" posAngle="90" minFireArc="320" maxFireArc="40"/>
+			<Device deviceID="&itStarCannon;" secondaryWeapon="true" posRadius="30" posAngle="270" minFireArc="320" maxFireArc="40"/>
+			<Device deviceID="&itBushidoEnhancer;"/>
+			<Device deviceID="&itArmorRepairDevice;"/>
+			<Device deviceID="&itArmorRepairDevice;"/>
+			<Device deviceID="&itArmorRepairDevice;"/>
+		</Devices>
+
+		<Items>
+			<Item count="6d6" item="&itPteracniumFuelRod;"/>
+		</Items>
+
+		<Image imageID="&rsBritannia;" imageWidth="80" imageHeight="80"/>
+		
+		<Maneuver
+			rotationCount=		"20"
+			maxRotationRate=	"18.0"
+			rotationAccel=		"4.0"
+			/>
+		<Effects>
+			<Effect type="thrustMain"		posAngle="154"	posRadius="26"	posZ="0"	rotation="180"/>
+			<Effect type="thrustMain"		posAngle="-154"	posRadius="26"	posZ="0"	rotation="180"/>
+			<Effect type="rotateRight"		posAngle="82"	posRadius="23"	posZ="0"	rotation="0"/>
+			<Effect type="rotateRight"		posAngle="-98"	posRadius="23"	posZ="0"	rotation="180"/>
+			<Effect type="rotateLeft"		posAngle="-82"	posRadius="23"	posZ="0"	rotation="0"/>
+			<Effect type="rotateLeft"		posAngle="98"	posRadius="23"	posZ="0"	rotation="180"/>
+		</Effects>
+		
+		<Names noArticle="true" personalName="true">Mark</Names>
+
+		<AISettings
+			fireRateAdj=		"10"
+			fireAccuracy=		"95"
+			perception=			"5"
+			ignoreShieldsDown=	"true"
+			noFriendlyFire="true"
+			/>
+		
+		<Language>
+			<Text id="ArmorRepaired">			"\"Armor at 100%\""</Text>
+			<Text id="AttackTargetAck">			"\"Target acquired\""</Text>
+			<Text id="CancelAttackAck">			"\"Disengaging\""</Text>
+			<Text id="FormUpAck">				"\"Forming up\""</Text>
+			<Text id="IcantAttackFriends">		"\"That is against my code of honor\""</Text>
+			<Text id="IcantAttackMyself">		"\"Very funny\""</Text>
+			<Text id="ImFarFromHome">			""</Text>
+			<Text id="ImTooFarFromHome">		""</Text>
+			<Text id="ImGoingHome">				""</Text>
+			<Text id="ImRepairingArmor">		"Mark docks to repair his armor"</Text>
+			<Text id="MyArmorNeedsRepair">		"\"My armor is damaged\""</Text>
+			<Text id="NiceShooting">			"\"Excellent!\""</Text>
+			<Text id="NoTargetInRange">			"\"I'm not picking up anything\""</Text>
+			<Text id="Status100Percent">		"\"Nothing out of the ordinary\""</Text>
+			<Text id="StatusAttackingTarget">	"\"Engaging the enemy\""</Text>
+			<Text id="StatusGoingHome">			""</Text>
+			<Text id="StatusRepairingArmor">	"\"Repairing my ship\""</Text>
+			<Text id="StatusWaiting">			"\"Waiting\""</Text>
+			<Text id="WaitAck">					"\"Take your time\""</Text>
+			<Text id="WatchYourTargets">		"\"Aim before shooting\""</Text>
+			<Text id="WingmanJoined">			"\"It's an honor to join you\""</Text>
+			<Text id="WingmanKilled">			"\"It has been an honor, sir\""</Text>
+		</Language>
+		
+		<Events>
+			<GetGlobalAchievements>
+				(block (theList status)
+					(setq status (typGetGlobalData &scBritannia2Mark; "status"))
+
+					(if status
+						(setq theList (list
+							(list
+								(switch
+									(eq status 'joined) "Accepted Mark's offer"
+									(eq status 'declined) "Declined Mark's offer"
+									(eq status 'destroyed) "Lost Mark"
+									(eq status 'destroyedByPlayer) "Killed Mark"
+									(eq status 'returnedHome) "Parted with Mark"
+									(cat "ERROR: Mark status: " status)
+									)
+								Nil
+								"achievements &amp; regrets"
+								)
+							))
+						)
+						
+					theList
+					)
+			</GetGlobalAchievements>
+		</Events>
+	</ShipClass>
+	
+	<!-- Ares spear -->
+
+	<ItemType UNID="&itAresSpear;"
+			name=				"Ares Spear"
+			level=				"10"
+			value=				"1000000"
+			mass=				"10000"
+			frequency=			"notrandom"
+			attributes=			"Ares; MajorItem; Military; NotForSale"
+
+			description=		"The Ares Spear is the successor to the Ares Plasma Archcannon. It outputs greater quantities of plasma in a compact form."
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+				deviceSlots=		"2"
+
+				damage=				"plasma:28d24; WMD7"
+				fireRate=			"60"
+				missileSpeed=			"80"
+				lifetime=			"100"
+				hitPoints=			"50"
+				powerUse=			"4000"
+
+				sound=				"&snLaserCannon;"
+
+				vaporTrailLength=	"24"
+				vaporTrailWidth=	"150"
+				vaporTrailWidthInc=	"10"
+				vaporTrailColor=	"0x57, 0x38, 0x00"
+				>
+
+			<FireEffect>
+				<Flare
+						style=				"fadingBlast"
+						lifetime=			"6"
+						radius=				"80"
+						primaryColor=		"0xff, 0xff, 0xf0"
+					/>
+			</FireEffect>
+				<Effect>
+
+				<Shape
+						directional=		"true"
+						scaleLength=		"64" 
+						scaleWidth=			"3"
+
+						color=				"0xff, 0xed, 0xcd"
+						opacity=			"255"
+						>
+					<Point x="0"	y="0"/>
+					<Point x="-25"	y="50"/>
+					<Point x="-100"	y="0"/>
+					<Point x="-25"	y="-50"/>
+				</Shape>
+				
+				<Shape
+						directional=		"true"
+						scaleLength=		"72" 
+						scaleWidth=			"6"
+
+						color=				"0xff, 0xc0, 0x00"
+						opacity=			"140"
+						>
+					<Point x="0"	y="0"/>
+					<Point x="-35"	y="50"/>
+					<Point x="-100"	y="0"/>
+					<Point x="-35"	y="-50"/>
+				</Shape>
+			</Effect>
+		</Weapon>
+	</ItemType>
+	
+	<!-- Quest Items -->
+	<ItemType UNID="&itAresROM;"
+                        name=                                "Data Rom"
+                        level=                                "4"
+                        value=                                "500"
+                        mass=                                "1"
+                        frequency=                        "veryrare"
+                        attributes=                        "PhobosRom"
+
+                        description=                "An encrypted data rom found from a secret vault at Omega Station."
+						useScreen=                        "&dsUseDataROM;"
+                        >
+
+                <Image imageID="&rsItems1;" imageX="192" imageY="96" imageWidth="96" imageHeight="96"/>
+			
+        </ItemType> 
+		
+		 <ItemType UNID="&itCargoCrates;"
+                        name=                                "Cargo Container"
+                        level=                                "1"
+                        value=                                "100"
+                        mass=                                "25000"
+                        frequency=                        "notrandom"
+                        attributes=                        "Supplies"
+
+                        description=                "Ubiquitous cube containers used for shipping cargo. There is an insignia of the Ares Orthodoxy on the side."
+                        >
+
+                <Image imageID="&rsItems1;" imageX="288" imageY="0" imageWidth="96" imageHeight="96"/>
+        </ItemType>
+		
+		<!-- Missions -->
+		 <MissionType UNID="&msRaidFreighter;"
+                        name=                                "Raid Polar freighter"
+                        scope=                                "system"
+
+                        attributes=                        "commonwealth, pointMinerva1"
+                        >
+                <Events>
+                        <OnCreate>
+					(block Nil
+						;We actually need 5 crates before moving to next mission
+						(if (not (ls (typGetGlobalData &stPointMinerva; "supplies") 4))
+						
+						(block Nil
+							(typIncGlobalData &stPointMinerva; "mission")
+												)
+											)
+											
+                                (block (enemyStations gateList)
+                                
+                                     ; Freighter will be coming from the usable gate
+											(setq gStart (intGetGateToSystem gSource "SK"))
+											(objSetObjRefData gSource "StartGate" gStart)
+                                                ; Get a list of enemy stations in the region. If we cannot find any then we make one
+                                                
+                                                 (setq enemyStations (random (sysFindObject aOwnerObj "AT +ares")))
+                                                 (if (not enemyStations)
+                                                                        (block (stationPos stationType)
+                                                                                ; Pick a random station type
+                                                                                (setq stationType &stAresCommune;)
+                                                                                
+                                                                                ; Pick a random point for the station to be
+                                                                                (setq stationPos (sysVectorRandom Nil (random 960 1500) 150))
+                                                                                
+                                                                                ; Create the station
+                                                                                (setq enemyStations (sysCreateStation stationType stationPos))
+                                                                                )
+                                                                        )
+                                                ; Otherwise we can create a mission
+
+                                                        (objSetObjRefData gSource "station" enemyStations)
+                                                                
+                                                        ; Compute reward
+                                                        (msnSetData gSource 'reward 300)
+                                                        )
+												)
+                        </OnCreate>
+						
+						<OnStarted>	
+					(block (freighter)
+										(setq freighter (sysCreateShip &scPolar; (objGetPos (objGetObjRefData gSource "StartGate")) &svAres;))
+										(shpOrder freighter 'dock (objGetObjRefData gSource "station"))
+										(shpOrder freighter 'wait 30)
+										(shpOrder freighter 'gate)
+										(objAddItem freighter (itmCreate &itCargoCrates; 1))
+										(objRegisterForEvents gSource freighter)
+										(shpOrder gPlayerShip 'attack freighter)
+							(for i 1 6
+								(block (ship)
+									(setq ship (sysCreateShip &scSandstorm; (objGetPos (objGetObjRefData gSource "StartGate")) &svAres;))
+									(shpOrder ship 'escort freighter)
+									)
+								)
+								(objSetData gSource "FreightersEscaped" 0)
+								(msnSetData gSource 'targetID (objGetID freighter))
+								(msnAddRecurringTimerEvent gSource 60 "RaidCheck")
+								(msnAddTimerEvent gSource 9000 "TooLong")
+							)
+                        </OnStarted>
+						
+						<RaidCheck>
+							(if (objGetItems gPlayerShip "t +Supplies;")
+																(msnSuccess gSource)
+                                                                        )
+						</RaidCheck>
+						
+						<TooLong>
+						;Mainly so that if the player destroyed the wreak of the polar, they won't be stuck on this mission
+							(msnFailure gSource)
+						</TooLong>
+
+                        <OnSetPlayerTarget>
+                                (block (targetObj)
+                                        (switch
+                                                ; If we just got debriefed then we clear our targets.
+
+                                                (eq aReason 'debriefed)
+                                                        (shpCancelOrders gPlayerShip)
+
+                                                ; If the mission is complete, then we point towards the 
+                                                ; owner station.
+
+                                                (msnGetProperty gSource 'isCompleted)
+                                                        (if (setq targetObj (objGetObjByID (msnGetProperty gSource 'ownerID)))
+                                                                (block Nil
+                                                                        (shpCancelOrders gPlayerShip)
+                                                                        (shpOrder gPlayerShip 'dock targetObj)
+                                                                        )
+                                                                )
+
+                                                ; Otherwise, we point towards the target
+
+                                                (if (setq freighter (objGetObjByID (msnGetData gSource 'targetID)))
+                                                        (block Nil
+                                                                (shpCancelOrders gPlayerShip)
+                                                                (shpOrder gPlayerShip 'attack freighter)
+                                                                )
+                                                        )
+                                                )
+                                        )
+                        </OnSetPlayerTarget>
+						
+                        <OnObjEnteredGate>
+						(block (shipClass)
+                                    (setq shipClass (objGetType aObj))
+                                     (switch
+                                   (eq shipClass &scPolar;)
+                                      (objIncData gSource "FreightersEscaped")
+                                                                                        
+                                      (setq shipClass Nil)
+                                       )
+                                                                                
+                                       ; If it's not one of the ships that we were expecting, then
+                                         ; don't do anything.
+                                                                        
+                                         (if shipClass
+                                               (block Nil
+
+                                                 ; Unregister so that we don't get called again at OnObjDestroyed
+                                                   (if (not (eq aObj gPlayerShip))
+                                                   (objUnregisterForEvents gSource aObj)
+                                                   )
+													(switch
+                                                      (eq (objGetData gSource "FreightersEscaped")
+                                                             1)
+                                                              (block Nil
+                                                                     (msnFailure gSource)
+                                                                       (shpCancelOrders gPlayerShip)
+                                                                                                        )
+                                                                                                )
+                                                                                        )
+                                                                                )
+																			)
+
+						</OnObjEnteredGate>
+
+                        <OnReward>		
+								(block Nil
+								
+									(objIncData gPlayerShip "fleetXP" (msnGetData gSource 'reward))
+									;Technically the player can just jettison the cargo before docking so that they can do all five missions without hunting down five polar freighters
+									;Unfortunately I don't know how to fix this and don't want to if it requires too much extra code
+									(objRemoveItem gPlayerShip (itmCreate &itCargoCrates; 1))
+									(typIncGlobalData &stPointMinerva; "supplies")
+								)
+                        </OnReward>
+                </Events>
+                
+                <Language>
+                        <Text id="Name">
+                                "Raid Polar Freighter"
+                        </Text>
+                        <Text id="Summary">
+                                (cat
+                                        "Your mission is to destroy " (objGetName (objGetObjByID (msnGetData gSource 'targetID)) 0x04) " in the " (sysGetName) " system and raid it's cargo.\n\n"
+                                        "System: " (sysGetName) "\n"
+                                        "Reward: " (msnGetData gSource 'reward) " fleet experience"
+                                        )
+                        </Text>
+                        <Text id="Intro">
+                                (cat
+										"You enter the crowded command center. General Aurelio turns to face you: \n\n"
+                                        "\"Our pilots are out on raiding missions. We would appreciate it if you help us raid supplies.\""
+                                        )
+                        </Text>
+                        <Text id="Briefing">
+                                  (cat
+                                         "\"General! We've located another freighter.\", a junior officer shouts from his console.\n\n"
+                                         "General Aurelio acknowledges the news with a curt nod of his head and smiles, \"So want to help us?\"\n\n"
+                                         )
+                        </Text>
+                        <Text id="AcceptReply">
+                                "\"Thanks! We'll enter the coordinates of the freighter.\""
+                        </Text>
+                        <Text id="DeclineReply">
+                                "\"So, are you here just to watch us struggle for our life?\""
+                        </Text>
+                        <Text id="InProgress">
+                                "\"Did you loot it's cargo yet?\""
+                        </Text>
+                        <Text id="SuccessDebrief">
+                                (cat
+                                        "\"Good job. I knew that I could count on you.\""
+                                        )
+                        </Text>
+						<Text id="FailureDebrief">
+                                (cat
+										"General Aurelio sighs. \n\n"
+                                        "\"There'll be more freighters...Probably...\""
+                                        )
+                        </Text>
+                        <Text id="SuccessMsg">
+                                "Mission complete!"
+                        </Text>
+                </Language>
+        </MissionType>
+	
+	<MissionType UNID="&msInvestigateColony;"
+                        name=                                "Investigate Omega Station"
+                        scope=                                "system"
+
+                        attributes=                        "commonwealth, pointMinerva2"
+                        >
+                <Events>
+                        <OnCreate>
+                                (block (omega)
+								
+									;There should only be one Omega Station in Deneb
+									(setq omega (sysFindObject aOwnerObj "TN +populated; -uncharted; +omegaStation;"))
+                                                        ; Remember it
+                                                        (msnSetData gSource 'targetID (objGetID omega))
+                                                                
+                                                        ; Compute reward
+                                                        (msnSetData gSource 'reward 300)
+                                )
+                                        
+                        </OnCreate>
+						
+                        <OnStarted>
+						(block Nil
+							;Allows player to enter vault
+							(typSetGlobalData &stOmegaStation; "codes" "true")
+							(msnAddRecurringTimerEvent gSource 60 "ROMCheck")
+						)
+                        </OnStarted>
+						
+						<ROMCheck>
+							(if (objGetItems gPlayerShip "u +PhobosRom;")
+																(msnSuccess gSource)
+                                                                        )
+						</ROMCheck>
+                        
+                        <OnSetPlayerTarget>
+                                (block (targetObj)
+                                        (switch
+                                                ; If we just got debriefed then we clear our targets.
+
+                                                (eq aReason 'debriefed)
+                                                        (shpCancelOrders gPlayerShip)
+
+                                                ; If the mission is complete, then we point towards the 
+                                                ; owner station.
+
+															(msnGetProperty gSource 'isCompleted)
+                                                        (if (setq targetObj (objGetObjByID (msnGetProperty gSource 'ownerID)))
+                                                                (block Nil
+                                                                        (shpCancelOrders gPlayerShip)
+                                                                        (shpOrder gPlayerShip 'dock targetObj)
+                                                                        )
+                                                                )
+
+                                                ; Otherwise, we point towards the target
+
+                                                (if (setq targetObj (objGetObjByID (msnGetData gSource 'targetID)))
+                                                        (block Nil
+                                                                (shpCancelOrders gPlayerShip)
+                                                                (shpOrder gPlayerShip 'dock targetObj)
+                                                                )
+                                                        )
+                                                )
+                                        )
+                        </OnSetPlayerTarget>
+                        
+                        <OnReward>
+						(block (rom)
+                                                                        (setq rom (item (objGetItems gPlayerShip "u +PhobosRom;") 0))
+                                                                        (if rom
+                                                                                (block Nil
+                                                                                        (objRemoveItem gPlayerShip rom)
+																						(objIncData gPlayerShip "fleetXP" (msnGetData gSource 'reward))
+																						(typIncGlobalData &stPointMinerva; "mission")
+                                                                                        )
+                                                                                )
+                                                                        )
+                        </OnReward>
+                </Events>
+                
+                <Language>
+                        <Text id="Name">
+                                "Investigate Omega Station"
+                        </Text>
+                        <Text id="Summary">
+                                (cat
+                                        "Your mission is to investigate Omega Station in the " (sysGetName) " system.\n\n"
+                                        "System: " (sysGetName) "\n"
+                                        "Reward: " (msnGetData gSource 'reward) " fleet experience"
+                                        )
+                        </Text>
+						 <Text id="Intro">
+                                  (cat
+                                        "General Aurelio turns around to face you as you enter the Command Center\n\n"
+                                        "\"Good job on raiding those Polars. The supplies we got should last for"
+                                        " weeks to come. Though that isn't why I was waiting for you.\""
+                                        )
+                        </Text>
+                        <Text id="Briefing">
+                                  (cat
+                                        "\"Among the supplies that we raided, we found a rom with some pass codes."
+                                        " One of the survivors from Omega Station says that the rom is a master code key. "
+										"We want you go to Omega Station and check it out.\""
+                                        )
+                        </Text>
+                        <Text id="AcceptReply">
+                                "\"Thanks again! I've entered the coordinates of Omega Station into your computer.\""
+                        </Text>
+                        <Text id="DeclineReply">
+                                "\"Well, I see where you're coming from. I don't believe that these random alphanumeric strings are pass codes either.\""
+                        </Text>
+                        <Text id="InProgress">
+                                "\"Did you find anything? Remember, Omega Station is orbiting the planet with two moons.\""
+                        </Text>
+                        <Text id="SuccessDebrief">
+                                (cat
+
+                                        "\"Hmm... An encrypted data rom..."
+                                        " We'll have our Intel department work on it.\"\n\n"
+										"General Aurelio takes out his comm device: \n\n"
+										"\"Get someone from the Intel department into the Command Center!\""
+                                        )
+                        </Text>
+                        <Text id="SuccessMsg">
+                                "Mission complete!"
+                        </Text>
+                </Language>
+        </MissionType>
+	
+	 <MissionType UNID="&msWeakenAresFoothold;"
+                        name=                                "Destroy Ares Station"
+                        scope=                                "system"
+
+                        attributes=                        "commonwealth, pointMinerva3"
+                        >
+                <Events>
+                        <OnCreate>
+                                (block (enemyStations)
+												; Get a list of enemy stations in the region. If we cannot find any then we make one
+                                                
+                                                (setq enemyStations (sysFindObject aOwnerObj "TAE +populated; -uncharted; +ares;"))
+												
+											;If there aren't any more enemy stations then we spawn another one while Minerva switches to the next mission	
+                                            (if (not enemyStations)
+												
+												;This is so that it does not give the player a Nil screen from all open missions of destroying Ares stations being destroyed
+												;So the player actually has to destroy an extra station... Can be immersion breaking if the player has scouted every station.
+												
+											(block (stationPos)
+											
+												 (typIncGlobalData &stPointMinerva; "mission")
+                                                                                
+                                                ; Pick a random point for the station to be
+                                                (setq stationPos (sysVectorRandom Nil (random 960 1500) 150))
+                                                                                
+                                                ; Create the station
+                                                (setq enemyStations (sysCreateStation &stAresCommune; stationPos))
+																				
+                                                                                )
+												
+                                                                        )
+																	
+                                              
+                                                (block (targetObj)
+                                                
+                                                        ; Pick a random enemy station to destroy
+                                                        (setq targetObj (seededRandom (objGetDestiny aOwnerObj) enemyStations))
+                                                        
+                                                        ; Remember it
+                                                        (msnSetData gSource 'targetID (objGetID targetObj))
+                                                        
+                                                        ; Register for events so we know when the target is destroyed
+                                                        (msnRegisterForEvents gSource targetObj)
+                                                                
+                                                        ; Compute reward
+                                                        (msnSetData gSource 'reward (multiply (objGetLevel targetObj) 75))
+                                                        )
+                                                )
+                        </OnCreate>
+
+                        <OnSetPlayerTarget>
+                                (block (targetObj)
+                                        (switch
+                                                ; If we just got debriefed then we clear our targets.
+
+                                                (eq aReason 'debriefed)
+                                                        (shpCancelOrders gPlayerShip)
+
+                                                ; If the mission is complete, then we point towards the 
+                                                ; owner station.
+
+                                                (msnGetProperty gSource 'isCompleted)
+                                                        (if (setq targetObj (objGetObjByID (msnGetProperty gSource 'ownerID)))
+                                                                (block Nil
+                                                                        (shpCancelOrders gPlayerShip)
+                                                                        (shpOrder gPlayerShip 'dock targetObj)
+                                                                        )
+                                                                )
+
+                                                ; Otherwise, we point towards the target
+
+                                                (if (setq targetObj (objGetObjByID (msnGetData gSource 'targetID)))
+                                                        (block Nil
+                                                                (shpCancelOrders gPlayerShip)
+                                                                (shpOrder gPlayerShip 'attack targetObj)
+                                                                )
+                                                        )
+                                                )
+                                        )
+                        </OnSetPlayerTarget>
+                        
+                        <OnObjDestroyed>
+                                (switch
+                                        (eq (objGetID aObjDestroyed) (msnGetData gSource 'targetID))
+                                                (msnSuccess gSource)
+                                        )
+                        </OnObjDestroyed>
+                        
+                        <OnReward>	
+								(objIncData gPlayerShip "fleetXP" (msnGetData gSource 'reward))
+                        </OnReward>
+                </Events>
+                
+                <Language>
+                        <Text id="Name">
+                                "Destroy Ares Station"
+                        </Text>
+                        <Text id="Summary">
+                                (cat
+                                        "Your mission is to destroy " (objGetName (objGetObjByID (msnGetData gSource 'targetID)) 0x04) " in the " (sysGetName) " system.\n\n"
+                                        "System: " (sysGetName) "\n"
+                                        "Reward: " (msnGetData gSource 'reward) " fleet experience"
+                                        )
+                        </Text>
+                        <Text id="Intro">
+						(block Nil
+						(if (not (typGetGlobalData &scBritannia2Mark; "status"))
+						(block Nil
+								(block (ship)
+									(setq ship (sysCreateShip &scBritannia2Mark; aOwnerObj &svCommonwealthFleet;))
+									(objFireEvent ship "OrderJoinPlayer")
+									(objSetObjRefData aOwnerObj "Mark" ship)
+									(cat
+                                        "As you are about to enter the Command Center, you hear someone say your name. You turn to see a smiling man, with sharp eyes and fair hair.\n\n"
+                                        "\"%name%, I've heard about you from the General. My name is Mark, a Britannia II pilot that was assigned to Point Minerva. I'll be flying with you"
+                                        " from now on. Well, lets go in.\""
+                                        )
+									)
+								)
+                                (cat
+                                        "General Aurelio turns to the gathering of pilots in the briefing room. \n\n"
+                                        "\"Now that we have supplies, we will continue to"
+                                        " weaken the Ares presence in Deneb.\""
+                                        )
+									)
+								)
+									
+                        </Text>
+                        <Text id="Briefing">
+                                  (cat
+                                         "\"We have located another Ares station and we want you to destroy it. "
+                                         "Any questions? No? Good! I'll enter the coordinates into your flight computers. \"\n\n"
+										 "Pilots start to leave the briefing room. The General turns to you: \n\n"
+										  "\"Will you help us again?\""
+                                         )
+                        </Text>
+                        <Text id="AcceptReply">
+                                "\"Thanks! Perhaps, we'll make it through all of this. Well, I'll enter the coordinates into your computer. Good luck!\""
+                        </Text>
+                        <Text id="DeclineReply">
+                                "\"I see. I guess we've made you do a lot of work without payment. There's a lot of Ares stations around, so come back if you want to help. Or destroy some yourself.\""
+                        </Text>
+                        <Text id="InProgress">
+                                "\"Did I not enter the coordinates? Wait, I did. Good luck.\""
+                        </Text>
+                        <Text id="SuccessDebrief">
+                                (cat
+
+                                        "\"Excellent mission pilots!"
+                                        " We're well on our way to victory!\""
+                                        )
+                        </Text>
+                        <Text id="SuccessMsg">
+                                "Mission complete!"
+                        </Text>
+                </Language>
+        </MissionType>
+		
+		 <MissionType UNID="&msBlockadeRunning;"
+                        name=                                "Blockade Running"
+                        scope=                                "system"
+
+                        attributes=                        "commonwealth, pointMinerva4"
+                        >
+                <Events>
+                        <OnCreate>
+                              (block (gateList)
+                                     ; We are heading towards St Kats
+                                     (setq gEnd (intGetGateToSystem gSource "SK"))
+														 (objSetObjRefData gSource "EndGate" gEnd)
+                                                        (msnSetData gSource 'reward 600)
+                                                        )
+                        </OnCreate>
+        
+                        <OnDeclined>
+						;Mission should start anyways, but they will fail without player
+						;Doesn't work...
+						(msnSetUnavailable gSource)
+                        </OnDeclined>
+
+                        <OnStarted>						
+						 (block (ship)
+                                        (setq ship (sysCreateShip &scAurochsFrigate; (objGetPos aOwnerObj) &svCommonwealthFleet;))
+										(shpOrder ship 'wait 6)
+                                        (shpOrderGate ship (objGetObjRefData gSource "EndGate"))
+										(objSendMessage gPlayerShip ship "OK! Let's go!")
+										
+                                        (objRegisterForEvents gSource ship)
+										(shpOrderEscort gPlayerShip ship)
+										(msnSetData gSource 'targetID (objGetID ship))
+								
+										(intFleetCreateWingmen aOwnerObj 12 &scCenturion;)
+										
+									(block (escort)	
+										(setq escort (sysCreateShip &scAurochsFrigate; (objGetPos aOwnerObj) &svCommonwealthFleet;))
+										(shpOrder escort 'escort ship)
+										(shpOrder escort 'gate aOwnerObj)
+										)
+										
+									(for i 1 6
+									(block (escort2)
+										(setq escort2 (sysCreateShip &scBritanniaM; (objGetPos aOwnerObj) &svCommonwealthFleet;))
+										(shpOrder escort2 'escort ship)
+										(shpOrder escort2 'gate aOwnerObj)
+										)
+									)
+										(objSetData gSource "FreightersEscaped" 0)
+								  
+								   (for i 1 2
+											(block (deimos)
+                                                        (setq deimos(sysCreateShip &scDeimos; (objGetObjRefData gSource "EndGate") &svAres; ))
+                                                        (shpOrder deimos 'attack ship)
+                                                        )
+                                                )
+									 (for i 1 2
+											(block (guards)
+                                                        (setq guards(sysCreateShip &scDeimos; (objGetObjRefData gSource "EndGate") &svAres; ))
+														(shpOrder guards 'patrol (objGetObjRefData gSource "EndGate") 10)
+                                                        )
+													)
+                                                
+									(for i 1 24
+											(block (sandstorm)
+                                                        (setq sandstorm(sysCreateShip &scSandstorm2; (objGetObjRefData gSource "EndGate") &svAres; ))
+                                                        (shpOrder sandstorm 'patrol (objGetObjRefData gSource "EndGate") 20)
+                                                        )
+                                                )
+												
+									(for i 1 10
+											(block (defense pos)
+														(setq pos (sysVectorPolarOffset (objGetObjRefData gSource "EndGate") (random 0 359) (random 20 60)))
+                                                        (setq defense(sysCreateShip &scAresCannon; pos &svAres; ))
+                                                        (shpOrder defense 'hold)
+                                                        )
+                                                )
+									;Swarm of Ares Gunships
+									(for i 1 10
+										(sysAddEncounterEventAtDist (random 780 820) ship &etAresAmbush2; 120)
+											)
+									(for i 1 4
+									(sysAddEncounterEventAtDist 1200 ship &etAresAmbush3; 120)
+										)			
+									(for i 1 4
+									(sysAddEncounterEventAtDist 1200 ship &etAresAmbush4; 120)
+										)
+											)
+                        </OnStarted>
+                        
+                        <OnSetPlayerTarget>
+                                (block (targetObj)
+                                        (switch
+                                                ; If we just got debriefed then we clear our targets.
+
+                                                (eq aReason 'debriefed)
+                                                        (shpCancelOrders gPlayerShip)
+
+                                                ; If the mission is complete, then we point towards the 
+                                                ; owner station.
+
+                                                (msnGetProperty gSource 'isCompleted)
+                                                        (if (setq targetObj (objGetObjByID (msnGetProperty gSource 'ownerID)))
+                                                                (block Nil
+                                                                        (shpCancelOrders gPlayerShip)
+                                                                        (shpOrder gPlayerShip 'dock targetObj)
+                                                                        )
+                                                                )
+
+                                                ; Otherwise, we point towards the target
+
+                                                (if (setq ship (objGetObjByID (msnGetData gSource 'targetID)))
+                                                        (block Nil
+                                                                (shpCancelOrders gPlayerShip)
+                                                                (shpOrder gPlayerShip 'escort ship)
+                                                                )
+                                                        )
+                                                )
+                                        )
+                        </OnSetPlayerTarget>
+						
+						<OnObjEnteredGate>
+						(block (shipClass)
+                                    (setq shipClass (objGetType aObj))
+                                     (switch
+                                      (eq shipClass &scAurochsFrigate;)
+                                      (objIncData gSource "FreightersEscaped")
+                                                                                        
+                                      (setq shipClass Nil)
+                                       )
+                                                                                
+                                                                        
+                                         (if shipClass
+                                               (block Nil
+
+                                                 ; Unregister so that we don't get called again at OnObjDestroyed
+                                                   (if (not (eq aObj gPlayerShip))
+                                                   (objUnregisterForEvents gSource aObj)
+                                                   )
+
+                                                   ; If all ships are accounted for, then the mission is
+                                                   ; successful.
+
+                                                       (if (eq(objGetData gSource "FreightersEscaped"))
+                                                             1)
+                                                              (block Nil
+                                                                    (plyMessage gPlayer "Mission complete!")
+                                                                     (msnSuccess gSource)
+                                                                       (shpCancelOrders gPlayerShip)
+																	   (typSetGlobalData &stPointMinerva; "blockade" "success")
+                                                                                                        )
+                                                                                                )
+                                                                                        )
+                                                                                )
+
+						</OnObjEnteredGate>
+                        
+                        <OnObjDestroyed>
+                                (switch
+                                        (eq (objGetID aObjDestroyed) (msnGetData gSource 'targetID))
+                                                (msnFailure gSource)
+												(typSetGlobalData &stPointMinerva; "blockade" "failure")
+                                        )
+                        </OnObjDestroyed>
+                        
+                        <OnCompleted>
+						(block Nil
+                                (intFleetDisperseWingmen aOwnerObj 12)
+								(typIncGlobalData &stPointMinerva; "mission")
+								)
+                        </OnCompleted>
+                        
+                        <OnReward>
+						(block Nil
+								(objIncData gPlayerShip "fleetXP" (msnGetData gSource 'reward))
+								)
+                        </OnReward>
+						
+                </Events>
+                
+                <Language>
+                        <Text id="Name">
+                                "Blockade Running"
+                        </Text>
+                        <Text id="Summary">
+                                (cat
+                                        "Your mission is to escort the Aurochs Frigate that will run the Ares blockade\n\n"
+                                        "System: " (sysGetName) "\n"
+                                        "Reward: " (msnGetData gSource 'reward) " fleet experience"
+                                        )
+                        </Text>
+                        <Text id="Intro">
+					(block Nil
+						(if (eq (typGetGlobalData &scBritannia2Mark; "status") "joined")
+									(cat
+                                        "A lieutenant walks up to you and Mark. \n\n"
+                                        "\"There you are! The General wants to see you pronto!"
+                                        " Follow me!\"\n\n"
+										"Mark seems to be in deep thought then breaks the silence: \n\n"
+										"\"I was talking to one of the guys from the Intel department earlier. "
+                                        "They said that there was something about a Phobos II dreadnought.\""
+                                        )
+                                  (cat
+                                        "A lieutenant walks up to you. \n\n"
+                                        "\"There you are! The General wants to see you pronto!"
+                                        " Follow me!\""
+                                        )
+									)
+								) 
+                        </Text>
+                        <Text id="Briefing">
+                                  (cat
+										"You enter from the back of the room. You can hear General Aurelio:  \n\n"
+                                         "\"Our situation is dire. We have found out that the Ares are planning an "
+                                         "attack on Point Minerva with their new dreadnought. I'm proposing"
+										 " that we send a frigate to St. Katherine's. I know that this is risky,"
+										 " but we won't survive if we don't. Any objections?\"\n\n"
+										 "The pilots gathered murmur amongst themselves, but no one speaks out.\n\n"
+										 "\"OK! Everyone, prep your ships! %name%, good work on getting the rom."
+										  " Will you help us again?\"\n\n"
+                                         )
+                        </Text>
+                        <Text id="AcceptReply">
+                                "\"Thanks! I don't think that I can ever repay you. Join up with the other pilots. "
+								"Also, our scouts spotted several deimos forming a blockade around the gate, so watch out!\""
+                        </Text>
+                        <Text id="DeclineReply">
+                                "\"I see. Wish us luck!\""
+                        </Text>
+                        <Text id="InProgress">
+                                "\"What are you doing? The frigate has already left!!!\""
+                        </Text>
+                        <Text id="SuccessDebrief">
+                                (cat
+                                        "\"Good job out there %name%!"
+                                        " Maybe the Fleet might actually come and help us.\""
+                                        )
+                        </Text>
+						<Text id="FailureDebrief">
+                                (cat
+										"You enter a silent command center. You see General Aurelio, calming a crying child. He looks up at you: \n\n"
+                                        "\"...We lost a lot of brave men and women today...\""
+                                        )
+                        </Text>
+                        <Text id="SuccessMsg">
+                                "Blockade run: Success!"
+                        </Text>
+						<Text id="FailureMsg">
+                                "Everyone, retreat!"
+                        </Text>
+                </Language>
+        </MissionType>
+	
+	 <MissionType UNID="&msInterceptAresVanguardFleet;"
+                        name=                                "Intercept Vanguard Fleet"
+                        scope=                                "system"
+
+                        attributes=                        "commonwealth, pointMinerva6"
+                        >
+                <Events>
+                        <OnCreate>
+                                                (block (targetObj)
+                                                
+                                                        (setq targetObj (objGetObjByID (msnGetProperty gSource 'ownerID)))
+                                                        
+                                                        ; Remember it
+                                                        (msnSetData gSource 'targetID (objGetID targetObj))
+                                                        
+                                                        (msnRegisterForEvents gSource targetObj)
+                                                                
+                                                        ; Compute reward
+                                                        (msnSetData gSource 'reward 1200)
+                                                        )
+                        </OnCreate>
+
+                        <OnSetPlayerTarget>
+                                (block (targetObj)
+                                        (switch
+                                                ; If we just got debriefed then we clear our targets.
+
+                                                (eq aReason 'debriefed)
+                                                        (shpCancelOrders gPlayerShip)
+
+                                                ; If the mission is complete, then we point towards the 
+                                                ; owner station.
+
+                                                (msnGetProperty gSource 'isCompleted)
+                                                        (if (setq targetObj (objGetObjByID (msnGetProperty gSource 'ownerID)))
+                                                                (block Nil
+                                                                        (shpCancelOrders gPlayerShip)
+                                                                        (shpOrder gPlayerShip 'dock targetObj)
+                                                                        )
+                                                                )
+                                                )
+                                        )
+                        </OnSetPlayerTarget>
+						
+						<OnStarted>
+						(block (enemyFleet)
+														;1 Phobos, 6 Deimos, 12 Tundra 
+														;There would have been more types of ships but the game started to glitch
+														(setq enemyFleet '(&scPhobos; &scDeimos; &scDeimos; &scDeimos; &scDeimos; &scDeimos; &scDeimos; &scTundra; &scTundra; &scTundra; &scTundra; &scTundra; &scTundra; &scTundra; &scTundra; &scTundra; &scTundra; &scTundra; &scTundra;))
+                                                                     
+                                                                        
+                                                                ; Create the enemy squadron
+                                                                
+                                                                (setq i 0)
+                                                                (enum enemyFleet theEnemyClass
+                                                                        (block (theShip)
+                                                                                (setq theShip
+                                                                                        (sysCreateShip 
+                                                                                                theEnemyClass 
+                                                                                                (sysVectorPolarOffset (objGetPos aOwnerObj) 0 360)
+                                                                                                &svAres;
+                                                                                                )
+                                                                                        )
+                                                                               (shpOrder theShip 'attack aOwnerObj)
+																			   (shpOrder theShip 'attackNearestEnemy)
+                                                                                
+                                                                                ; Remember the ship
+                                                                                (objSetObjRefData gSource (cat "Target" i) theShip)
+                                                                                (objRegisterForEvents gSource theShip)
+                                                                                
+                                                                                (setq i (add i 1))
+                                                                                )
+																	)
+									;Friendly ships 1 Aurochs Frigate, 12 Britannias, 24 Centurions
+									(block (frigate)	
+										(setq frigate (sysCreateShip &scAurochsFrigate; (objGetPos aOwnerObj) &svCommonwealthFleet;))
+										(shpOrder frigate 'wait 20)
+										(shpOrder frigate 'attackNearestEnemy)
+										(shpOrder frigate 'gate aOwnerObj)
+										)
+									(for i 1 12
+									(block (brit)
+										(setq brit (sysCreateShip &scBritanniaM; (objGetPos aOwnerObj) &svCommonwealthFleet;))
+										(shpOrder brit 'wait 22)
+										(shpOrder brit 'attackNearestEnemy)
+										(shpOrder brit 'gate aOwnerObj)
+										)
+									)
+									(for i 1 24
+									(block (cent rally)
+										(setq cent (sysCreateShip &scCenturion; (objGetPos aOwnerObj) &svCommonwealthFleet;))
+										(setq rally (sysCreateMarker "mark" (sysVectorPolarOffset aOwnerObj (random 0 5) 20) &svCommonwealthFleet;))
+										(shpOrder cent 'goto rally)
+										(shpOrder cent 'wait 17)
+										(shpOrder cent 'attackNearestEnemy)
+										(shpOrder cent 'gate aOwnerObj)
+										)
+									)
+
+                                    (objSetData gSource "Targets" enemyFleet)
+                                    (objSetData gSource "TargetsLeft" (count enemyFleet))
+                                                                
+                                    ; Set the target
+                                                                
+                                    (shpCancelOrders gPlayerShip)
+                                    (shpOrderAttack gPlayerShip (objGetObjRefData gSource "Target0"))
+                                                                )
+                        </OnStarted>
+						
+                        <OnObjDestroyed>
+						 (block (targetSet)
+                                           (for i 0 (subtract (count (objGetData gSource "Targets")) 1)
+                                                   (if (eq aObjDestroyed (objGetObjRefData gSource (cat "Target" i)))
+                                                            (block Nil
+                                                            (objIncData gSource "TargetsLeft" -1)
+                                                            )
+                                                            (if (and (not targetSet) (objGetObjRefData gSource (cat "Target" i)))
+                                                            (block Nil
+                                                            (shpCancelOrders gPlayerShip)
+                                                            (shpOrderAttack gPlayerShip (objGetObjRefData gSource (cat "Target" i)))
+                                                            (objSetIdentified (objGetObjRefData gSource (cat "Target" i)))
+                                                            (setq targetSet True)
+                                                             )
+                                                    )
+                                            )
+                                    )
+
+                                             (if (eq (objGetData gSource "TargetsLeft") 0)
+                                                     (block Nil
+                                                            (plyMessage gPlayer "Mission complete!")
+                                                           (msnSuccess gSource)
+                                                            )
+                                                            (if (eq (objGetData gSource "TargetsLeft") 1)
+                                                            (plyMessage gPlayer "1 target left!")
+                                                            (plyMessage gPlayer (objGetData gSource "TargetsLeft") " targets left")
+                                                             )
+                                                        )
+                                                    )
+                        </OnObjDestroyed>
+                        
+                        <OnReward>	
+							(block Nil
+							
+								(objIncData gPlayerShip "fleetXP" (msnGetData gSource 'reward))
+								(typIncGlobalData &stPointMinerva; "mission")
+							)
+                        </OnReward>
+                </Events>
+                
+                <Language>
+                        <Text id="Name">
+                                "Intercept Vanguard Fleet"
+                        </Text>
+                        <Text id="Summary">
+                                (cat
+                                        "Your mission is to protect Point Minerva and destroy the Ares Vanguard Fleet in the " (sysGetName) " system.\n\n"
+                                        "System: " (sysGetName) "\n"
+                                        "Reward: " (msnGetData gSource 'reward) " fleet experience"
+                                        )
+                        </Text>
+                        <Text id="Intro">
+                                (cat
+                                        "You see General Aurelio and his officers surrounding the radar charts.\n\n"
+                                        "\"There is an Ares fleet inbound... Put the station "
+                                        "on red alert! Everyone to Battle Stations.\"\n\n"
+										"You hear sirens ring. The General Approaches you: \n\n"
+                                        )
+                        </Text>
+                        <Text id="Briefing">
+                                  (cat
+                                         "\"Its a good thing that we finished fortifications already. "
+                                         "Well, they are going to attack us even if you decline. So, "
+										  "\"lets fight together. \"\n\n"
+                                         )
+                        </Text>
+                        <Text id="AcceptReply">
+                                "\"Good. We're going to scramble our pilots. Good luck!\""
+                        </Text>
+                        <Text id="DeclineReply">
+                                "\"You're not going to leave us now are you?\""
+                        </Text>
+                        <Text id="InProgress">
+                                "\"The enemy fleet is still out there...\""
+                        </Text>
+                        <Text id="SuccessDebrief">
+                                (cat
+                                        "\"Good piloting! Looks like our defenses are working too.\""
+                                        )
+                        </Text>
+                        <Text id="SuccessMsg">
+                                "Mission complete!"
+                        </Text>
+                </Language>
+        </MissionType>
+		
+		 <MissionType UNID="&msFortify;"
+                        name=                                "Fortification"
+                        scope=                                "system"
+
+                        attributes=                        "commonwealth, pointMinerva5"
+                        >
+                <Events>
+                        <OnCreate>
+                                  (msnSetData gSource 'reward 500)
+                        </OnCreate>
+						
+                        <OnStarted>						
+						 (block (ship spot)
+										(setq spot (sysCreateMarker "rally" (sysVectorPolarOffset aOwnerObj 0 30) &svCommonwealthFleet;))
+                                        (setq ship (sysCreateShip &scAurochs; (objGetPos aOwnerObj) &svCommonwealthFleet;))
+										
+										(objSendMessage gPlayerShip ship "OK! Let's go!")
+										(objRegisterForEvents gSource ship)
+										(shpOrderEscort gPlayerShip ship)
+										(msnSetData gSource 'targetID (objGetID ship))
+										
+										(intFleetCreateWingmen aOwnerObj 6 &scCenturion;)
+										
+										;Initialize variables
+										(objSetData gSource "Dock" 0)
+										(objSetData gSource "ang" 0)
+										
+										;Begin timers
+										(msnAddTimerEvent gSource 190 "Start")
+										(msnAddTimerEvent gSource 5560 "End")
+										
+										(for i 1 15
+											(sysAddEncounterEventAtDist 5400 ship &etAresAmbush2; 120)
+											)
+										(for i 1 2
+											(sysAddEncounterEventAtDist 5500 ship &etAresAmbush3; 120)
+											)
+										(for i 1 4
+											(sysAddEncounterEventAtDist 5500 ship &etAresAmbush4; 120)
+											)
+										
+										;Long list of ship orders, I should've used a recurring timer event but already finished this so I left it
+										(shpOrder ship "goto" spot)
+										(shpOrder ship 'wait 10)
+
+										(setq spot (sysCreateMarker "rally" (sysVectorPolarOffset aOwnerObj 45 30) &svCommonwealthFleet;))
+										(shpOrder ship "goto" spot)
+										(shpOrder ship 'wait 10)		
+							
+										(setq spot (sysCreateMarker "rally" (sysVectorPolarOffset aOwnerObj 90 30) &svCommonwealthFleet;))
+										(shpOrder ship "goto" spot)
+										(shpOrder ship 'wait 10)
+										
+										(setq spot (sysCreateMarker "rally" (sysVectorPolarOffset aOwnerObj 135 30) &svCommonwealthFleet;))
+										(shpOrder ship "goto" spot)
+										(shpOrder ship 'wait 10)
+												
+										(setq spot (sysCreateMarker "rally" (sysVectorPolarOffset aOwnerObj 180 30) &svCommonwealthFleet;))
+										(shpOrder ship "goto" spot)
+										(shpOrder ship 'wait 10)
+											
+										(setq spot (sysCreateMarker "rally" (sysVectorPolarOffset aOwnerObj 225 30) &svCommonwealthFleet;))
+										(shpOrder ship "goto" spot)
+										(shpOrder ship 'wait 10)
+												
+										(setq spot (sysCreateMarker "rally" (sysVectorPolarOffset aOwnerObj 270 30) &svCommonwealthFleet;))
+										(shpOrder ship "goto" spot)
+										(shpOrder ship 'wait 10)
+												
+										(setq spot (sysCreateMarker "rally" (sysVectorPolarOffset aOwnerObj 315 30) &svCommonwealthFleet;))
+										(shpOrder ship "goto" spot)
+										(shpOrder ship 'wait 10)
+										
+										(setq spot (sysCreateMarker "rally" (sysVectorPolarOffset aOwnerObj 0 50) &svCommonwealthFleet;))
+										(shpOrder ship "goto" spot)
+										(shpOrder ship 'wait 10)
+										
+										(setq spot (sysCreateMarker "rally" (sysVectorPolarOffset aOwnerObj 45 50) &svCommonwealthFleet;))
+										(shpOrder ship "goto" spot)
+										(shpOrder ship 'wait 10)		
+							
+										(setq spot (sysCreateMarker "rally" (sysVectorPolarOffset aOwnerObj 90 50) &svCommonwealthFleet;))
+										(shpOrder ship "goto" spot)
+										(shpOrder ship 'wait 10)
+										
+										(setq spot (sysCreateMarker "rally" (sysVectorPolarOffset aOwnerObj 135 50) &svCommonwealthFleet;))
+										(shpOrder ship "goto" spot)
+										(shpOrder ship 'wait 10)
+												
+										(setq spot (sysCreateMarker "rally" (sysVectorPolarOffset aOwnerObj 180 50) &svCommonwealthFleet;))
+										(shpOrder ship "goto" spot)
+										(shpOrder ship 'wait 10)
+											
+										(setq spot (sysCreateMarker "rally" (sysVectorPolarOffset aOwnerObj 225 50) &svCommonwealthFleet;))
+										(shpOrder ship "goto" spot)
+										(shpOrder ship 'wait 10)
+												
+										(setq spot (sysCreateMarker "rally" (sysVectorPolarOffset aOwnerObj 270 50) &svCommonwealthFleet;))
+										(shpOrder ship "goto" spot)
+										(shpOrder ship 'wait 10)
+												
+										(setq spot (sysCreateMarker "rally" (sysVectorPolarOffset aOwnerObj 315 50) &svCommonwealthFleet;))
+										(shpOrder ship "goto" spot)
+										(shpOrder ship 'wait 10)
+												
+										(shpOrder ship 'gate aOwnerObj)
+								)
+                        </OnStarted>
+						
+						<Start>
+						(msnAddRecurringTimerEvent gSource 670 "Build")
+						</Start>
+						
+						<End>
+						(block Nil
+								(msnCancelTimerEvent gSource "Build") 
+								(msnAddRecurringTimerEvent gSource 710 "Build2")
+								(msnAddTimerEvent gSource 5800 "End2")
+								(objSetData gSource "ang" 0)
+						)
+						</End>
+						
+						<Build>
+						(block (turret angle)
+								(setq turret (sysCreateStation &stCommonFleetTurret; (sysVectorPolarOffset aOwnerObj (objGetData gSource "ang") 30)))
+								(setq angle (add (objGetData gSource "ang") 45))
+								(objSetData gSource "ang" angle)
+						)
+						</Build>
+						
+						<End2>
+						(msnCancelTimerEvent gSource "Build2") 
+						</End2>
+						
+						<Build2>
+						(block (turret angle)
+							(setq turret (sysCreateStation &stCommonFleetTurret; (sysVectorPolarOffset aOwnerObj (objGetData gSource "ang") 50)))
+							(setq angle (add (objGetData gSource "ang") 45))
+							(objSetData gSource "ang" angle)
+						)
+						</Build2>
+						
+						<Failure>
+						;This is so that we stop building things without the Aurochs
+						(block Nil
+							(msnCancelTimerEvent gSource "Build")
+							(msnCancelTimerEvent gSource "Build2")
+							(msnCancelTimerEvent gSource "End")
+							(msnCancelTimerEvent gSource "Start2")
+						)
+                        </Failure> 
+						
+                        <OnSetPlayerTarget>
+                                (block (targetObj)
+                                        (switch
+                                                ; If we just got debriefed then we clear our targets.
+
+                                                (eq aReason 'debriefed)
+                                                        (shpCancelOrders gPlayerShip)
+
+                                                ; If the mission is complete, then we point towards the 
+                                                ; owner station.
+
+                                                (msnGetProperty gSource 'isCompleted)
+                                                        (if (setq targetObj (objGetObjByID (msnGetProperty gSource 'ownerID)))
+                                                                (block Nil
+                                                                        (shpCancelOrders gPlayerShip)
+                                                                        (shpOrder gPlayerShip 'dock targetObj)
+                                                                        )
+                                                                )
+
+                                                ; Otherwise, we point towards the target
+
+                                                (if (setq ship (objGetObjByID (msnGetData gSource 'targetID)))
+                                                        (block Nil
+                                                                (shpCancelOrders gPlayerShip)
+                                                                (shpOrder gPlayerShip 'escort ship)
+                                                                )
+                                                        )
+                                                )
+                                        )
+                        </OnSetPlayerTarget>
+						
+						<OnObjEnteredGate>
+						(block (shipClass)
+                                    (setq shipClass (objGetType aObj))
+                                     (switch
+                                      (eq shipClass &scAurochs;)
+                                      (objIncData gSource "Dock")
+                                                                                        
+                                      (setq shipClass Nil)
+                                       )
+                                                                                
+                                       ; If it's not one of the ships that we were expecting, then
+                                         ; don't do anything.
+                                                                        
+                                         (if shipClass
+                                               (block Nil
+
+                                                 ; Unregister so that we don't get called again at OnObjDestroyed
+                                                   (if (not (eq aObj gPlayerShip))
+                                                   (objUnregisterForEvents gSource aObj)
+                                                   )
+
+                                                   ; If all ships are accounted for, then the mission is
+                                                   ; successful.
+
+                                                       (if (eq(objGetData gSource "Dock"))
+                                                             1)
+                                                              (block Nil
+                                                                    (plyMessage gPlayer "Mission complete!")
+                                                                     (msnSuccess gSource)
+                                                                       (shpCancelOrders gPlayerShip)
+                                                                                                        )
+                                                                                                )
+                                                                                        )
+                                                                                )
+
+						</OnObjEnteredGate>
+                        
+                        <OnObjDestroyed>
+                                (switch
+                                        (eq (objGetID aObjDestroyed) (msnGetData gSource 'targetID))
+										(block Nil
+                                                (msnFailure gSource)
+												;For some reason, just cancelling timer events here didn't work so we call an event 1 tick later 
+												(msnAddTimerEvent gSource 1 "Failure")
+												)
+                                        )
+                        </OnObjDestroyed>
+                        
+                        <OnCompleted>
+						(block Nil
+                                (intFleetDisperseWingmen aOwnerObj 6)
+								(typIncGlobalData &stPointMinerva; "mission")
+								)
+                        </OnCompleted>
+                        
+                        <OnReward>
+								(objIncData gPlayerShip "fleetXP" (msnGetData gSource 'reward))
+                        </OnReward>
+						
+                </Events>
+                
+                <Language>
+                        <Text id="Name">
+                                "Fortification"
+                        </Text>
+                        <Text id="Summary">
+                                (cat
+                                        "Your mission is to escort the Aurochs Transport that will be building defense turrets.\n\n"
+                                        "System: " (sysGetName) "\n"
+                                        "Reward: " (msnGetData gSource 'reward) " fleet experience"
+                                        )
+                        </Text>
+                        <Text id="Intro">
+								(block Nil
+						(if (not (eq (typGetGlobalData &stPointMinerva; "blockade") "success"))
+									(cat
+                                        "You enter the command center. Everyone seems worned out. General Aurelio is talking to an officer: \n\n"
+										"\"We need to hunker down, likely the Ares are going to strike soon, especially after our recent failure. Gather some pilots.\"\n\n"
+                                        "\" I'll see who I can find.\""
+                                        )
+                                  (cat
+                                        "You enter the bustling command center. General Aurelio is talking to a group of officers: \n\n"
+                                        "\"Now, we need to fortify our defenses as we can't rely on the Fleet to come in time"
+                                        " or at all. I want to deploy the turrets that we've been building in hangar 4.\""
+                                        )
+									)
+								) 
+                        </Text>
+                        <Text id="Briefing">
+                                  (cat
+										"The General notices you and turns to face you: \n\n"
+                                        "\"Since you're here, want to be part of the escort detail of the Auroch that we'll use? \""
+                                         )
+                        </Text>
+                        <Text id="AcceptReply">
+                                "\"Good luck! Stay vigilant, the Ares will likely attack.\""
+                        </Text>
+                        <Text id="DeclineReply">
+                                "\"You're the pilot most fit to do this. Come back once you thought about it.\""
+                        </Text>
+                        <Text id="InProgress">
+                                "\"What are you doing? The transport has already left!!!\""
+                        </Text>
+                        <Text id="SuccessDebrief">
+                                (cat
+                                        "\"Good work! I hope that this defense is enough to stop the Ares.\""
+                                        )
+                        </Text>
+						<Text id="FailureDebrief">
+                                (cat
+                                        "\"What were you doing out there! We need those defenses!\""
+                                        )
+                        </Text>
+                        <Text id="SuccessMsg">
+                                "Mission complete!"
+                        </Text>
+						<Text id="FailureMsg">
+                                "Fall back!"
+                        </Text>
+                </Language>
+        </MissionType>
+		
+		<MissionType UNID="&msRendezvous;"
+						name=                                "Rendezvous"
+                        scope=                                "system"
+
+                        attributes=                        "commonwealth, pointMinerva7"
+                        >
+                <Events>
+                        <OnCreate>
+                              (block (gateList)
+                                     ; We are heading towards St Kats
+                                     (setq gEnd (intGetGateToSystem gSource "SK"))
+														 (objSetObjRefData gSource "EndGate" gEnd)
+                                                        (msnSetData gSource 'reward 500)
+                                                        )
+                        </OnCreate>
+
+                        <OnStarted>		
+						 (block (ship)
+                                        (setq ship (sysCreateShip &scAquilaCruiser; (sysVectorPolarOffset (objGetPos (objGetObjRefData gSource "EndGate")) (random 0 359) (random 100 200)) &svCommonwealthFleet;))
+										(shpOrder ship 'wander)
+										(shpOrderEscort gPlayerShip ship)
+										
+                                        (objRegisterForEvents gSource ship)
+										(objSetObjRefData gSource "Aquila2" ship)	
+										
+										(msnAddRecurringTimerEvent gSource 120 "Player")
+										(objSetData gSource "Aquila" 0)
+										(msnSetData gSource 'targetID (objGetID ship))
+										
+										;So that we don't keep repeating this mission
+										(typSetGlobalData &stPointMinerva; "blockade" "arrive")
+									(for i 1 3
+										(block (escort)	
+											(setq escort (sysCreateShip &scAurochsFrigate; (objGetPos ship) &svCommonwealthFleet;))
+											(shpOrder escort 'escort ship)
+											(objRegisterForEvents gSource escort)
+											)
+										)
+										
+									(for i 1 6
+										(block (escort2)
+											(setq escort2 (sysCreateShip &scBritannia; (objGetPos ship) &svCommonwealthFleet;))
+											(shpOrder escort2 'patrol ship 5)
+											(shpOrder escort2 'gate aOwnerObj)
+											(objRegisterForEvents gSource escort2)
+											
+												(for i 1 6
+													(block (escort3)
+														(setq escort3 (sysCreateShip &scCenturion; (objGetPos ship) &svCommonwealthFleet;))
+														(shpOrder escort3 'escort escort2)
+														(objRegisterForEvents gSource escort3)
+											)
+										)
+									)
+								)
+							)
+                        </OnStarted>
+                        
+                        <OnSetPlayerTarget>
+                                (block (targetObj)
+                                        (switch
+                                                ; If we just got debriefed then we clear our targets.
+
+                                                (eq aReason 'debriefed)
+                                                        (shpCancelOrders gPlayerShip)
+
+                                                ; If the mission is complete, then we point towards the 
+                                                ; owner station.
+
+                                                (msnGetProperty gSource 'isCompleted)
+                                                        (if (setq targetObj (objGetObjByID (msnGetProperty gSource 'ownerID)))
+                                                                (block Nil
+                                                                        (shpCancelOrders gPlayerShip)
+                                                                        (shpOrder gPlayerShip 'dock targetObj)
+                                                                        )
+                                                                )
+
+                                                ; Otherwise, we point towards the target
+
+                                                (if (setq ship (objGetObjByID (msnGetData gSource 'targetID)))
+                                                        (block Nil
+                                                                (shpCancelOrders gPlayerShip)
+                                                                (shpOrder gPlayerShip 'escort ship)
+                                                                )
+                                                        )
+                                                )
+                                        )
+                        </OnSetPlayerTarget>
+						
+						<Player>
+						;If the player is in 100 ls then the captain of the Aquila will detect them
+						(if (sysFindObject (objGetObjRefData gSource "Aquila2") "zN:100")
+						
+							(block (ship messenger)
+								(setq ship (objGetObjRefData gSource "Aquila2"))
+								(shpCancelOrders ship)
+								(shpOrder ship 'gate aOwnerObj)
+								
+								(msnCancelTimerEvent gSource "Player")
+								(msnSuccess gSource)
+								(typSetGlobalData &stPointMinerva; "blockade" "reinforcements")
+								
+								(plyMessage gplayer "This is CW expeditionary fleet 3 leader, do you copy?")
+								(plyMessage gplayer "Received confirmation codes, we are en route to Point Minerva, over.")
+								
+								;Messenger back to fleet, just extra background stuff
+								(setq messenger (sysCreateShip &scCenturion; (objGetPos ship) &svCommonwealthFleet;))
+								(shpOrder messenger 'gate)
+							)
+						)
+						
+						</Player>
+						
+						<OnObjEnteredGate>
+					(block (shipClass)
+                                    (setq shipClass (objGetType aObj))
+									;We count remaining ships with the Aquila
+                                     (switch
+									  (eq shipClass &scAquilaCruiser;)
+                                      (typIncGlobalData &stPointMinerva; "Aquila")
+									  
+									  (eq shipClass &scAurochsFrigate;)
+                                      (typIncGlobalData &stPointMinerva; "Frigate")
+									  
+									  (eq shipClass &scBritannia;)
+                                      (typIncGlobalData &stPointMinerva; "Britannia")
+									  
+									  (eq shipClass &scCenturion;)
+                                      (typIncGlobalData &stPointMinerva; "Centurion")
+                              
+                                      (setq shipClass Nil)
+                                       )
+                                                                                
+                                                                        
+                                         (if shipClass
+                                               (block Nil
+
+                                                 ; Unregister so that we don't get called again at OnObjDestroyed
+                                                   (if (not (eq aObj gPlayerShip))
+                                                   (objUnregisterForEvents gSource aObj)
+                                                   )
+                                                                                                )
+                                                                                        )
+                                                                                )
+
+						</OnObjEnteredGate>
+                        
+                        <OnObjDestroyed>
+                                (switch
+                                        (eq (objGetID aObjDestroyed) (msnGetData gSource 'targetID))
+										(block Nil
+                                                (msnFailure gSource)
+												(msnCancelTimerEvent gSource "Player")
+												)
+                                        )
+                        </OnObjDestroyed>
+						   
+                        <OnReward>
+								(objIncData gPlayerShip "fleetXP" (msnGetData gSource 'reward))
+                        </OnReward>
+						
+                </Events>
+                
+                <Language>
+                        <Text id="Name">
+                                "Rendezvous"
+                        </Text>
+                        <Text id="Summary">
+                                (cat
+                                        "Your mission is to rendezvous with the CW expeditionary fleet and escort them to Point Minerva\n\n"
+                                        "System: " (sysGetName) "\n"
+                                        "Reward: " (msnGetData gSource 'reward) " fleet experience"
+                                        )
+                        </Text>
+                        <Text id="Intro">
+                                (cat
+                                        "\"Ah, I was just about to send someone to find you. We just heard chatter over one of the "
+                                        "frequencies the fleet uses. We are currently waiting for-\"\n\n"
+                                        "\"General! There's chatter again! I'll put it on speaker: \"\n\n"
+										"\"Looks desolate. What are your orders Expeditionary Leader?\"\n\n"
+										"\"Put everyone on alert, it is likely that the Ares have taken this system. "
+										" We'll have a look around. Form up on my cruiser!...Also, switch to short range communications.\"\n\n"
+                                        )
+                        </Text>
+                        <Text id="Briefing">
+                                  (cat
+                                         "\"We're going to try communicating with them. %name%, can you go out and guide them? "
+                                         "Our communication devices were damaged in the last attack. We'll probably fix them soon enough, "
+										 "but we don't want them to gate without finding us. \"\n\n"
+                                         )
+                        </Text>
+                        <Text id="AcceptReply">
+                                "\"Thanks! Just send them our coordinates when you get close to them.\""
+                        </Text>
+                        <Text id="DeclineReply">
+                                "\"OK... Wait, what!? Didn't I say that our communications systems were damaged?\""
+                        </Text>
+                        <Text id="InProgress">
+                                "\"Have you made contact with them yet?\""
+                        </Text>
+                        <Text id="SuccessDebrief">
+								(block Nil
+						(if (eq (typGetGlobalData &scBritannia2Mark; "status") "joined")
+									(cat
+                                        "Mark leads you to the docking port. You see General Aurelio talking to a woman with a captain's cap:\n\n"
+                                        "\"Patrols encountered your men. They said that dozens of sandstorms were chasing your frigate."
+                                        " After command verified the rom, we were dispatched to your station.\"\n\n"
+										"\"I'm glad that someone in the Fleet finally decided that the lack of communications to this front was suspicious.\"\n\n"
+                                        "\"Well, the Fleet is stretched more than ever. We're steadily losing ground as the Ares have been conducting Phobos rushes. \""
+                                        )
+                                  (cat
+                                        "\Looks like the Fleet isn't that bad at all. Lets give them a warm welcome.\""
+                                        )
+									)
+								)
+                        </Text>
+						<Text id="FailureDebrief">
+                                (cat
+                                        "\"%name%! What the hell were you doing out there? Your ship should be able to easily catch up to that fleet!\""
+                                        )
+                        </Text>
+                        <Text id="SuccessMsg">
+                                "Mission complete!"
+                        </Text>
+						<Text id="FailureMsg">
+                                "%name%! Get back here!"
+                        </Text>
+                </Language>
+        </MissionType>
+		
+		 <MissionType UNID="&msInterceptAresMainFleet;"
+                        name=                                "Intercept Main Fleet"
+                        scope=                                "system"
+
+                        attributes=                        "commonwealth, pointMinerva8"
+                        >
+                <Events>
+                        <OnCreate>
+                                                        ; Compute reward
+                                                        (msnSetData gSource 'reward 2000)
+                        </OnCreate>
+						
+						
+
+                        <OnSetPlayerTarget>
+                                (block (targetObj)
+                                        (switch
+                                                ; If we just got debriefed then we clear our targets.
+
+                                                (eq aReason 'debriefed)
+                                                        (shpCancelOrders gPlayerShip)
+
+                                                ; If the mission is complete, then we point towards the 
+                                                ; owner station.
+
+                                                (msnGetProperty gSource 'isCompleted)
+                                                        (if (setq targetObj (objGetObjByID (msnGetProperty gSource 'ownerID)))
+                                                                (block Nil
+                                                                        (shpCancelOrders gPlayerShip)
+                                                                        (shpOrder gPlayerShip 'dock targetObj)
+                                                                        )
+                                                                )
+
+                                                ; Otherwise, we point towards the target
+
+                                                (if (setq targetObj (objGetObjByID (msnGetData gSource 'targetID)))
+                                                        (block Nil
+                                                                (shpCancelOrders gPlayerShip)
+                                                                (shpOrder gPlayerShip 'attack targetObj)
+                                                                )
+                                                        )
+                                                )
+                                        )
+                        </OnSetPlayerTarget>
+						
+						<OnStarted>
+						
+				(block Nil
+				
+						;Ships assigned to player
+						(intFleetCreateWingmen aOwnerObj 18 &scBritanniaM;)
+						
+						;Main Fleet
+						(block (theTarget)
+								 (setq theTarget (sysCreateShip &scPhobos2Prototype; (sysVectorPolarOffset Nil 45 1000) &svAres;))
+								 (shpOrder theTarget 'orbit (sysFindObject Nil "tN +star") 750)
+								 
+                                    (objSetObjRefData gSource "phobos2" theTarget)
+									(msnAddTimerEvent gSource 8268 "Target")
+									(msnSetData gSource 'targetID (objGetID theTarget))
+									(msnRegisterForEvents gSource theTarget)
+									
+									(block (phobos)
+										(setq phobos (sysCreateShip &scPhobos; (objGetPos theTarget) &svAres;))
+										(shpOrder phobos 'escort theTarget)
+												(for i 1 6
+													(block (deimos)
+														(setq deimos (sysCreateShip &scDeimos; (objGetPos theTarget) &svAres;))
+														(shpOrder deimos 'escort phobos)
+								)
+							)
+						)
+						;12 flights of 6 sandstorms with a sandstorm II as leader
+					(for i 1 12
+															(block (lead)
+																(setq lead (sysCreateShip &scSandstorm2; (objGetPos theTarget) &svAres;))
+																(shpOrder lead 'wait (random 0 10))
+																(shpOrder lead 'patrol theTarget (random 20 40))
+																	(for i 1 6
+																		(block (sand)
+																			(setq sand (sysCreateShip &scSandstorm2; (objGetPos theTarget) &svAres;))
+																			(shpOrder sand 'escort lead)
+														)
+													)
+												)
+											)
+											
+					(if (eq (typGetGlobalData &stPointMinerva; "blockade") "reinforcements")
+					
+						(block (aurochsCount britanniaCount centurionCount)
+							;We count the number of Ships that were acquired in rendezvous
+							(setq aurochsCount (typGetGlobalData &stPointMinerva; "Frigate"))
+							(setq britanniaCount (typGetGlobalData &stPointMinerva; "Britannia"))
+							(setq centurionCount (typGetGlobalData &stPointMinerva; "Centurion"))
+							
+							;Spawn allies, for the Aquila we assume that it is alive as we finished the mission
+							(block (aquila)
+								(setq aquila (sysCreateShip &scAquilaCruiser; (sysVectorPolarOffset aOwnerObj (random 0 359) 10) &svCommonwealthFleet;))
+								(shpOrder aquila 'wait 160)
+								(shpOrder aquila 'attack theTarget)
+							)
+							
+							(for i 1 aurochsCount
+									(block (aurochs)
+										(setq aurochs (sysCreateShip &scAurochsFrigate; (sysVectorPolarOffset aOwnerObj (random 0 359) 10) &svCommonwealthFleet;))
+										(shpOrder aurochs 'wait 160)
+										(shpOrder aurochs 'attack theTarget)
+									)
+								)
+								(for i 1 britanniaCount
+									(block (britannia)
+										(setq britannia (sysCreateShip &scBritannia; (sysVectorPolarOffset aOwnerObj (random 0 359) 10) &svCommonwealthFleet;))
+										(shpOrder britannia 'wait 160)
+										(shpOrder britannia 'attack theTarget)
+									)
+								)
+								(for i 1 centurionCount
+									(block (centurion)
+										(setq centurion (sysCreateShip &scCenturion; (sysVectorPolarOffset aOwnerObj (random 0 359) 10) &svCommonwealthFleet;))
+										(shpOrder centurion 'patrol aOwnerObj 30)
+									)
+								)
+								;We start the timer for reinforcements
+								(msnAddTimerEvent gSource 4250 "Reinforcements")
+							)
+						)
+					)
+				;Rear fleet
+					(block (phobos point)
+						(setq phobos (sysCreateShip &scPhobos; (sysVectorPolarOffset Nil 45 1000) &svAres;))
+						(setq point (sysCreateMarker "rally" (sysVectorPolarOffset Nil 180 750) &svAres;))
+						(shpOrder phobos 'goto point)
+						(shpOrder phobos 'attack aOwnerObj)
+							(for i 1 3
+								(block (deimos)
+								(setq deimos (sysCreateShip &scDeimos; (sysVectorPolarOffset Nil 45 1000) &svAres;))
+								(shpOrder deimos 'escort phobos)
+								)
+							)
+								(for i 1 12
+									(block (chasm)
+									(setq chasm (sysCreateShip &scChasm; (sysVectorPolarOffset Nil 45 1000) &svAres;))
+									(shpOrder chasm ' escort phobos)
+									)
+								)
+						;Minerva fleet sent to deal with rear fleet, they should do fine, likely the phobos will get to Minerva but will be heavily damaged and easily dispatched
+							(for i 1 2
+							(block (frigate2)
+								(setq frigate2 (sysCreateShip &scAurochsFrigate; (sysVectorPolarOffset aOwnerObj (random 0 359) 10) &svCommonwealthFleet;))
+								(shpOrder frigate2 'goto point)
+								(shpOrder frigate2 'wait 15)
+								(shpOrder frigate2 'attack phobos)
+								(shpOrder frigate2 'attackNearestEnemy)
+							)
+						)
+								(block (frigate)
+								(setq frigate (sysCreateShip &scAurochsFrigate; (sysVectorPolarOffset aOwnerObj (random 0 359) 10) &svCommonwealthFleet;))
+								(shpOrder frigate 'goto point)
+								(shpOrder frigate 'wait 15)
+								(shpOrder frigate 'attack phobos)
+								(shpOrder frigate 'attackNearestEnemy)
+								
+							(for i 1 36
+								(block (centX)
+								(setq centX (sysCreateShip &scCenturion; (sysVectorPolarOffset aOwnerObj (random 0 359) 10) &svCommonwealthFleet;))
+								(shpOrder centX 'escort frigate)
+								)
+							)
+						)
+							(for i 1 12
+								(block (brit)
+								(setq brit (sysCreateShip &scBritanniaM; (sysVectorPolarOffset aOwnerObj (random 0 359) 10) &svCommonwealthFleet;))
+								(shpOrder brit 'goto point)
+								(shpOrder brit 'wait 30)
+								(shpOrder brit 'attack phobos)
+								(shpOrder brit 'attackNearestEnemy)
+								)
+							)
+					)
+				)
+                        </OnStarted>
+						
+						<Target>
+						;The commander in charge is incompetent as he/she decides to have it orbit at the same plane as Minerva before attacking
+						;This is to give the player more time to stop it
+						(block (ship)
+							(setq ship (objGetObjRefData gSource "phobos2"))
+							(shpCancelOrders ship)
+							(shpOrder ship 'attack aOwnerObj)
+							(shpOrder ship 'attackNearestEnemy)
+						)
+						</Target>
+						
+						<Reinforcements>
+					;1 Aquila II, 2 Aquila, and 12 Britannia
+					(block (phobos gate aquila2)
+						(setq gate (intGetGateToSystem gSource "SK"))
+						(setq phobos (objGetObjRefData gSource "phobos2"))
+						(setq aquila2 (sysCreateShip &scAquilaCruiser2; gate &svCommonwealthFleet;))
+						
+								(objSendMessage gPlayerShip aquila2 "Reinforcements inbound!")
+								(shpOrder aquila2 'wait 5)
+								(shpOrder aquila2 'attack phobos)
+								(shpOrder aquila2 'attackNearestEnemy)
+								(shpOrder aquila2 'guard aOwnerObj)
+								
+								(for i 1 12
+									(block (brit)
+										(setq brit (sysCreateShip &scBritannia; gate &svCommonwealthFleet;))
+										(shpOrder brit 'escort aquila2)
+								)
+							)
+						(for i 1 2
+							(block (aquila)
+								(setq aquila (sysCreateShip &scAquilaCruiser; gate &svCommonwealthFleet;))
+								(shpOrder aquila 'attack phobos)
+								(shpOrder aquila 'attackNearestEnemy)
+							)
+						)
+						;If the player destroyed Antarctica then Decker sends a "present" to help the player
+						;But still only if the player encountered the Expeditionary fleet
+						(if (eq (typGetGlobalData &scCSCTerra; "antarctica") "destroyedByPlayer")
+							(for i 1 3
+								(block (present)
+									(setq present (sysCreateShip &scAquilaCruiser2; gate &svCommonwealthFleet;))
+									(shpOrder present 'attack phobos)
+									(shpOrder present 'attackNearestEnemy)
+									(shpOrder present 'guard aOwnerObj)
+								)
+							)
+						)
+					)
+						</Reinforcements>
+						
+                        <OnObjDestroyed>
+                                (switch
+                                        (eq (objGetID aObjDestroyed) (msnGetData gSource 'targetID))
+                                                (msnSuccess gSource)
+                                        )
+                        </OnObjDestroyed>
+                        
+                        <OnReward>		
+							(block Nil
+								;Disperse wingmen
+								(intFleetDisperseWingmen aOwnerObj 18)
+								(objIncData gPlayerShip "fleetXP" (msnGetData gSource 'reward))
+								(typIncGlobalData &stPointMinerva; "mission")
+								
+								<!--(if (typGetGlobalData &stPointMinerva; "blockade" "reinforcements")
+									(block (count)
+									(setq count (add (typGetGlobalData &stPointMinerva; "Aquila") (typGetGlobalData &stPointMinerva; "Frigate") (typGetGlobalData &stPointMinerva; "Britannia") (typGetGlobalData &stPointMinerva; "Centurion")))
+									;Disperse wingmen from rendezvous
+									(intFleetDisperseWingmen aOwnerObj count)
+							)
+						) -->
+								)
+                        </OnReward>
+                </Events>
+                
+                <Language>
+                        <Text id="Name">
+                                "Intercept Ares Main Fleet"
+                        </Text>
+                        <Text id="Summary">
+                                (cat
+                                        "Your mission is to protect Point Minerva in the " (sysGetName) " system.\n\n"
+                                        "System: " (sysGetName) "\n"
+                                        "Reward: " (msnGetData gSource 'reward) " fleet experience"
+                                        )
+                        </Text>
+                        <Text id="Intro">
+                                (cat
+										"You enter to see a gathering of officers. \n\n"
+                                        "\"General! There's a huge mass of ships inbound. I'm guessing that it's the main fleet. There's also a second smaller fleet! \"\n\n"
+                                        "\"Put the station on red alert! Deploy damage control teams! Scramble all gunships! Deploy all warships!\"\n\n"
+										"People rush pass you as they rush to wherever they need to be. The General approaches you: \n\n"
+                                        )
+                        </Text>
+                        <Text id="Briefing">
+						(block Nil
+						(if (not (eq (typGetGlobalData &stPointMinerva; "blockade") "reinforcements"))
+									(cat
+                                        "\"Looks like they're finally here... Thanks for all of your help. Good luck out there.\""
+                                        )
+                                  (cat
+                                         "\"Well, this is it. I'm grateful for all the help that you've "
+                                         "been. Thanks for everything. Now, go kick their asses back to "
+										  "Ares Prime! We'll take care of the rear fleet. \"\n\n"
+                                         )
+									)
+								)
+                        </Text>
+                        <Text id="AcceptReply">
+						(block Nil
+						(if (eq (typGetGlobalData &scBritannia2Mark; "status") "joined")
+									(cat
+                                        "The General smiles at you and walks back into the command center. \n\n"
+										"Mark turns to you: \n\n"
+										"\"I'm surprised that I survived this long, its thank to you that I'm still alive. "
+                                        "On, a more serious note: I'm sure that the main fleet will have at least 2 dreadnoughts, so it's going to be a hard fight. \"\n\n"
+                                        )
+                                  (cat
+                                        "The General smiles at you and walks back into the command center. \n\n"
+                                        )
+									)
+								)
+                        </Text>
+                        <Text id="DeclineReply">
+                                "\"I'm 100% positively sure that we need your help...\""
+                        </Text>
+                        <Text id="InProgress">
+                                 "General Aurelio is focused on the battlefield. Officers at their stations are directing the battle against the rear fleet.\n\n"
+                        </Text>
+                        <Text id="SuccessDebrief">
+						(block Nil
+						(TypSetGlobalData &stPointMinerva; "status" 'defended)
+                                (cat
+										"\"We did it!!!\"\n\n"
+										"The staff of Point Minerva celebrates as you exit your ship. \n\n"
+                                        "\"%name%! %name%! %name%!\"\n\n"
+										"Everyone is ecstatic. You find General Aurelio celebrating with the officers in the command center: \n\n"
+										"\"Good job! You're the best pilot I've seen in my life!\"\n\n"
+                                        )
+									)
+                        </Text>
+                        <Text id="SuccessMsg">
+                                "Mission complete!"
+                        </Text>
+                </Language>
+        </MissionType>
+	<!-- Systems -->
+	
+	<SystemType UNID="&ssDeneb;">
+
+		<SystemGroup>
+		
+			<Lookup table="HumanSpaceStargates"/>
+
+			<Station type="&stStarClassA0;" name="Deneb"/>
+
+			<!-- Deneb I is volcanic world -->
+
+			<Orbitals distance="75-85" angle="random">
+				<Group>
+					<Primary>
+						<Station type="&stVolcanicPlanet;" name="Deneb I"	showOrbit="true"/>
+					</Primary>
+
+					<Orbitals distance="8" angle="random">
+						<Station type="&stAresOutpost;"/>
+					</Orbitals>
+				</Group>
+			</Orbitals>
+
+			<!-- Deneb II is a cratered world -->
+
+			<Orbitals distance="155-165" angle="random">
+				<Group>
+					<Primary>
+						<Station type="&stCrateredPlanet;" name="Deneb II" showOrbit="true"/>
+					</Primary>
+					
+					<Orbitals count="4d12" distance="2d6+4" eccentricity="20-40" angle="random">
+						<Table>
+							<Station chance="15" type="&stMediumVolcanicAsteroid;"/>
+							<Station chance="85" type="&stSmallVolcanicAsteroid;" />
+						</Table>
+					</Orbitals>
+					
+					<Orbitals distance="30" angle="random">
+                                <Station type="&stAresShipyard;"/>
+					</Orbitals>
+					
+					<Orbitals distance="18-25" angle="random">
+						<Station type="&stAresShipyard;"/>
+					</Orbitals>
+
+				</Group>
+			</Orbitals>
+
+			<!-- Deneb III is a Volcanic world -->
+
+			<Orbitals distance="240" angle="random">
+				<Group>
+					<Primary>
+						<Station type="&stVolcanicPlanet;" name="Deneb III" showOrbit="true"/>
+					</Primary>
+
+					<Orbitals distance="10-16" angle="random">
+						<Station type="&stAresShipyard;"/>
+					</Orbitals>
+
+				</Group>
+			</Orbitals>
+			
+			<Orbitals distance="240" angle="random">
+                                <Group>
+                                        <Siblings count="100" distribution="5d45-100">
+                                                <Station type="&stVolcanicAsteroidSizeA;"/>
+                                        </Siblings>
+
+                                        <Siblings count="50" distribution="3d29-42">
+                                                <Station type="&stVolcanicAsteroidSizeB;"/>
+                                        </Siblings>
+                                </Group>
+                        </Orbitals>
+
+			<!-- Deneb IV is a gas giant -->
+
+			<Orbitals distance="360-400" angle="random">
+				<Group>
+					<Primary>
+						<Station type="&stHydrogenGasGiant;" name="Deneb IV" showOrbit="true"/>
+					</Primary>
+
+					<Orbitals count="4d12" distance="2d6+4" eccentricity="20-40" angle="random">
+						<Table>
+							<Station chance="75" type="&stSmallFrostAsteroid;" />
+							<Station chance="25" type="&stMediumFrostAsteroid;" />
+						</Table>
+					</Orbitals>
+
+					<Orbitals distance="8-36" angle="random">
+								<Table>
+                                       <Station chance="50"  type="&stAresShipyard;"/>
+                                       <Station chance="30"  type="&stAresOutpost;"/>
+                                       <Station chance="20" type="&stAresCommune;"/>
+                                </Table>
+					</Orbitals>
+
+					<Trojan>
+						<Group>
+							<Orbitals count="2d4+4d3" distance="2d8+8" angle="random">
+								<Lookup table="AsteroidSmall"/>
+							</Orbitals>
+
+							<Orbitals count="2d6" distance="2d8+8" angle="random">
+								<Lookup table="AsteroidMedium"/>
+							</Orbitals>
+							
+							<Orbitals distance="8-16" angle="random">
+								<Station type="&stAresOutpost;"/>
+							</Orbitals>
+
+						</Group>
+					</Trojan>
+
+					<AntiTrojan>
+						<Group>
+							<Orbitals count="2d4+4" distance="2d8+8" angle="random">
+								<Lookup table="AsteroidSmall"/>
+							</Orbitals>
+
+							<Orbitals count="2d6" distance="2d8+8" angle="random">
+								<Lookup table="AsteroidMedium"/>
+							</Orbitals>
+							
+							<Orbitals distance="8-16" angle="random">
+								<Station type="&stAresCommune;"/>
+							</Orbitals>
+
+						</Group>
+					</AntiTrojan>
+				</Group>
+			</Orbitals>
+	
+			<!-- Deneb V is a hydrogen gas giant -->
+
+			<Orbitals distance="550-590" angle="random">
+				<Group>
+					<Primary>
+						<Station type="&stHydrogenGasGiant;" name="Deneb V" showOrbit="true"/>
+					</Primary>
+
+					<Orbitals distance="18-20" angle="random">
+						<Lookup table="AsteroidMedium"/>
+					</Orbitals>
+
+					<Orbitals distance="28-32" angle="random">
+						<Station type="&stIcePlanet;"/>
+					</Orbitals>
+
+					<Orbitals distance="40-44" angle="random">
+						<Station type="&stVolcanicPlanet;"/>
+					</Orbitals>
+					
+					<Orbitals count="6d12" distance="2d7+4" eccentricity="20-35" angle="random">
+						<Table>
+							<Station chance="65" type="&stSmallFrostAsteroid;" />
+							<Station chance="35" type="&stMediumFrostAsteroid;" />
+						</Table>
+					</Orbitals>
+					
+					<Orbitals distance="20-25" angle="random">
+								<Table>
+                                       <Station chance="50"  type="&stAresOutpost;"/>
+                                       <Station chance="50" type="&stAresCommune;"/>
+                                </Table>
+					</Orbitals>
+					
+					<Orbitals distance="32" angle="random">
+                                       <Station type="&stOmegaStation;"/>
+					</Orbitals> 
+					
+					<Orbitals distance="5-15" angle="random">
+                                       <Station type="&stAresShipyard;"/>
+					</Orbitals> 
+
+				</Group>
+			</Orbitals>
+			
+			<!-- Deneb VI is a Methane Gas Giant -->
+			<Orbitals distance="750" angle="225">
+				<Group>
+					<Primary>
+						<Station type="&stMethaneGasGiant;" name="Deneb VI" showOrbit="true"/>
+					</Primary>
+
+					<Orbitals distance="28-32" angle="random">
+						<Station type="&stPointMinerva;"/>
+					</Orbitals>
+
+				</Group>
+			</Orbitals>
+			
+			<Orbitals distance="780" angle="random">
+                                <Group>
+                                        <Siblings count="300" distribution="5d45-100">
+                                                <Station type="&stIceAsteroidSizeA;"/>
+                                        </Siblings>
+
+                                        <Siblings count="100" distribution="3d29-42">
+                                                <Station type="&stIceAsteroidSizeB;"/>
+                                        </Siblings>
+                                </Group>
+                        </Orbitals>
+			
+			<Orbitals distance="1000" angle="45">
+				<Group>
+					<Primary>
+						<Station type="&stCastorStargate;" showOrbit="false"/>
+					</Primary>
+				</Group>
+			</Orbitals>
+			<FillLocations
+					percentFull=		"90" 
+					stationCriteria=	"!primary,!debris,++ares" 
+					percentEnemies=		"100"
+					separateEnemies=	"true"
+					/>
+
+			<!-- Stuff in void -->
+			<Orbitals count="1d2" distance="3d200+240" angle="random" exclusionRadius="100">
+				<Table>
+					<RandomStation chance="100" stationCriteria="*ares" locationAttribs="void"/>
+				</Table>
+			</Orbitals>
+
+		</SystemGroup>
+	</SystemType>
+	
+	<!-- Stations -->
+	<StationType UNID="&stCastorStargate;"
+			name=				"Castor Stargate"
+			sovereign=			"&svAres;"
+			dockingPorts=		"4"
+
+			multiHull=			"true"
+			immutable=			"true"
+
+			attributes=			"castor"
+			gateEffect="&efStargateOut;"
+			definiteArticle=	"true"
+			>
+		<Image imageID="&rsStdStargate;" imageX="0" imageY="0" imageWidth="128" imageHeight="128" imageFrameCount="12" imageTicksPerFrame="3"/>
+
+		<Ships>
+			<Ship	count="1"	class="&scPhobos;"	orders="guard"/>
+		</Ships>
+		
+		<Construction maxConstruction="10" constructionRate="150">
+			<Table>
+				<Ship chance="45" count="1d3" class="&scSandstorm2;" orders="patrol" patrolDist="12">
+						<Escorts>
+							<Ship count="1d3+1" class="&scSandstorm;" orders="escort"/>
+						</Escorts>
+				</Ship>
+				<Ship chance="20" count="1d2" class="&scTundra;" orders="patrol" patrolDist="10"/>
+				<Ship chance="10" count="1d2" class="&scChasm;" orders="patrol" patrolDist="10"/>
+				<Ship chance="5" count="1d2" class="&scChasm2;" orders="patrol" patrolDist="10"/>
+				<Ship chance="10" count="1" class="&scDeimos;" orders="patrol" patrolDist="15">
+						<Escorts>
+							<Ship count="3d2" class="&scSandstorm;" orders="escort"/>
+						</Escorts>
+				</Ship>
+				<Ship chance="5" count="1d2" class="&scPolarCarrier;" orders="patrol" patrolDist="15"/>
+					<Ship chance="5" count="1" class="&scPhobos;" orders="guard">
+					<Escorts>
+							<Ship count="3d2" class="&scTundra;" orders="escort"/>
+						</Escorts>
+					</Ship>
+			</Table>
+		</Construction>
+		
+		<Encounters frequency="common">
+			<Lookup table="&tbAresEncounters;"/>
+		</Encounters>
+	<Events>
+		<OnCreate>
+	; Every 3 minutes (3 hours in game) an Ares Squadron attacks Point Minerva
+		(block Nil
+		(sysAddObjRecurringTimerEvent 5400 gSource 'Attack)
+		)
+		</OnCreate>
+		<Attack>
+		(block (target)
+		(setq target (sysFindObject gSource "tAN +commonwealth;"))
+			(if target
+				(block (roll enemyFleet)
+								; Randomly generate the enemy fleet
+								(setq roll (random 1 100))
+								(switch
+								(leq roll 15)
+										; 16 Sandstorms
+										(setq enemyFleet '(&scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm;))
+
+									(leq roll 30)
+										; A Deimos plus 8 Sandstorms
+										(setq enemyFleet '(&scDeimos; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm;))
+
+									(leq roll 55)
+										; 3 Cometfalls
+										(setq enemyFleet '(&scCometfall; &scCometfall; &scCometfall;))
+
+									(leq roll 70)
+										; 8 Chasms
+										(setq enemyFleet '(&scChasm; &scChasm; &scChasm; &scChasm; &scChasm; &scChasm; &scChasm; &scChasm;))
+									(leq roll 85)
+										; 2 Polar Carriers
+										(setq enemyFleet '(&scPolarCarrier; &scPolarCarrier;))
+									(leq roll 100)
+										; 1 Chasm II 6 Tundras
+										(setq enemyFleet '(&scChasm2; &scTundra; &scTundra; &scTundra; &scTundra; &scTundra; &scTundra;))
+									)
+
+								; Create the enemy squadron
+
+								(setq i 0)
+								(enum enemyFleet theEnemyClass
+									(block (theShip)
+										(setq theShip
+											(sysCreateShip 
+												theEnemyClass 
+												gSource
+												&svAres;
+												)
+											)
+
+										; Order to attack Minerva
+										(shpOrder theShip 'attack target)
+										(shpOrder theShip 'attackNearestEnemy)
+										(shpOrder theShip 'gate	gSource)
+										)
+									)
+								)
+							)
+						)
+      </Attack>
+	 </Events>
+	</StationType>
+	
+	<!-- Omega Station -->
+	
+	 <StationType UNID="&stOmegaStation;"
+                        name=                                "Omega Station"
+                        sovereign=                        "&svCommonwealth;"
+                        controllingSovereign=				"&svAres;"
+                        abandonedScreen=        "Main"
+
+                        multiHull=                        "true"
+                        armorID=                        "&itPlasteelPlate;"
+                        maxHitPoints=                "100"
+                        hitPoints=                        "0"
+                        ejectaType=                        "&vtWreckEjecta;"
+
+                        attributes=                        "friendly, human, majorStation, populated, omegaStation"
+                        >
+
+                <Image                        imageID="&rsStations1;" imageX="0" imageY="256" imageWidth="128" imageHeight="128"/>
+
+                <Ships>
+                        <Ship        count="1"        class="&scPhobos;" orders="guard" sovereign="&svAres;"/>
+						<Ship        count="2"        class="&scDeimos;" orders="guard" sovereign="&svAres;"/>
+						<Ship        count="2"        class="&scPolarCarrier;" orders="guard" sovereign="&svAres;"/>
+						<Ship		 count="5d5"	  class="&scSandstorm;"	orders="patrol" patrolDist="10" sovereign="&svAres;"/>
+						<Ship		 count="2d5"	  class="&scChasm;"	orders="patrol" patrolDist="10" sovereign="&svAres;"/>
+                </Ships>
+
+				<Events>
+                        <OnCreate>
+						(block Nil
+						(typSetGlobalData &stOmegaStation; "codes" "false")
+                                (block (email)
+                                        (setq email (itmCreate &itAresROM; 1))
+                                        (setq email (itmSetData email "Text"
+                                                (cat
+                                                        "UmVzZWFyY2ggRGl2aXNpb24gMw==\n"
+                                                        "UHJvdG90eXBlICJTcGVhciIgYW5kICJDaGFyaW90IiBhcmUgaW4gZmluYWwgc3RhZ2VzIG9mIGRldmVsb3BtZW50IGFuZCBhcmUgcmVhZHkgdG8gdW5kZXJnbyBmaWVsZCB0ZXN0cy4gRmllbGQgdGVzdHMgYXJlIHNjaGVkdWxlZCB0byB0YWtlIHBsYWNlIGluICJBcmd5cmUiIGFnYWluc3QgdGhlIENvbW1vbndlYWx0aCBwcmVzZW5jZSB0aGVyZS4=\n"
+                                                        "U3BlYXIucm0NCg==\n"
+                                                        "Q2hhcmlvdC5ybQ0K\n"
+                                                        "QXJneXJlLnJtDQo=\n"
+                                                        "SXQgaXMgaW1wZXJhdGl2ZSB0aGF0IHRoaXMga25vd2xlZGdlIGlzIG5vdCBjb21wcm9taXNlZC4gTWF5IHdlIGZpbmQgd2F0ZXIu\n"
+                                                        )
+                                                ))
+                                        (objAddItem gSource email)
+                                        )
+									)
+                        </OnCreate>
+                </Events>
+				
+                <DockScreens>
+                        <Main>
+                                <Panes>
+                                        <Default
+                                                        desc=                "You are docked at the lifeless ruins of a destroyed station. Masses of corpses pile on the sides of the corridors.">
+
+                                                <Actions>
+                                                        <Action name="Look Around" key="L" default="1" >
+														(scrShowPane gScreen "Residential")
+                                                        </Action>
+
+                                                        <Action name="Undock" cancel="1" key="U">
+                                                                <Exit/>
+                                                        </Action>
+
+                                                </Actions>
+
+                                        </Default>
+										<Residential	
+												desc=						"You walk through the desolate corridors and find rooms on both sides of the hallway.">
+												<Actions>
+                                                        <Action name="Go into the left room" key="L" default="1" >
+                                                               (scrShowPane gScreen "Left") 
+                                                        </Action>
+														 <Action name="Go into the right room" key="R" default="1" >
+														 (scrShowPane gScreen "Terminal")
+                                                               
+                                                        </Action>
+
+                                                        <Action name="Go back" cancel="1" key="G">
+                                                                (scrShowPane gScreen "Default")
+                                                        </Action>
+
+                                                </Actions>
+										</Residential>
+										 <Left>
+                                                <OnPaneInit>
+                                                        (scrSetDesc gScreen
+                                                                "You enter what appears to be the room of a family. As you survey the room you notice a group of corpses huddling together; likely the family that lived here. There is nothing else of interest."
+                                                                )
+                                                </OnPaneInit>
+                                                
+                                                <Actions>
+                                                        <Action name="Go back" cancel="1" key="G">
+                                                                (scrShowPane gScreen "Residential")
+                                                        </Action>
+                                                </Actions>
+                                        </Left>
+										
+										<Terminal>
+                                                <OnPaneInit>
+                                                        (scrSetDesc gScreen
+                                                               "You enter a room that is undecorated. There is a thin layer of dust over all of the standard furniture and devices that comes with the room. You notice a terminal."
+                                                                )
+                                                </OnPaneInit>
+                                                
+                                                <Actions>
+														<Action name="Use it" default="1" key="U">
+														;This is so that we don't have to do the CSC Europa style passcode
+												(if (not (eq (typGetGlobalData &stOmegaStation; "codes") "true"))
+												(scrShowPane gScreen "Terminal3")
+												(scrShowPane gScreen "Terminal2")
+                                                )
+                                                        </Action>
+                                                        <Action name="Go back" cancel="1" key="G">
+                                                                (scrShowPane gScreen "Residential")
+                                                        </Action>
+                                                </Actions>
+                                        </Terminal>
+										
+										<Terminal2>
+                                                <OnPaneInit>
+                                                        (scrSetDesc gScreen
+                                                                "You try to turn the terminal on. After a few attempts, the screen flashes to life. The terminal prompts you for a password..."
+                                                                )
+                                                </OnPaneInit>
+                                                
+                                                <Actions>
+														<Action name="Enter pass codes" default="1" key="E">
+                                                                (scrShowPane gScreen "Vault")
+                                                        </Action>
+                                                        <Action name="Go back" cancel="1" key="G">
+                                                                (scrShowPane gScreen "Residential")
+                                                        </Action>
+                                                </Actions>
+                                        </Terminal2>
+										
+										<Terminal3>
+                                                <OnPaneInit>
+                                                        (scrSetDesc gScreen
+                                                                "You try to turn the terminal on. After a few attempts, the screen flashes to life. The terminal prompts you for a password..."
+                                                                )
+                                                </OnPaneInit>
+                                                
+                                                <Actions>
+														<Action name="Guess" default="1" key="U">
+                                                                (scrShowPane gScreen "NoAccess")
+                                                        </Action>
+                                                        <Action name="Go back" cancel="1" key="G">
+                                                                (scrShowPane gScreen "Residential")
+                                                        </Action>
+                                                </Actions>
+                                        </Terminal3>
+										
+										<NoAccess>
+												 <OnPaneInit>
+                                                        (scrSetDesc gScreen
+                                                                "You guess at the password... The computer refuses your guess."
+                                                                )
+                                                </OnPaneInit>
+                                                
+                                                <Actions>
+														<Action name="Guess Again" default="1" key="A">
+                                                                (scrShowPane gScreen "NoAccess2")
+                                                        </Action>
+                                                        <Action name="Go back" cancel="1" key="G">
+                                                                (scrShowPane gScreen "Residential")
+                                                        </Action>
+                                                </Actions>
+										</NoAccess>
+										
+										<NoAccess2>
+												 <OnPaneInit>
+                                                        (scrSetDesc gScreen
+                                                                "You guess at the password... The computer refuses your guess again."
+                                                                )
+                                                </OnPaneInit>
+                                                
+                                                <Actions>
+														<Action name="Guess Again" default="1" key="A">
+                                                                (scrShowPane gScreen "NoAccess")
+                                                        </Action>
+                                                        <Action name="Go back" cancel="1" key="G">
+                                                                (scrShowPane gScreen "Residential")
+                                                        </Action>
+                                                </Actions>
+										</NoAccess2>
+
+										<Vault>
+                                                <OnPaneInit>
+                                                        (scrSetDesc gScreen
+                                                               "You hear a soft hiss and turn to see that a panel in the wall slides to the side to reveal a storage space."
+                                                                )
+                                                </OnPaneInit>
+                                                
+                                                <Actions>
+														<Action name="Loot" default="1" key="L">
+                                                                (scrShowScreen gScreen &dsRPGLoot;)
+                                                        </Action>
+                                                        <Action name="Go back" cancel="1" key="G">
+                                                                <Exit/>
+                                                        </Action>
+                                                </Actions>
+                                        </Vault>
+                                </Panes>
+                        </Main>
+
+                </DockScreens>
+				
+				<Items>
+				<Item count="1d3" item="&itCerusiteCrystal;"/>
+				<Item count="1" item="&itDigitalWristComputer;"/>
+				<Item count="1" item="&itBombaySapphireGin;"/>
+				<Item count="1" item="&itPromethiumCrystal;"/>
+				<Item count="1d2" item="&itRingerSpice;"/>
+				</Items>
+
+                <DockingPorts>
+                        <Port x="0"                y="90" />
+                        <Port x="0"                y="-90" />
+                        <Port x="60"        y="60" />
+                        <Port x="60"        y="-60" />
+                        <Port x="90"        y="0" />
+                        <Port x="-90"        y="0" />
+                        <Port x="-60"        y="60" />
+                        <Port x="-60"        y="-60" />
+                </DockingPorts>
+
+        </StationType>
+	
+	<!-- Point Minerva -->
+	
+	<StationType UNID="&stPointMinerva;"
+			name=				"Point Minerva"
+			sovereign=			"&svCommonwealthFleet;"
+			dockScreen=			"Main"
+			abandonedScreen=	"&dsAbandonedStation;"
+			defaultBackgroundID="&rsPointJunoBkgnd;"
+			canAttack=			"true"
+			fireRateAdj=		"10"
+			noBlacklist=		"true"
+			noFriendlyFire=		"true"
+			
+			multiHull=			"true"
+			armorID=			"&itP1000HexphaseArmor;"
+			maxHitPoints=		"1500"
+			hitPoints=			"1500"
+			repairRate=			"20"
+			shipRepairRate=		"10"
+			explosionType=		"&vtThermoExplosion4;"
+			ejectaType=			"&vtWreckEjecta;"
+
+			attributes=			"commonwealth, commonwealthFleet, commonwealthMilitary, fleetDelivery, friendly, human, majorStation, populated"
+			level=				"9"
+
+			noArticle=			"true"
+			>
+
+		<Image			imageID="&rsStationsPointJuno;" imageX="0" imageY="0" imageWidth="208" imageHeight="256"/>
+		
+		<Satellites>
+			<Orbitals distance="12" angle="45">
+				<Station type="&stCommonfleetTurret;" imageVariant="2"/>
+			</Orbitals>
+
+			<Orbitals distance="12" angle="135">
+				<Station type="&stCommonfleetTurret;" imageVariant="1"/>
+			</Orbitals>
+
+			<Orbitals distance="12" angle="225">
+				<Station type="&stCommonfleetTurret;" imageVariant="0"/>
+			</Orbitals>
+
+			<Orbitals distance="12" angle="315">
+				<Station type="&stCommonfleetTurret;" imageVariant="3"/>
+			</Orbitals>
+			
+			<Orbitals distance="12" angle="90">
+				<Station type="&stCommonfleetTurret;" imageVariant="2"/>
+			</Orbitals>
+
+			<Orbitals distance="12" angle="180">
+				<Station type="&stCommonfleetTurret;" imageVariant="1"/>
+			</Orbitals>
+
+			<Orbitals distance="12" angle="270">
+				<Station type="&stCommonfleetTurret;" imageVariant="0"/>
+			</Orbitals>
+
+			<Orbitals distance="12" angle="0">
+				<Station type="&stCommonfleetTurret;" imageVariant="3"/>
+			</Orbitals>
+		</Satellites>
+		
+		<Events>
+		
+		<GetGlobalAchievements>
+                                (block (theList status)
+                                        (setq status (typGetGlobalData &stPointMinerva; "status"))
+
+                                        (if status
+                                                (setq theList (list
+                                                        (list
+                                                                (switch
+                                                                        (eq status 'defended) "Saved Point Minerva"
+                                                                        (eq status 'destroyed) "Failed to defend Point Minerva"
+                                                                        (eq status 'destroyedByPlayer) "Destroyed Point Minerva"
+                                                                        (cat "ERROR: Point Minerva status: " status)
+                                                                        ) 
+                                                                Nil
+                                                                "achievements &amp; regrets"
+                                                                )
+                                                        ))
+                                                )
+                                                
+                                        theList
+                                        )
+                        </GetGlobalAchievements>
+						
+		<OnCreate>
+		(block Nil
+		(typSetGlobalData &stPointMinerva; "mission" 1)
+		(objSetData gSource "Intro" 0)
+		)
+		</OnCreate>
+		
+		<OnDestroy>
+         (block Nil
+                                        (objSetGlobalData gSource "status"
+                                                (if (and gPlayerShip (eq aOrderGiver gPlayerShip)) 'destroyedByPlayer 'destroyed)
+                                                )
+
+                                        (intCommonwealthOnDestroy)
+
+                                        ; Military will execute the player
+
+                                        (if (and gPlayerShip (eq aOrderGiver gPlayerShip))
+                                                (intFleetCrime 3 (cat "the destruction of " (objGetName gSource 4)))
+                                                )
+                                        )
+                        </OnDestroy>
+		</Events>
+		
+		<Devices>
+			<Device deviceID="&itStarCannon;" secondaryWeapon="true" omnidirectional="true" posAngle="45" posRadius="45"/>
+			<Device deviceID="&itStarCannon;" secondaryWeapon="true" omnidirectional="true" posAngle="135" posRadius="45"/>
+			<Device deviceID="&itStarCannon;" secondaryWeapon="true" omnidirectional="true"  posAngle="225" posRadius="45"/>
+			<Device deviceID="&itStarCannon;" secondaryWeapon="true" omnidirectional="true" posAngle="315" posRadius="45"/>
+			<Device deviceID="&itPlasmaCannon;" secondaryWeapon="true" omnidirectional="true" posAngle="90" posRadius="45"/>
+			<Device deviceID="&itPlasmaCannon;" secondaryWeapon="true" omnidirectional="true" posAngle="270" posRadius="45"/>
+			<Device deviceID="&itPlasmaCannon;" secondaryWeapon="true" omnidirectional="true" posAngle="180" posRadius="45"/>
+			<Device deviceID="&itPlasmaCannon;" secondaryWeapon="true" omnidirectional="true" posAngle="0" posRadius="45"/>
+		</Devices>
+
+		<DockScreens>
+			<Main>
+			
+			<InitialPane>
+                                        ; If the player hasn't docked yet then we explain situation and ask for help
+                                        (if (not (eq (objGetData gSource "Intro") 1))
+                                                "Intro"
+                                                "Default"
+                                                )
+                                </InitialPane>
+				<Panes>
+					<Default
+							desc=	"You are docked at Point Minerva.">
+
+						<Actions>
+							<Action name="Central Command" default="1" key="C">
+									(block Nil
+									(if (intFleetPromotion)
+                                                                                (block Nil
+                                                                                        (setq gName "General Aurelio")
+                                                                                        (scrShowScreen gScreen "&dsFleetPromotion;")
+                                                                                        )
+                                                                                )
+									(block (theMission status)
+									(setq status (objGetGlobalData gSource "mission"))
+									 (switch
+                                     ; If we have an active mission, then show it
+									(setq theMission (@ (msnFind gSource "aS") 0))
+                                    (scrShowScreen gScreen &dsRPGMission;
+                                     {
+                                      missionObj: theMission
+                                     })
+									 
+									;Allows us to switch the mission given out
+									(eq status 1)
+									(block Nil
+										(setq theMission (msnCreate (typFind "n +pointMinerva1;") gSource))
+											(scrShowScreen gScreen &dsRPGMission;
+												{
+												missionObj: theMission
+												})
+									)
+									(eq status 2)
+									(block Nil
+										(setq theMission (msnCreate (typFind "n +pointMinerva2;") gSource))
+											(scrShowScreen gScreen &dsRPGMission;
+												{
+												missionObj: theMission
+												})
+									)
+									(eq status 3)
+									(block Nil
+										(setq theMission (msnCreate (typFind "n +pointMinerva3;") gSource))
+											(scrShowScreen gScreen &dsRPGMission;
+												{
+												missionObj: theMission
+												})
+									)
+									(eq status 4)
+									(block Nil
+										(setq theMission (msnCreate (typFind "n +pointMinerva4;") gSource))
+											(scrShowScreen gScreen &dsRPGMission;
+												{
+												missionObj: theMission
+												})
+									)
+									(eq status 5)
+									(block Nil
+										(setq theMission (msnCreate (typFind "n +pointMinerva5;") gSource))
+											(scrShowScreen gScreen &dsRPGMission;
+												{
+												missionObj: theMission
+												})
+									)
+									(eq status 6)
+									(block Nil
+										(setq theMission (msnCreate (typFind "n +pointMinerva6;") gSource))
+											(scrShowScreen gScreen &dsRPGMission;
+												{
+												missionObj: theMission
+												})
+									)
+									(eq (typGetGlobalData &stPointMinerva; "blockade") "success")
+									(block Nil
+										(setq theMission (msnCreate (typFind "n +pointMinerva7;") gSource))
+											(scrShowScreen gScreen &dsRPGMission;
+												{
+												missionObj: theMission
+												})
+									)
+								(eq status 7)
+									(block Nil
+										(setq theMission (msnCreate (typFind "n +pointMinerva8;") gSource))
+											(scrShowScreen gScreen &dsRPGMission;
+												{
+												missionObj: theMission
+												})
+									)
+								(eq status 8)
+									(scrShowPane gScreen "Victory")
+									
+								(geq status 9)
+									(scrShowPane gScreen "BackToNormal")
+							)
+						)			
+					)
+							</Action>
+
+							<Action name="Dock Services" key="D">
+								(block Nil
+									(setq gPrevScreen2 "Main")
+									(scrShowScreen gScreen "&dsFleetDockServices;")
+									)
+							</Action>
+
+							<Action name="Undock" cancel="1" key="U">
+								<Exit/>
+							</Action>
+
+						</Actions>
+
+					</Default>
+					<Intro>
+                                                <OnPaneInit>
+                                                        (scrSetDesc gScreen
+                                                                "As you exit the airlock, you notice that a crowd has gathered. The crowd parts to a bald middle-aged man with three stars on his uniform.\n\n"
+                                                                "\"Greetings, adventurer. I am General Aurelio of Point Minerva. As you may have noticed, the Ares have overrun this system and were blockading the gate. I assume were as you've arrived here. "
+																"Right now, our position is safe but I don't think it'll last. We would appreciate your help.\""
+                                                                )
+                                                </OnPaneInit>
+                                                
+                                                <Actions>
+														<Action name="Accept" default="1" key="A">
+                                                                (scrShowPane gScreen "Intro2")
+                                                        </Action>
+                                                        <Action name="&quot;Will there be any rewards?&quot;" default="1" key="R">
+                                                                (scrShowPane gScreen "Rewards")
+                                                        </Action>
+                                                </Actions>
+                                        </Intro>
+					<Intro2>
+                                                <OnPaneInit>
+                                                        (scrSetDesc gScreen
+                                                                "General Aurelio is visibly relieved.\n\n"
+                                                                "\"Maybe we might make it out of here alive after all. Visit me in the Command Center when you are ready.\"\n\n"
+                                                                )
+                                                </OnPaneInit>
+                                                
+                                                <Actions>
+														<Action name="Continue" default="1" key="C">
+														(block Nil
+                                                                (scrShowPane gScreen "Default")
+																(objSetData gSource "Intro" 1)
+																)
+                                                        </Action>
+                                                </Actions>
+                                        </Intro2>
+										<Rewards>
+                                                <OnPaneInit>
+                                                        (scrSetDesc gScreen
+                                                                "General Aurelio frowns.\n\n"
+                                                                "\"I could transfer you all of the credits on my account, but unfortunately that's in the banks back at St. Katherines. I have 50,000 credits on hand. Will you help us if I pay you?\"\n\n"
+                                                                )
+                                                </OnPaneInit>
+                                                
+                                                <Actions>
+														<Action name="&quot;Gladly&quot;" default="1" key="G">
+                                                                (scrShowPane gScreen "Credits")
+                                                        </Action>
+														<Action name="&quot;No&quot;" default="1" key="N">
+														(block Nil
+                                                                (scrShowPane gScreen "Decline")
+																(objSetData gSource "Intro" 1)
+																)
+                                                        </Action>
+														<Action name="&quot;On second thought, I'll help for free.&quot;" default="1" key="F">
+                                                                (scrShowPane gScreen "Intro2")
+                                                        </Action>
+                                                </Actions>
+                                        </Rewards>
+										<Decline>
+                                                <OnPaneInit>
+                                                        (scrSetDesc gScreen
+                                                                "\"If you reconsider helping, just come again.\"\n\n"
+                                                                )
+                                                </OnPaneInit>
+                                                
+                                                <Actions>
+														<Action name="Exit" default="1" key="E">
+																<Exit/>
+                                                        </Action>
+                                                </Actions>
+                                        </Decline>
+										<Credits>
+                                                <OnPaneInit>
+												 (scrSetDesc gScreen
+                                                        "General Aurelio types into a terminal, then taps a card against the card you hold out.\n\n"
+                                                                "\"There, done. Lets hope that you're some kind of ace pilot.\"\n\n"
+																)
+                                                </OnPaneInit>
+                                                
+                                                <Actions>
+														<Action name="Continue" default="1" key="C">
+														(block Nil
+																;Small sum of credits as rins are used in outer realms
+																(plyCredit gplayer 50000)
+                                                                (scrShowPane gScreen "Default")
+																(objSetData gSource "Intro" 1)
+																)
+                                                        </Action>
+                                                </Actions>
+                                        </Credits>
+									<Victory>
+                                                <OnPaneInit>
+							(block Nil
+								(if (eq (typGetGlobalData &stPointMinerva; "blockade") "reinforcements")
+									(scrSetDesc gScreen
+                                        "Upon entering the Command Center you are met with an applause from the personnel of Point Minerva. General Aurelio turns to you:\n\n"
+										"\"%name%, it's thanks to you that we are able to finally send the survivor's from Omega station to St. Katherines. "
+                                        "As for us, many of us are going to unfortunately remain here. At least the Fleet sent us reinforcements.\"\n\n"
+                                        )
+									(scrSetDesc gScreen
+                                        "Upon entering the Command Center you are met with an applause from the personnel of Point Minerva. General Aurelio turns to you:\n\n"
+										"\"%name%, it's thanks to you that we are able to finally send the survivor's from Omega station to St. Katherines. "
+                                        "As for us, many of us are going to unfortunately remain here. \"\n\n"
+                                        )
+									)
+								)
+                                                </OnPaneInit>
+                                                
+                                                <Actions>
+														<Action name="Continue" default="1" key="C">
+														(block Nil
+                                                                (scrShowPane gScreen "Continue")
+																(TypSetGlobalData &stPointMinerva; "status" 'defended)
+																)
+                                                        </Action>
+                                                </Actions>
+                                        </Victory>
+
+										<Continue>
+                                                <OnPaneInit>
+										(block Nil
+											(if (eq (typGetGlobalData &scBritannia2Mark; "status") "joined")
+												 (scrSetDesc gScreen
+                                                                "\"Unfortunately, I don't have much to offer as in rewards. Although, I'm sure that Mark would like to follow you on your journey.\"\n\n"
+																)
+												(scrSetDesc gScreen
+                                                                "\"Unfortunately, I don't have much to offer as in rewards... \"\n\n"
+																)
+															)
+														)
+                                                </OnPaneInit>
+                                                
+                                                <Actions>
+														<Action name="&quot;I'm glad that I could help.&quot;" default="1" key="H">
+                                                                (scrShowPane gScreen "Farewell")
+                                                        </Action>
+                                                </Actions>
+                                        </Continue>
+										<Farewell>
+                                                <OnPaneInit>
+												(scrSetDesc gScreen
+													"General Aurelio shakes your hand:\n\n"
+													"\"%name%, I wish you the best of luck on your journey to the core. \"\n\n"
+													"Officers and personnel approach you and thank you.\n\n"
+																)
+                                                </OnPaneInit>
+                                                
+                                                <Actions>
+														<Action name="&quot;Farewell&quot;" default="1" key="F">
+														(block Nil
+                                                                (scrShowPane gScreen "Default")
+																(typIncGlobalData &stPointMinerva; "mission")
+																)
+                                                        </Action>
+                                                </Actions>
+                                        </Farewell>
+										 <BackToNormal>
+                                                <OnPaneInit>
+                                                        (scrSetDesc gScreen
+                                                                (cat
+                                                                        "General Aurelio and staff welcomes you as you enter. \n\n"
+																		"\"The Ares has still been sending attacks, I hope that they don't send another fleet with a phobos. \"\n\n"
+                                                                        )
+                                                                )
+                                                </OnPaneInit>
+
+                                                <Actions>
+                                                        <Action name="Continue" default="1" cancel="1" key="C">
+                                                                <ShowPane pane="Default"/>
+                                                        </Action>
+                                                </Actions>
+                                        </BackToNormal>
+				</Panes>
+			</Main>
+
+		</DockScreens>
+
+		<DockingPorts>
+			<Port x="0"		y="100" />
+			<Port x="-80"	y="40" />
+			<Port x="80"	y="40" />
+			<Port x="-60"	y="-40" />
+			<Port x="60"	y="-40" />
+
+			<Port x="0"		y="-105" />
+			<Port x="-130"	y="-17" />
+			<Port x="130"	y="-17" />
+			<Port x="-70"	y="105" />
+			<Port x="70"	y="105" />
+			
+			<Port x="0"		y="160" />		
+			<Port x="0"		y="-165" />
+			<Port x="-60"	y="-90" />
+			<Port x="60"	y="-90" />
+		</DockingPorts>
+	</StationType>
+</TranscendenceModule>
