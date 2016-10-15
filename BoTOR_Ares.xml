@@ -1157,6 +1157,7 @@
                 </LevelTable>
         </ShipTable>
 		
+	<!-- Overwrite to add an omni Lightning cannon and a Micronuke cannon -->
 		<ShipClass UNID="&scDeimos;"
 			manufacturer=		"Ares Orthodoxy"
 			class=				"Deimos"
@@ -1237,6 +1238,7 @@
 
 	</ShipClass>
 		
+	<!-- Overwrite to add a micronuke cannon -->
 		<ShipClass UNID="&scPhobos;"
 			manufacturer=		"Ares Orthodoxy"
 			class=				"Phobos"

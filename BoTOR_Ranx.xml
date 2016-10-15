@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TranscendenceModule>
+<!-- Overwrite to add PD, firerate increased to 30 -->
+<ShipClass UNID="&scRanxDreadnought;"
+			manufacturer=		"Ranx"
+			class=				""
+			type=				"dreadnought"
+			defaultSovereign=	"&svRanxEmpire;"
+
+			attributes=			"capitalShip, genericClass, majorShip, ranx"
+			   
+			size=				"350"
+			mass=				"60000"
+			cargoSpace=			"15000"
+			thrustRatio=		"0.5"
+			maxSpeed=			"8"
+
+			cyberDefenseLevel=	"6"
+
+			explosionType=		"&vtThermoExplosion3;"
+			>
+
+		<!-- Configuration -->
+		
+		<Armor
+			armorID=			"&itTransuranicPlate;"
+			count=				"16"
+			/>
+		
+		<Devices>
+			<Device deviceID="&itKilotonCannon;"						omnidirectional="true"				posAngle="180" posRadius="61" posZ="20"/>
+			<Device deviceID="&itAkan30Cannon;"	 secondaryWeapon="true" minFireArc="225" maxFireArc="340"	posAngle="270" posRadius="20" posZ="0"/>
+			<Device deviceID="&itAkan30Cannon;"	 secondaryWeapon="true" minFireArc="20"  maxFireArc="135"	posAngle="90"  posRadius="20" posZ="0"/>
+			<Device deviceID="&itAkan30Cannon;"	 secondaryWeapon="true" minFireArc="100" maxFireArc="260"	posAngle="180" posRadius="90" posZ="10"/>
+			<Device deviceID="&itPatchSpider;"/>
+			<Device deviceID="&itPatchSpider;"/>
+			<Device deviceID="&itLongreachIAutocannon;"/>
+		</Devices>
+
+		<Maneuver
+			maxRotationRate=	"2.0"
+			rotationAccel=		"0.2"
+			/>
+
+		<Interior>
+			<Compartment name="interior"
+					hitPoints=	"300"
+					/>
+			
+			<Compartment name="main drive"
+					type=		"mainDrive"
+					hitPoints=	"100"
+
+					posX=		"-115"
+					posY=		"0"
+					sizeX=		"44"
+					sizeY=		"44"
+					/>
+		</Interior>
+
+		<Items>
+			<Item	count="80-160"		item="&itKilotonCannonShell;"/>
+			<Item	count="1000-1200"	item="&itAkan30CannonShell;" />
+			<Item	count="2d12"		item="&itPteracniumFuelRod;"/>
+			<Table>
+				<Lookup	chance="40"	count="1d4"		table="&trConsumables8;"/>
+				<Lookup	chance="30"	count="1d2"		table="&trMinorItem8;"/>
+				<Lookup	chance="30"	count="1"		table="&trMajorItem7;"/>
+			</Table>
+		</Items>
+
+		<!-- Image and Effects -->
+
+		<Image imageID="&rsRanxDreadnought;" imageX="0" imageY="0" imageWidth="280" imageHeight="280"/>
+
+		<Effects>
+			<Effect type="thrustMain"		posAngle="175"	posRadius="136"	posZ="0"	rotation="180"	effect="&efMainThrusterLarge;"/>
+			<Effect type="thrustMain"		posAngle="180"	posRadius="136"	posZ="0"	rotation="180"	effect="&efMainThrusterLarge;"/>
+			<Effect type="thrustMain"		posAngle="-175"	posRadius="136"	posZ="0"	rotation="180"	effect="&efMainThrusterLarge;"/>
+		</Effects>
+		
+		<!-- AI and Behavior -->
+
+		<AISettings
+			aggressor=			"true"
+			fireRateAdj=		"30"
+			fireAccuracy=		"90"
+			perception=			"6"
+			
+			combatStyle=		"standOff"
+			/>
+
+	</ShipClass>
+
+</TranscendenceModule>

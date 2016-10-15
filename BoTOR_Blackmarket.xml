@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TranscendenceModule>
+
+<!-- An unwieldy ship acquired cheaply and upgraded by ____ as his personal cruiser. -->
+<ShipClass UNID="&scMikenoBM;"
+			manufacturer=		"United African States"
+			class=				"Sindikat destroyer"
+			type=				""
+
+			mass=				"5000"
+			cargoSpace=			"500"
+			thrustRatio=		"0.4"
+			maxSpeed=			"16"
+
+			leavesWreck=		"100"
+			>
+
+		<Armor
+			armorID=			"&itCarbideCarapace;"
+			count=				"12"
+			/>
+		
+		<Interior>
+                        <Compartment name="interior"
+                                        hitPoints=        "200"
+                                        />
+                        
+                        <Compartment name="main drive"
+                                        type=                "mainDrive"
+                                        hitPoints=        "100"
+
+                                        posX=                "-88"
+                                        posY=                "0"
+                                        sizeX=                "80"
+                                        sizeY=                "62"
+                                        />
+                </Interior>
+
+		<Devices>
+			<Device deviceID="&itFusionfireHowitzer;" posAngle="0" posRadius="64" minFireArc="330" maxFireArc="30"/>
+			
+			<Device deviceID="&itHanzoBlaster;" secondaryWeapon="true" minFireArc="0" maxFireArc="175" posAngle="90" posRadius="20"/>
+			<Device deviceID="&itHanzoBlaster;" secondaryWeapon="true" minFireArc="185" maxFireArc="360" posAngle="270" posRadius="20"/>
+			<Device deviceID="&itMissileDefense;"/>
+			<Device deviceID="&itMammoth50Deflector;"/>
+		</Devices>
+
+		<Maneuver
+			maxRotationRate=	"3.6"
+			rotationAccel=		"1.2"
+			/>
+
+		<Items>
+		</Items>
+
+		<Image imageID="&rsMikeno;" imageX="0" imageY="0" imageWidth="192" imageHeight="192" rotationCount="20"/>
+
+		<AISettings
+			fireRateAdj=		"15"
+			fireAccuracy=		"95"
+			perception=			"4"
+			ignoreShieldDown=	"true"
+
+			/>
+
+	</ShipClass>
+	
+</TranscendenceModule>

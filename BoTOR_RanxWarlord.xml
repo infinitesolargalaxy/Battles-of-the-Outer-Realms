@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TranscendenceModule>
+
+<!-- Warlord's ____ personal dreadnought, well armed. Boss fight! Rename to warlod's name -->
+<ShipClass UNID="&scWarlordDreadnought;"
+			manufacturer=		"Ranx"
+			class=				""
+			type=				"dreadnought"
+			defaultSovereign=	"&svRanxEmpire;"
+
+			attributes=			"capitalShip, genericClass, majorShip, ranx"
+			   
+			size=				"350"
+			mass=				"60000"
+			cargoSpace=			"15000"
+			thrustRatio=		"0.5"
+			maxSpeed=			"8"
+
+			cyberDefenseLevel=	"6"
+
+			explosionType=		"&vtThermoExplosion3;"
+			>
+		
+		<Names noArticle="true" personalName="true">Imperius</Names>
+		<!-- Configuration -->
+		
+		<Armor
+			armorID=			"&itTransuranicPlate;"
+			count=				"16"
+			/>
+		
+		<Devices>
+			<Device deviceID="&itKilotonCannon;"						omnidirectional="true"				posAngle="180" posRadius="61" posZ="20"/>
+			<Device deviceID="&itThermoCannon;"	 secondaryWeapon="true" minFireArc="225" maxFireArc="340"	posAngle="270" posRadius="20" posZ="0"/>
+			<Device deviceID="&itThermoCannon;"	 secondaryWeapon="true" minFireArc="20"  maxFireArc="135"	posAngle="90"  posRadius="20" posZ="0"/>
+			<Device deviceID="&itThermoCannon;"	 secondaryWeapon="true" minFireArc="100" maxFireArc="260"	posAngle="180" posRadius="90" posZ="10"/>
+			<Device deviceID="&itPatchSpider;"/>
+			<Device deviceID="&itPatchSpider;"/>
+			<Device deviceID="&itLongreachIAutocannon;"/>
+		</Devices>
+
+		<Maneuver
+			maxRotationRate=	"2.0"
+			rotationAccel=		"0.2"
+			/>
+
+		<Interior>
+			<Compartment name="interior"
+					hitPoints=	"300"
+					/>
+			
+			<Compartment name="main drive"
+					type=		"mainDrive"
+					hitPoints=	"100"
+
+					posX=		"-115"
+					posY=		"0"
+					sizeX=		"44"
+					sizeY=		"44"
+					/>
+		</Interior>
+
+		<Items>
+			<Item	count="80-160"		item="&itKilotonCannonShell;"/>
+			<Item	count="1000-1200"	item="&itThermoCannonShell;" />
+			<Item	count="2d12"		item="&itPteracniumFuelRod;"/>
+			<Table>
+				<Lookup	chance="40"	count="1d4"		table="&trConsumables8;"/>
+				<Lookup	chance="30"	count="1d2"		table="&trMinorItem8;"/>
+				<Lookup	chance="30"	count="1"		table="&trMajorItem7;"/>
+			</Table>
+		</Items>
+
+		<!-- Image and Effects -->
+
+		<Image imageID="&rsRanxDreadnought;" imageX="0" imageY="0" imageWidth="280" imageHeight="280"/>
+
+		<Effects>
+			<Effect type="thrustMain"		posAngle="175"	posRadius="136"	posZ="0"	rotation="180"	effect="&efMainThrusterLarge;"/>
+			<Effect type="thrustMain"		posAngle="180"	posRadius="136"	posZ="0"	rotation="180"	effect="&efMainThrusterLarge;"/>
+			<Effect type="thrustMain"		posAngle="-175"	posRadius="136"	posZ="0"	rotation="180"	effect="&efMainThrusterLarge;"/>
+		</Effects>
+		
+		<!-- AI and Behavior -->
+
+		<AISettings
+			aggressor=			"true"
+			fireRateAdj=		"20"
+			fireAccuracy=		"90"
+			perception=			"6"
+			
+			combatStyle=		"standOff"
+			/>
+
+	</ShipClass>
+	
+	<!-- Ronin D-class Gunship -->
+	<!-- Level 5 gunship, still fully non-military and bridges gap between Ronin/C and Centurion. They are extremely outdated this deep in Sung space, but
+		Ranx gunships are pretty weak as well. -->
+	<ShipClass UNID="&scRoninD;"
+			manufacturer=		"Pacific Defense Corporation"
+			class=				"Ronin/D"
+			type=				"gunship"
+			defaultSovereign=	"&svCommonwealth;"
+
+			mass=				"60"
+			cargoSpace=			"50"
+			thrustRatio=		"5.5"
+			maxSpeed=			"20"
+
+			attributes=			"commonwealth,genericClass"
+			>
+
+		<Armor
+			armorID=			"&itCeralloyArmor;"
+			count=				"4"
+			/>
+
+		<Devices>
+			<Device deviceID="&itDualParticleBeamWeapon;"/>
+			<Device deviceID="&itNAMIMissileLauncher;"/>
+			<Device deviceID="&itClass3Deflector;"/>
+		</Devices>
+
+		<Maneuver
+			maxRotationRate=	"9.0"
+			rotationAccel=		"1.0"
+			/>
+
+		<Items>
+			<Item count="3d6" item="&itKM550Missile;"/>
+			<Item count="3d6" item="&itHelium3FuelRod;"/>
+		</Items>
+
+		<Image imageID="&rsMediumShips1;" imageX="96" imageY="0" imageWidth="48" imageHeight="48"/>
+
+		<Effects>
+			<Effect type="thrustMain"		posAngle="148"	posRadius="20"	posZ="0"	rotation="180"/>
+			<Effect type="thrustMain"		posAngle="-148"	posRadius="20"	posZ="0"	rotation="180"/>
+		</Effects>
+		
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"90"
+			perception=			"4"
+			
+			combatStyle=		"advanced"
+			/>
+
+	</ShipClass>
+	
+	<!-- Black Market privateers, elite named characters with around level 7 starships -->
+	<ShipClass UNID="&scBMPrivateer1;"
+			manufacturer=		"Earth Industries"
+			class=				"EI200"
+			type=				"freighter"
+
+			defaultSovereign=	"&svBlackmarket;"
+
+			attributes=			"commonwealth,freighter"
+			   
+			size=				"54"
+			mass=				"500"
+			thrustRatio=		"1.8"
+			maxSpeed=			"16"
+			cargoSpace=			"500"
+			>
+
+		<Names noArticle="true" personalName="true">aluminum falcon</Names>
+
+		<!-- Configuration -->
+
+		<Armor
+			armorID=			"&itAdvancedCeralloyArmor;"
+			count=				"6"
+			/>
+
+		<Devices>
+		<!-- 50MW + 30MW + 3MW -->
+			<Device deviceID="&itTritiumCannon;" omnidirectional="true"/>
+			<Device deviceID="&itR5Deflector;"/>
+			<Device deviceID="&itTritiumPropulsionUpgrade;"/>
+			<Device deviceID="&it150MWReactor;"/>
+			<Device deviceID="&itArmorRepairDevice;"/>
+		</Devices>
+
+		<Maneuver
+			maxRotationRate=	"4.5"
+			rotationAccel=		"0.5"
+			/>
+
+		<!-- Image and Effects -->
+		
+		<Image imageID="&rsEI200Image;" imageWidth="90" imageHeight="90"/>
+
+		<Effects>
+			<Effect type="thrustMain"		posAngle="158"	posRadius="42"	posZ="0"	rotation="180"/>
+			<Effect type="thrustMain"		posAngle="-158"	posRadius="42"	posZ="0"	rotation="180"/>
+		</Effects>
+
+		<!-- AI and Behavior -->
+
+		<AISettings
+			fireRateAdj=		"15"
+			fireAccuracy=		"85"
+			perception=			"4"
+		/>
+
+
+	</ShipClass>
+	
+	<!-- Actually has weaker armor and no shields compared to the normal manticore. Has a bunch of armor repairing and more weapons. -->
+	<ShipClass UNID="&scBMPrivateer2;"
+			manufacturer=		"Makayev-Energia"
+			class=				"Manticore"
+			type=				"heavy gunship"
+			defaultSovereign=	"&svBlackmarket;"
+
+			mass=				"90"
+			cargoSpace=			"50"
+			thrustRatio=		"2.0"
+			maxSpeed=			"18"
+
+			attributes=			"commonwealth, genericClass"
+			>
+
+		<Armor
+			armorID=			"&itHeavyMeteorsteel;"
+			count=				"6"
+			/>
+		
+		<Names noArticle="true" personalName="true">slave III</Names>
+		
+		<Devices>
+		<!-- Same as player's Manticore from CC -->
+			<DeviceSlot criteria="p" posAngle="45" posRadius="30" posZ="0"/>
+			<DeviceSlot criteria="l" posAngle="315" posRadius="30" posZ="0"/>
+			<DeviceSlot criteria="s -nonEnergyShields;" hpBonus="-20"/>
+			
+			<!-- 72MW + 30MW -->
+			<Device deviceID="&itDualMarkIIIHowitzer;"/>
+			<!-- Since they are named, they know how to fire launchers at the same time as main weapons like the player -->
+			<Device deviceID="&itMakayevLauncher;" secondaryWeapon="true"/>
+			<Device deviceID="&itArmorRepairDevice;"/>
+			<Device deviceID="&itPatchSpider;"/>
+			<!-- Without shields we are vulnerable to missiles -->
+			<Device deviceID="&itMissileDefense;"/>
+			<Device deviceID="&itTitanFusionDrive;"/>
+			<Device deviceID="&it250MWReactor;"/>
+		</Devices>
+		
+		
+
+		<Maneuver
+			maxRotationRate=	"9.0"
+			rotationAccel=		"2.0"
+			/>
+
+		<Items>
+			<Item count="2d6" item="&itHeliumAssembly;"/>
+			<Item count="100" item="&itStrelkaRed;"/>
+		</Items>
+
+		<Image imageID="&rsManticore;" imageWidth="80" imageHeight="80"/>
+		
+		<Effects>
+			<Effect type="thrustMain"		posAngle="157"	posRadius="23"	posZ="0"	rotation="180"	sendToBack="4,16"/>
+			<Effect type="thrustMain"		posAngle="-157"	posRadius="23"	posZ="0"	rotation="180"	sendToBack="4,16"/>
+			<Effect type="rotateRight"		posAngle="46"	posRadius="30"	posZ="0"	rotation="135"/>
+			<Effect type="rotateRight"		posAngle="-142"	posRadius="23"	posZ="0"	rotation="315"/>
+			<Effect type="rotateLeft"		posAngle="-46"	posRadius="30"	posZ="0"	rotation="225"/>
+			<Effect type="rotateLeft"		posAngle="142"	posRadius="23"	posZ="0"	rotation="45"/>
+		</Effects>
+
+		<AISettings
+			aggressor=			"true"
+			fireRateAdj=		"15"
+			fireAccuracy=		"95"
+			perception=			"4"
+			
+			combatStyle=		"advanced"
+			/>
+	</ShipClass>
+
+	<!--  -->
+
+	<ShipClass UNID="&scBMPrivateer3;"
+			manufacturer=		""
+			class=				"medium IAV"
+			type=				""
+			defaultSovereign=	"&svCommonwealth;"
+
+			size=				"42"
+			mass=				"50"
+			cargoSpace=			"10"
+			thrustRatio=		"6.5"
+			maxSpeed=			"16"
+
+			attributes=			"commonwealth, genericClass"
+			>
+
+		<Armor
+			armorID=			"&itLightOrthosteel;"
+			count=				"2"
+			/>
+		
+		<Names noArticle="true" personalName="true">pale blue dot</Names>
+		<Devices>
+		<!-- 50MW + 50MW + 30MW -->
+			<Device deviceID="&itLightIonBlaster;" />
+			<Device deviceID="&itTrentonFieldGenerator;"/>
+			<Device deviceID="&itTitanFusionDrive;"/>
+			<Device deviceID="&itArmorRepairDevice;"/>
+			<Device deviceID="&it150MWReactor;"/>
+		</Devices>
+
+		<Maneuver
+			maxRotationRate=	"5.0"
+			rotationAccel=		"0.5"
+			/>
+
+		<Image imageID="&rsIAVMedium;" imageWidth="64" imageHeight="64"/>
+
+		<Effects>
+			<Effect type="thrustMain"		posAngle="168"	posRadius="30"	posZ="0"	rotation="180"/>
+			<Effect type="thrustMain"		posAngle="-168"	posRadius="30"	posZ="0"	rotation="180"/>
+		</Effects>
+		
+		<AISettings
+			aggressor=			"true"
+			fireRateAdj=		"15"
+			fireRangeAdj=		"50"
+			fireAccuracy=		"85"
+			perception=			"4"
+			/>
+
+	</ShipClass>
+	
+	<!-- Sotho-class Gunship -->
+
+	<ShipClass UNID="&scBMPrivateer4;"
+			manufacturer=		"United African States"
+			class=				"Sotho"
+			type=				"heavy gunship"
+			defaultSovereign=	"&svBlackmarket;"
+
+			attributes=			"outlaws"
+			   
+			mass=				"100"
+			thrustRatio=		"4"
+			maxSpeed=			"18"
+			cargoSpace=			"25"
+			>
+
+		<!-- Configuration -->
+		
+		<Armor
+			armorID=			"&itHeavyBlastPlate;"
+			count=				"4"
+			/>
+		
+		<Names noArticle="true" personalName="true">trojan</Names>
+		<Devices>
+		<!-- 75MW + 30MW + 3MW -->
+			<Device deviceID="&itStarCannon;" omnidirectional="true"	posAngle="180" posRadius="5" posZ="20"/>
+			<Device deviceID="&itInvincibleDeflector;"/>
+			<Device deviceID="&itTritiumPropulsionUpgrade;"/>
+			<Device deviceID="&itArmorRepairDevice;"/>
+			<Device deviceID="&it150MWReactor;"/>
+		</Devices>
+
+		<Maneuver
+			maxRotationRate=	"9.0"
+			rotationAccel=		"1.0"
+			/>
+
+		<Items>
+			<Item count="3d6" item="&itHelium3FuelRod;"/>
+		</Items>
+
+		<!-- Image and Effects -->
+		
+		<Image imageID="&rsSotho;" imageX="0" imageY="0" imageWidth="72" imageHeight="72"/>
+
+		<Effects>
+			<Effect type="thrustMain"		posAngle="164"	posRadius="29"	posZ="0"	rotation="180"	sendToBack="3,4,16,17"/>
+			<Effect type="thrustMain"		posAngle="-164"	posRadius="29"	posZ="0"	rotation="180"	sendToBack="3,4,16,17"/>
+		</Effects>
+		
+		<!-- AI and Behavior -->
+
+		<AISettings
+			fireRateAdj=		"15"
+			fireAccuracy=		"90"
+			perception=			"4"
+			
+			combatStyle=		"advanced"
+			/>
+	</ShipClass>
+	
+	<!-- Corporate Hiearchy Operation Command Privateers -->
+	
+	<!-- Centurion-class Heavy Gunship -->
+
+	<ShipClass UNID="&scCHPrivateer1;"
+			manufacturer=		"Pacific Defense Corporation"
+			class=				"Centurion"
+			type=				"heavy gunship"
+			defaultSovereign=	"&svCorporate;"
+
+			mass=				"90"
+			cargoSpace=			"50"
+			thrustRatio=		"9.0"
+			maxSpeed=			"20"
+
+			attributes=			"commonwealth,commonMilitary"
+			>
+
+		<Armor
+			armorID=			"&itHeavyBlastPlate;"
+			count=				"4"
+			/>
+		
+		<Names noArticle="true" personalName="true">praetorius</Names>
+		<Devices>
+		<!-- 60MW + 7MW + 75MW + 30MW -->
+			<Device deviceID="&itDualTeV9Blaster;"/>
+			<Device deviceID="&itParticleEnhancer;"/>
+			<Device deviceID="&itNephrenB700;"/>
+			<Device deviceID="&itTitanFusionDrive;"/>
+			<Device deviceID="&itArmorRepairDevice;"/>
+			<Device deviceID="&it250MWReactor;"/>
+		</Devices>
+
+		<Maneuver
+			maxRotationRate=	"9.0"
+			rotationAccel=		"1.0"
+			/>
+
+		<Items>
+			<Item count="2d6" item="&itHeliumAssembly;"/>
+		</Items>
+
+		<Image imageID="&rsMediumShips2;" imageX="320" imageY="0" imageWidth="64" imageHeight="64"/>
+
+		<Effects>
+			<Effect type="thrustMain"		posAngle="141"	posRadius="27"	posZ="0"	rotation="180"/>
+			<Effect type="thrustMain"		posAngle="-141"	posRadius="27"	posZ="0"	rotation="180"/>
+			<Effect type="rotateRight"		posAngle="82"	posRadius="23"	posZ="0"	rotation="0"/>
+			<Effect type="rotateRight"		posAngle="-98"	posRadius="23"	posZ="0"	rotation="180"/>
+			<Effect type="rotateLeft"		posAngle="-82"	posRadius="23"	posZ="0"	rotation="0"/>
+			<Effect type="rotateLeft"		posAngle="98"	posRadius="23"	posZ="0"	rotation="180"/>
+		</Effects>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"85"
+			perception=			"4"
+			
+			combatStyle=		"advanced"
+			/>
+
+	</ShipClass>
+	
+	<!-- Part of the militia as well-->
+
+	<ShipClass UNID="&scCHPrivateer2;"
+			manufacturer=		"Pacific Defense Corporation"
+			class=				"Ronin/C"
+			type=				"gunship"
+			defaultSovereign=	"&svCommonwealth;"
+
+			mass=				"60"
+			cargoSpace=			"50"
+			thrustRatio=		"5.5"
+			maxSpeed=			"20"
+
+			attributes=			"commonwealthcClass"
+			>
+		
+		<Names noArticle="true" personalName="true">samurai</Names>
+		
+		<Armor
+			armorID=			"&itP120HexphaseArmor;"
+			count=				"4"
+			/>
+		
+		<Devices>
+		<!-- 60MW + 50MW + 0.5MW + 1MW + repair-->
+			<Device deviceID="&itMarkVHowitzer;"/>
+			<Device deviceID="&itNAMIMissileLauncher;" secondaryWeapon="true" />
+			<Device deviceID="&itYoroiMX;"/>
+			<Device deviceID="&itPatchSpider;"/>
+			<Device deviceID="&itMissileDefense;"/>
+			<Device deviceID="&it150MWReactor;"/>
+		</Devices>
+
+		<Maneuver
+			maxRotationRate=	"9.0"
+			rotationAccel=		"1.0"
+			/>
+
+		<Items>
+			<Item count="50" item="&itKM550Missile;"/>
+			<Item count="3d6" item="&itHelium3FuelRod;"/>
+		</Items>
+
+		<Image imageID="&rsMediumShips1;" imageX="96" imageY="0" imageWidth="48" imageHeight="48"/>
+
+		<Effects>
+			<Effect type="thrustMain"		posAngle="148"	posRadius="20"	posZ="0"	rotation="180"/>
+			<Effect type="thrustMain"		posAngle="-148"	posRadius="20"	posZ="0"	rotation="180"/>
+		</Effects>
+		
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"90"
+			perception=			"4"
+			
+			combatStyle=		"advanced"
+			/>
+
+	</ShipClass>
+	
+	<ShipClass UNID="&scCHPrivateer3;"
+			manufacturer=		"Earth Industries"
+			class=				"EI7000"
+			type=				"freighter"
+			defaultSovereign=	"&svCorporate;"
+
+			attributes=			"commonwealth,freighter"
+			
+			size=				"75"
+			mass=				"2100"
+			thrustRatio=		"2"
+			maxSpeed=			"12"
+			cargoSpace=			"2000"
+			>
+		
+		<Names noArticle="true" personalName="true">spacer one</Names>
+		
+		<!-- Configuration -->
+
+		<Armor
+			armorID=			"&itLightOmskArmor;"
+			count=				"12"
+			/>
+
+		<Devices>
+			<!-- 60MW + 100MW + 3MW -->
+			<Device deviceID="&itHanzoBlaster;" omnidirectional="true"/>
+			<Device deviceID="&itOmskDeflectorII;"/>
+			<Device deviceID="&itTritiumPropulsionUpgrade;"/>
+			<Device deviceID="&itArmorRepairDevice;"/>
+			<Device deviceID="&it250MWReactor;"/>
+		</Devices>
+
+		<Maneuver
+			maxRotationRate=	"6"
+			rotationAccel=		"1"
+			/>
+
+		<Interior>
+			<Compartment name="interior"
+					hitPoints=	"30"
+					/>
+			
+			<Compartment name="main drive"
+					type=		"mainDrive"
+					hitPoints=	"70"
+
+					posX=		"-40"
+					posY=		"0"
+					sizeX=		"26"
+					sizeY=		"50"
+					/>
+			
+			<Compartment name="cargo contatiners"
+					type=		"cargo"
+					hitPoints=	"50"
+
+					posX=		"6"
+					posY=		"0"
+					sizeX=		"74"
+					sizeY=		"36"
+					/>
+		</Interior>
+
+		<!-- Image and Effects -->
+
+		<Image imageID="&rsEI7000Image;" imageX="0" imageY="0" imageWidth="110" imageHeight="110"/>
+
+		<Effects>
+			<Effect type="thrustMain"		posAngle="165"	posRadius="52"	posZ="-10"	rotation="180"	effect="&efMainThrusterLarge;"/>
+			<Effect type="thrustMain"		posAngle="-165"	posRadius="52"	posZ="-10"	rotation="180"	effect="&efMainThrusterLarge;"/>
+			<Effect type="thrustMain"		posAngle="165"	posRadius="52"	posZ="10"	rotation="180"	effect="&efMainThrusterLarge;"/>
+			<Effect type="thrustMain"		posAngle="-165"	posRadius="52"	posZ="10"	rotation="180"	effect="&efMainThrusterLarge;"/>
+		</Effects>
+		
+		<!-- AI and Behavior -->
+
+		<AISettings
+			fireRateAdj=		"15"
+			fireAccuracy=		"95"
+			perception=			"4"
+		/>
+	</ShipClass>
+	
+	<ShipClass UNID="&scCHPrivateer4;"
+			manufacturer=		"Revolution Designs"
+			class=				"Earthzone"
+			type=				"armed shuttle"
+			defaultSovereign=	"&svCorporate;"
+
+			attributes=			"anarchists"
+			   
+			size=				"21"
+			mass=				"50"
+			thrustRatio=		"4"
+			maxSpeed=			"20"
+			cargoSpace=			"50"
+			>
+		
+		<Names noArticle="true" personalName="true">earthinator</Names>
+		<!-- Configuration -->
+
+		<Armor
+			armorID=			"&itGusokuArmor;"
+			count=				"4"
+			/>
+
+		<Devices>
+		<!-- 50MW + 30MW + 30MW -->
+			<Device deviceID="&itLightIonBlaster;" />
+			<Device deviceID="&itClass5Deflector;"/>
+			<Device deviceID="&itTitanFusionDrive;"/>
+			<Device deviceID="&it150MWReactor;"/>
+		</Devices>
+
+		<Maneuver
+			maxRotationRate=	"9.0"
+			rotationAccel=		"1.0"
+			/>
+
+		<Items>
+			<Item count="2d6" item="&itHelium3FuelRod;"/>
+		</Items>
+
+		<!-- Image and Effects -->
+
+		<Image imageID="&rsMediumShips1;" imageX="192" imageY="0" imageWidth="48" imageHeight="48"/>
+
+		<Effects>
+			<Effect type="thrustMain"		posAngle="158"	posRadius="18"	posZ="0"	rotation="180"	sendToBack="*"/>
+			<Effect type="thrustMain"		posAngle="-158"	posRadius="18"	posZ="0"	rotation="180"	sendToBack="*"/>
+		</Effects>
+		
+		<!-- AI and Behavior -->
+
+		<AISettings
+			fireRateAdj=		"15"
+			fireAccuracy=		"85"
+			perception=			"4"
+			
+			combatStyle=		"advanced"
+			/>
+
+	</ShipClass>
+
+</TranscendenceModule>

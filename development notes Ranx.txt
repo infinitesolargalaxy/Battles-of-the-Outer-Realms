@@ -1,0 +1,32 @@
+Should be a level 7-8 story branching off from one of the level 6 systems.
+Story is similar to earlier treatment in 'Story - Ranx Empire.txt', just note that we are scaling it down. It will just be one warlord (think of warlord's in
+Star Wars EU after fall of empire). Rather than it being the Ranx Empire, its an ambitious warlord, this makes more sense since the Ranx Empire is still powerful
+according to the unreleased ORE. A warlord though will have considerably less R&D (if any) and be facing attrition over time. Thus making the need of weapons
+make sense. In addition, we have a rising star as the syndicat lord whos trying to find another way to gain wealth. 
+<Ranx Warlord> is buying the weapons at 1.25 times market value. He doesn't have any CW credits so is trading in ore. 
+
+Characters:
+
+<Ranx Warlord>: An ambitious and ruthless man. His strength has brought many to his side. Currently resides in the prosperous ore-filled <Star system> 
+			Has many rivals.
+<Warlord Captain>: The right hand man of <Ranx Warlord>. Also commands a ranx dreadnought
+<Recruitable wingment>
+
+
+<Syndicat Lord>: A young and rising crimelord who has had the great fortune to be seen as a partner for <Ranx Warlord>. He knows that buttkissing is needed to
+rise in the ranks. (Submissive in presence of <Ranx Warlord> but bold elsewhere. Presents a facade of weakness). He should fly a Mikeno destroyer.
+Bounty Hunters/Privateers: Add as needed, we should also have some minor characters with names that shows up on missions if they aren't dead
+- Smuggler dude: "I ain't cut out for this" Flies a kitted out EI200. - Member (rank 4)
+- Seasoned Bounty Hunter guy: "Easy job" Flies a Manticore with side-mounted weapons? - Member (rank 4)
+- Girl from Earth: "Gonna roll in the dough" Flies a medium IAV. - Smuggler (rank 2)
+- Former miner woman: "Everyone I cared for was killed in the destruction of my home" Flies a Sotho - Enforcer (rank 3)
+- Flies a Saphire
+
+
+<Corporate Agent>: An agent of the CHOC, he flies a Corporate cruiser. Assigned to this case to deal with this warlord
+Corporate Privateers:
+- Old guy: "One last job" Flies a Centurion - Special Agent (rank 4)
+- Dude from militia: "In the lawless stars, I'm the law" Flies a Ronin - Senior security officer (rank 3)
+- Seasoned Trader woman: "Isn't my ship a beauty?" Flies an EI7000 - Senior security officer (rank 3)
+- Guy from the New Beyond: "I can't believe I made it this far" Flies an Earthzone - Security officer (rank 2)
+- Flies a Heavy IAV
