@@ -1,0 +1,70 @@
+Missions:
+Raid Polar freighter: 
+Originally there was supposed to be a convoy but I found that too hard to code. So I decided that
+it should carry a random amount of cargo containers and the player needs a certain amount to move onto the next mission.
+I couldn't figure out how to code it so that it counts the amount of cargo cobtainers the player turns in so I just made
+1 heavy container on the freighter. 
+
+Investigate Omega Station:
+This was actually where I made the code that I copied over to the Raid Polar Freighter mission. I just used globals in 
+this mission so that the player couldn't open the vault if they haven't taken this mission.
+
+Weaken Ares presence:
+I just took the code from the only vanilla mission and changed it to fit my needs. I belive that there are still too many
+ares stations in Deneb as this mission feels grindy.
+
+Blockade Running: 
+Because of the speed of the Frigates, the mission was really easy. So I decided to spawn lots of gunships and send deimos
+after the frigate. Eventually I reduced the number of deimos as the mission became too hard.
+
+Fortify:
+I really should've placed the move orders into a recurring timer event. The only reason the creation of the turrets are
+in a recurring timer event is because the code does not seem to work procedurely and just spawns all the stations at once
+There is a bug in which the 3rd ring of turrets does not spawn around Point Minerva and instead around the systems center
+I don't know why this happens, sometimes it works the way I want it to and sometimes it doesn't. Perhaps too much objects
+can't refer to aOwnerObj? 
+
+Intercept vanguard fleet:
+I just took the code from the CSC intercept squadron mission. I wanted to spawn more ships but it seems that spawning too
+many causes some of them to spawn at the system center instead.
+
+Rendezvous:
+Because of the gate guards in Blockade running, the Aquila kept dieing so I spawned it 100 to 200 ls away from the gate.
+This mission is actually very easy but I don't feel like making it harder. There is now a logic error in how the 
+Expeditionary fleet made it past those guards though...
+
+Intercept Main fleet:
+Originally the player was to get the ships from Rendezvous as wingmen if they finished it but intFleetDisperseWingmen
+doesn't seem to like several ship classes. Also the player would be overpowered with a capital ship as a wingmen. So I just gave the player a lot of Britannia/M. Originally the Phobos II was much stronger but I nerfed it and called it a
+prototype. Eventually in later expansions of this mod, the Phobos II will appear again in its true form. This mission 
+like many is actually very easy if the player uses shatter. So I may need to give the Phobos II good loot to deter the 
+player from shattering it. Originally its fleet included all types of Ares ships but that made it too hard without
+using shatter. One of the reason was the Chasm IIs which could just prevent the player from attacking at all. There
+isn't anything significant code-wise in this mission.
+------------------------------------------------------------------------------------------------------------------------
+Ships:
+Aurochs Frigate: 
+Designed to give the Fleet a fast light capital ship. It originally had a NAMI missile launcher but that made it too powerful. It will likely appear in missions as the mentioned light capital ship and as a freighter on escort
+missions.
+
+Aquila II Cruiser: 
+The modern version of the Aquila Cruiser. It has 4 times the ion firepower as it's predecessor. I made this because the Fleet really doesn't have any powerful capital ships. It is still uncapable of standing up against a phobos but that should be expected. Another reason is because it irks me to see that the Aquila has 4 katana mounts but the vanilla version only uses 2 of them.
+
+Britannia II Heavy Gunship:
+The elite fleet gunship more elite than the Britannia. This was designed as the Fleet counterpart to the Ares Chasm II. The Britannia II is a space superiority gunship and excels at destroying enemy gunships. It was originally designed to have several "magazines" of missiles. e.g. It would use it's reload ability 2 or so times on each missile pod before running out of missiles. I couldn't code that so I just gave them infinite ammo.
+
+Britannia/M Heavy Gunship:
+Britannia Gunships that were upgraded by Point Minerva. This was designed as the Britannia was too weak against the Ares in Deneb. It seems logical that they would upgrade their ships with loot from the Ares.
+
+Polar Carrier:
+Designed to spawn a lot of Ares gunships. I thought that the Ares should also have an overhauled freighter so I made the polar carrier. Originally I used the Charon Frigate code for it but I wasn't able to order its fighters to attack enemies so I just took the code that I made for the CSC and modified it. It breaks a lot of logic as it spawns infinite gunships (I think faster than shipyards too) but that doesn't matter too much. It is rather poorly armed and armored but makes up for it by being capable of spawning Tundras and Chasms.
+
+Sandstorm II Gunsip:
+Designed as a faster and stronger Sandstorm. It originally had the same armor as the standard sandstorm but I decided that made it too weak. So now it has Tharsis plate. Its fast enough to catch up to players who didn't get engine upgrades. It still has a lightning cannon but fires it 3 times as fast. 
+
+Chasm II Heavy Gunship:
+The elite Ares gunship. It combines the anti-capital firepower of the Tundra and the shield killing positron damage of the Chasm. The Chasm II is an Anti-capital gunship but can also be a space superiority gunship. It serves especially well 
+in large fleet battles where it can devestate the enemy fleet without hurting its allies. One of them is not too great of a threat but their threat level increases exponentially with each extra Chasm II as it is possible that they deny an enemy of firing any shots and just nuke them until death.
+
+Phobos II Dreadnought (Prototype):
+The prototype of the next generation of Ares dreadnoughts. Originally it had 3 sets of lightning turrets, lightning cannons, 1 Archcannon, 1 omni micronuke cannon, and an Ares spear. It was nerfed to 2 sets of lightning turrtes, lightning cannons, 1 micronuke cannon, and an Ares spear. The phobos II really excels in fleet battles with its no friendly fire.

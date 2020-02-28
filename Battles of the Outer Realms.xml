@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE TranscendenceExtension
+[
+<!-- UNID CODE 
+		0xD3090*** Battles of the Outer Realm
+		0xD3090A** Ships
+		0xD3090B** Stations
+		0xD3090C** Items
+		0xD3090D** Missions
+		0xD3090E** Systems + Sovereigns + Dockscreens
+		-->
+		
+	<!ENTITY unidExtension						"0xD309001">
+	
+	<!-- Ships -->
+	<!ENTITY scBritannia2						"0xD3090A00">
+	<!ENTITY scBritannia2Mark					"0xD3090A01"> 
+	<!ENTITY scAurochsFrigate					"0xD3090A02">
+	<!ENTITY scPolarCarrier						"0xD3090A03">
+	<!ENTITY scChasm2							"0xD3090A04">
+	<!ENTITY scPhobos2Prototype					"0xD3090A05">
+	<!ENTITY scChasm2AEGIS3B					"0xD3090A06">
+	<!ENTITY scAquilaCruiser2					"0xD3090A07">
+	<!ENTITY scBritanniaM						"0xD3090A08">
+	<!ENTITY scSandstorm2						"0xD3090A09">
+	
+	<!-- Stations -->
+	<!ENTITY stCastorStargate					"0xD3090B00">
+	<!ENTITY stPointMinerva						"0xD3090B01">
+	<!ENTITY stCommonFleetTurret				"0xD3090B02">
+	<!ENTITY stOmegaStation						"0xD3090B03">
+	
+	<!-- Items -->
+	<!ENTITY vtICXTev9							"0xD3090C00">
+	<!ENTITY itTeV9PD							"0xD3090C01">	
+	<!ENTITY itAresSpear						"0xD3090C02">
+	<!ENTITY itAresROM							"0xD3090C03">
+	<!ENTITY itCargoCrates						"0xD3090C04">
+	<!ENTITY itR13Deflector						"0xD3090C05">
+	
+	
+	<!-- Missions -->
+	<!ENTITY msWeakenAresFoothold				"0xD3090D00">
+	<!ENTITY msInvestigateColony				"0xD3090D01">
+	<!ENTITY msBlockadeRunning					"0xD3090D02">
+	<!ENTITY msInterceptAresVanguardFleet		"0xD3090D03">
+	<!ENTITY msFortify							"0xD3090D04">
+	<!ENTITY msInterceptAresMainFleet			"0xD3090D05">
+	<!ENTITY msRaidFreighter					"0xD3090D06">
+	<!ENTITY msRendezvous						"0xD3090D07">
+		
+	<!-- Systems -->	
+	<!ENTITY smAresSpace						"0xD3090E00">
+	<!ENTITY ssDeneb							"0xD3090E01">
+	
+]>
+<TranscendenceExtension UNID="0xD309000;" version="1.0" name="Battles of the Outer Realms" credits="SolarGalaxy">
+
+<Modules>
+		<Module filename="BoTOR_CWFleet.xml"/>
+		<Module filename="BoTOR_Ares.xml"/>
+		<Module filename="BoTOR_Minerva.xml"/>		
+</Modules>
+
+</TranscendenceExtension>
