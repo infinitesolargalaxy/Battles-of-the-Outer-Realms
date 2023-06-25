@@ -47,11 +47,16 @@ Aurochs Frigate:
 Designed to give the Fleet a fast light capital ship. It originally had a NAMI missile launcher but that made it too powerful. It will likely appear in missions as the mentioned light capital ship and as a freighter on escort
 missions.
 
+CW Fleet now has:
+- Minotaur-class corvette
+- Aurochs-class mine layer
+- Midway-class Missile ship
+
 Aquila II Cruiser: 
-The modern version of the Aquila Cruiser. It has 4 times the ion firepower as it's predecessor. I made this because the Fleet really doesn't have any powerful capital ships. It is still uncapable of standing up against a phobos but that should be expected. Another reason is because it irks me to see that the Aquila has 4 katana mounts but the vanilla version only uses 2 of them.
+The modern version of the Aquila Cruiser. It has 4 times the ion firepower as its predecessor. I made this because the Fleet really doesn't have any powerful capital ships. It is still uncapable of standing up against a phobos but that should be expected. Another reason is because it irks me to see that the Aquila has 4 katana mounts but the vanilla version only uses 2 of them.
 
 Britannia II Heavy Gunship:
-The elite fleet gunship more elite than the Britannia. This was designed as the Fleet counterpart to the Ares Chasm II. The Britannia II is a space superiority gunship and excels at destroying enemy gunships. It was originally designed to have several "magazines" of missiles. e.g. It would use it's reload ability 2 or so times on each missile pod before running out of missiles. I couldn't code that so I just gave them infinite ammo.
+The elite fleet gunship more elite than the Britannia. This was designed as the Fleet counterpart to the Ares Chasm II. The Britannia II is a space superiority gunship and excels at destroying enemy gunships. It was originally designed to have several "magazines" of missiles. e.g. It would use its reload ability 2 or so times on each missile pod before running out of missiles. I couldn't code that so I just gave them infinite ammo.
 
 Britannia/M Heavy Gunship:
 Britannia Gunships that were upgraded by Point Minerva. This was designed as the Britannia was too weak against the Ares in Deneb. It seems logical that they would upgrade their ships with loot from the Ares.

@@ -60,7 +60,7 @@
 	</ShipClass>
 		
 	<!-- Phobos II Prototype -->
-	;A new Phobos with upgrades to counter it's predecessor's weaknesses, including multiple lightning cannons to fend off gunships, a new Plasma Cannon
+	;A new Phobos with upgrades to counter its predecessor's weaknesses, including multiple lightning cannons to fend off gunships, a new Plasma Cannon
 	;with a smaller profile and higher missile speed. It also features the new targeting system which is also used on Chasm IIs. This is a prototype.
 	
 		<ShipClass UNID="&scPhobos2Prototype;"

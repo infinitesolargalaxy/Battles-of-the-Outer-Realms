@@ -2,7 +2,7 @@
 
 <TranscendenceModule>
 	<!-- Aquila II-class Cruiser -->
-	;Aquila Cruiser equipped to use more of it's turret mounts.
+	;Aquila Cruiser equipped to use more of its turret mounts.
 	
 	<ShipClass UNID="&scAquilaCruiser2;"
 			manufacturer=		"Pacific Defense Corporation"
@@ -318,7 +318,7 @@
 			attributes=			"MajorItem; Military; PacificDefense"
 			frequency=			"rare"
 
-			description=		"The R13 deflector was designed for the Fleet's new Aquila-II cruisers after the scandal over the original Aquila cruisers."
+			description=		"The R13 deflector was designed for the Fleet's new Aquila II cruisers after the scandal over the original Aquila cruisers."
 			>
 
 		<Image imageID="&rsItems1;" imageX="192" imageY="0" imageWidth="96" imageHeight="96"/>
@@ -398,7 +398,7 @@
 	
 	<!-- Centurion-class Heavy Gunship -->
 
-	<ShipClass UNID="&scCenturion;"
+	<!-- <ShipClass UNID="&scCenturion;"
 			manufacturer=		"Pacific Defense Corporation"
 			class=				"Centurion"
 			type=				"heavy gunship"
@@ -497,9 +497,9 @@
 			<Effect type="rotateLeft"		posAngle="98"	posRadius="23"	posZ="0"	rotation="180"/>
 		</Effects>
 
-	</ShipClass>
+	</ShipClass> -->
 	
-	<ShipClass UNID="&scAquilaCruiser;"
+	<!-- <ShipClass UNID="&scAquilaCruiser;"
 			manufacturer=		"Pacific Defense Corporation"
 			class=				"Aquila"
 			type=				"cruiser"
@@ -571,7 +571,7 @@
 			combatStyle=		"standOff"
 			/>
 
-	</ShipClass>
+	</ShipClass> -->
 	
 	<!-- CSC Base Class
 	
@@ -599,7 +599,7 @@
 						
 	-->
 
-	<ShipClass UNID="&baCSCBase;"
+	<!-- <ShipClass UNID="&baCSCBase;"
 			class=				"(CSC base class)"
 			virtual=			"true"
 			
@@ -722,7 +722,7 @@
 					)
 			</Radar>
 			
-			<!-- Allows us to spawn Britannias if we keep engaging in battles or are in a really long one. -->
+			;Allows us to spawn Britannias if we keep engaging in battles or are in a really long one.
 			<ReinforcementCheck>
 			(block Nil
 			
@@ -913,11 +913,11 @@
 					)
 			</OnOrdersCompleted>
 		</Events>
-	</ShipClass>
+	</ShipClass> -->
 	
 	<!-- CSC Hospital -->
 
-	<ShipClass UNID="&scCSCHospital;"
+	<!-- <ShipClass UNID="&scCSCHospital;"
 			manufacturer=		"Earth Industries"
 			class=				"Commonwealth Star Carrier"
 			type=				""
@@ -936,8 +936,6 @@
 
 			dockScreen=			"Main"
 			>
-
-		<!-- Configuration -->
 		
 		<Armor
 			armorID=			"&itP1000HexphaseArmor;"
@@ -981,8 +979,6 @@
 		
 		<Items>
 			<Item				count="6d12"	item="&itPteracniumFuelRod;"/>
-			
-			<!-- Some upgrades for sale -->
 			
 			<Item count="3d4"	item="&itBlastPlate;"/>
 			<Item count="3d4"	item="&itP120HexphaseArmor;"/>
@@ -1173,10 +1169,6 @@
 									)
 							</Action>
 
-							<!--
-							<Action name="Talk to patient" key="P">
-								</Action>
-								-->
 
 							<Action name="Leave" cancel="1" key="L">
 								<Navigate screen="Main"/>
@@ -1377,7 +1369,7 @@
 			<Port x="-50"	y="-50" />
 		</DockingPorts>
 
-	</ShipClass>
+	</ShipClass> -->
 		
 		<!-- Overwrites Taskforce Encounter -->
 		;Now able to have each ship have unique load-outs!
@@ -1525,7 +1517,7 @@
 			dockScreen=			"Main"
 			>
 
-		<!-- Configuration -->
+		
 
 		<Armor
 			armorID=			"&itP1000HexphaseArmor;"
@@ -1608,7 +1600,7 @@
 			<Item				count="6d12"	item="&itPteracniumFuelRod;"/>
 			<Item				count="500"	item="&itThermoCannonShell;"/>
 			
-			<!-- Some upgrades for sale -->
+			
 			
 			<Item count="3d4"	item="&itBlastPlate;"/>
 			<Item count="3d4"	item="&itP120HexphaseArmor;"/>
@@ -1628,7 +1620,7 @@
 			<Effect type="thrustMain"		posAngle="-166"	posRadius="116"	posZ="-10"	rotation="180"	effect="&efMainThrusterLarge;"/>
 		</Effects>
 
-		<!-- AI and Behavior -->
+		
 
 		<AISettings
 			fireRateAdj=		"10"
@@ -4176,7 +4168,7 @@
 			dockScreen=			"Main"
 			>
 
-		<!-- Configuration -->
+		
 
 		<Armor
 			armorID=			"&itP1000HexphaseArmor;"
@@ -4265,7 +4257,7 @@
 		<Items>
 			<Item				count="6d12"	item="&itPteracniumFuelRod;"/>
 			
-			<!-- Some upgrades for sale -->
+			
 			
 			<Item count="3d4"	item="&itBlastPlate;"/>
 			<Item count="3d4"	item="&itP120HexphaseArmor;"/>
@@ -4285,7 +4277,7 @@
 			<Effect type="thrustMain"		posAngle="-166"	posRadius="116"	posZ="-10"	rotation="180"	effect="&efMainThrusterLarge;"/>
 		</Effects>
 
-		<!-- AI and Behavior -->
+		
 
 		<AISettings
 			fireRateAdj=		"10"
@@ -6832,7 +6824,7 @@
 			dockScreen=			"Main"
 			>
 
-		<!-- Configuration -->
+		
 
 		<Armor
 			armorID=			"&itP1000HexphaseArmor;"
@@ -6916,7 +6908,7 @@
 		<Items>
 			<Item				count="6d12"	item="&itPteracniumFuelRod;"/>
 			
-			<!-- Some upgrades for sale -->
+			
 			
 			<Item count="3d4"	item="&itBlastPlate;"/>
 			<Item count="3d4"	item="&itP120HexphaseArmor;"/>
@@ -6936,7 +6928,7 @@
 			<Effect type="thrustMain"		posAngle="-166"	posRadius="116"	posZ="-10"	rotation="180"	effect="&efMainThrusterLarge;"/>
 		</Effects>
 
-		<!-- AI and Behavior -->
+		
 
 		<AISettings
 			fireRateAdj=		"10"
@@ -9483,7 +9475,7 @@
 			dockScreen=			"Main"
 			>
 
-		<!-- Configuration -->
+		
 
 		<Armor
 			armorID=			"&itP1000HexphaseArmor;"
@@ -9564,7 +9556,7 @@
 		<Items>
 			<Item				count="6d12"	item="&itPteracniumFuelRod;"/>
 			
-			<!-- Some upgrades for sale -->
+			
 			
 			<Item count="3d4"	item="&itBlastPlate;"/>
 			<Item count="3d4"	item="&itP120HexphaseArmor;"/>
@@ -9584,7 +9576,7 @@
 			<Effect type="thrustMain"		posAngle="-166"	posRadius="116"	posZ="-10"	rotation="180"	effect="&efMainThrusterLarge;"/>
 		</Effects>
 
-		<!-- AI and Behavior -->
+		
 
 		<AISettings
 			fireRateAdj=		"10"
@@ -12131,7 +12123,7 @@
 			dockScreen=			"Main"
 			>
 
-		<!-- Configuration -->
+		
 
 		<Armor
 			armorID=			"&itP1000HexphaseArmor;"
@@ -12213,7 +12205,7 @@
 		<Items>
 			<Item				count="6d12"	item="&itPteracniumFuelRod;"/>
 			
-			<!-- Some upgrades for sale -->
+			
 			
 			<Item count="3d4"	item="&itBlastPlate;"/>
 			<Item count="3d4"	item="&itP120HexphaseArmor;"/>
@@ -12233,7 +12225,7 @@
 			<Effect type="thrustMain"		posAngle="-166"	posRadius="116"	posZ="-10"	rotation="180"	effect="&efMainThrusterLarge;"/>
 		</Effects>
 
-		<!-- AI and Behavior -->
+		
 
 		<AISettings
 			fireRateAdj=		"10"
