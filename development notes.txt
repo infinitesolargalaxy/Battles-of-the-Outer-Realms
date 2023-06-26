@@ -1,3 +1,4 @@
+
 Missions:
 Raid Polar freighter: 
 Originally there was supposed to be a convoy but I found that too hard to code. So I decided that
@@ -42,30 +43,96 @@ player from shattering it. Originally its fleet included all types of Ares ships
 using shatter. One of the reason was the Chasm IIs which could just prevent the player from attacking at all. There
 isn't anything significant code-wise in this mission.
 ------------------------------------------------------------------------------------------------------------------------
-Ships:
-Aurochs Frigate: 
-Designed to give the Fleet a fast light capital ship. It originally had a NAMI missile launcher but that made it too powerful. It will likely appear in missions as the mentioned light capital ship and as a freighter on escort
-missions.
+# Existing Ships:
+
+Centurion/M (Block 3)
+- Advanced Ceralloy Armor
+- R5 Deflector
+- Dual SAR10
+
+Minotaur/M
+- Massive Ithalium Armor (Level 8)
+- R9 Deflector
+- Fusionfire Howitzer
+- Omni TeV 9 Blaster
+- NAMI Launcher: XM900 Missile
+
+Aquila-class Cruiser (Block 1)
+- P450 Hexphase Armor (Level 8)
+- R9 Deflector
+- 2 Katana Star Cannon
+- NAMI Heavy Launcher: M2
+- Damage Control Party (Level 9)
+
+Star Carrier
+- P1000 Hexphase Armor (Level 9)
+- 4 SAR/40 cannon
+- NAMI Heavy Launcher: M5
+- Damage Control Party (Level 10)
 
 CW Fleet now has:
 - Minotaur-class corvette
-- Aurochs-class mine layer
-- Midway-class Missile ship
+- Aurochs-class mine layer (Rogue Fleet)
+- Midway-class Missile ship (NAMI?)
 
-Aquila II Cruiser: 
+Aurochs Frigate: 
+Designed to give the Fleet a fast light capital ship. It originally had a NAMI missile launcher but that made it too powerful. It will likely appear in missions as the mentioned light capital ship and as a freighter on escort
+missions. Because the minotaur now exists, this is more like a q-ship that blends in with regular convoys.
+- P450 Hexphase Armor (Level 8)
+- R5 Deflector
+- 2 TeV 9 blaster
+- NAMI mine launcher: Static Mine
+- Patcher Arm
+
+Centurion/M-class Heavy Gunship (Block 4)
+- Super-Heavy Blast Plate (Level 7)
+- R5 Deflector
+- Dual SAR/10 cannon
+- NAMI Launcher: KM550 Broadsword
+- Patcher Arm
+
+Aquila-class Cruiser (Block 2) 
 The modern version of the Aquila Cruiser. It has 4 times the ion firepower as its predecessor. I made this because the Fleet really doesn't have any powerful capital ships. It is still uncapable of standing up against a phobos but that should be expected. Another reason is because it irks me to see that the Aquila has 4 katana mounts but the vanilla version only uses 2 of them.
+- Massive Ithalium Armor (Level 8)
+- R13 Deflector (Level 9)
+- 4 Katana Star cannons
+- NAMI Heavy Launcher: M2 Missile
+- Bushido Enhancer
+- Damage Control Party (Level 9)
 
-Britannia II Heavy Gunship:
+Aquila-class Cruiser (Block 3)
+- Massive Hexacarbide Armor (Level 9)
+- Experimental Ithalium Armor (Level 10)
+- R13 Deflector (Level 9)
+- 4 Katana Star cannons
+- 2 Nami Launchers (2 hidden turrets at bow)
+  - NM900 lucifer
+- NAMI Heavy Launcher: M2 Missile
+- Bushido Enhancer
+- Damage Control Party (Level 9)
+
+Britannia-class Heavy Gunship (Block 2)
 The elite fleet gunship more elite than the Britannia. This was designed as the Fleet counterpart to the Ares Chasm II. The Britannia II is a space superiority gunship and excels at destroying enemy gunships. It was originally designed to have several "magazines" of missiles. e.g. It would use its reload ability 2 or so times on each missile pod before running out of missiles. I couldn't code that so I just gave them infinite ammo.
+- Massive Ithalium Armor (Level 8)
+- Katana Star Cannon
+- 2 NM900 Missile Pod
+- Bushido Enhancer
+- Patcher Arm
+- Titan 440 fusion drive
 
-Britannia/M Heavy Gunship:
+Britannia-class Heavy Gunship (Minerva)
 Britannia Gunships that were upgraded by Point Minerva. This was designed as the Britannia was too weak against the Ares in Deneb. It seems logical that they would upgrade their ships with loot from the Ares.
+- Heavy Tharsis plate (Level 8)
+- Katana Star Cannon / Ares Lightning Turret
+- NM900 Missile Pod / Micronuke Cannon
 
 Polar Carrier:
 Designed to spawn a lot of Ares gunships. I thought that the Ares should also have an overhauled freighter so I made the polar carrier. Originally I used the Charon Frigate code for it but I wasn't able to order its fighters to attack enemies so I just took the code that I made for the CSC and modified it. It breaks a lot of logic as it spawns infinite gunships (I think faster than shipyards too) but that doesn't matter too much. It is rather poorly armed and armored but makes up for it by being capable of spawning Tundras and Chasms.
 
-Sandstorm II Gunsip:
+Sandstorm II Gunship:
 Designed as a faster and stronger Sandstorm. It originally had the same armor as the standard sandstorm but I decided that made it too weak. So now it has Tharsis plate. Its fast enough to catch up to players who didn't get engine upgrades. It still has a lightning cannon but fires it 3 times as fast. 
+- Tharsis Plate
+- Lightning Cannon
 
 Chasm II Heavy Gunship:
 The elite Ares gunship. It combines the anti-capital firepower of the Tundra and the shield killing positron damage of the Chasm. The Chasm II is an Anti-capital gunship but can also be a space superiority gunship. It serves especially well 

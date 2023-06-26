@@ -29,19 +29,6 @@
 	<!ENTITY scCSCAtlantica						"0xD3090A0C">
 	<!ENTITY scCSCPacifica						"0xD3090A0D">
 	<!ENTITY scCSCAsia							"0xD3090A0E">
-	<!ENTITY scWarlordDreadnought				"0xD3090A0F">
-	<!ENTITY scMikenoBM							"0xD3090A10">
-	<!ENTITY scBMPrivateer1						"0xD3090A11">
-	<!ENTITY scBMPrivateer2						"0xD3090A12">
-	<!ENTITY scBMPrivateer3						"0xD3090A13">
-	<!ENTITY scBMPrivateer4						"0xD3090A14">
-	<!ENTITY scBMPrivateer5						"0xD3090A15">
-	<!ENTITY scCHPrivateer1						"0xD3090A16">
-	<!ENTITY scCHPrivateer2						"0xD3090A17">
-	<!ENTITY scCHPrivateer3						"0xD3090A18">
-	<!ENTITY scCHPrivateer4						"0xD3090A19">
-	<!ENTITY scCHPrivateer5						"0xD3090A1A">
-	<!ENTITY scRoninD							"0xD3090A1B">
 	
 	<!-- Stations -->
 	<!ENTITY stCastorStargate					"0xD3090B00">
