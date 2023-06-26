@@ -101,13 +101,11 @@ The modern version of the Aquila Cruiser. It has 4 times the ion firepower as it
 - Damage Control Party (Level 9)
 
 Aquila-class Cruiser (Block 3)
-- Massive Hexacarbide Armor (Level 9)
 - Experimental Ithalium Armor (Level 10)
 - R13 Deflector (Level 9)
 - 4 Katana Star cannons
-- 2 Nami Launchers (2 hidden turrets at bow)
-  - NM900 lucifer
-- NAMI Heavy Launcher: M2 Missile
+- 2 thermo cannons (2 hidden turrets at bow)
+- NAMI Heavy Launcher: M5 Missile
 - Bushido Enhancer
 - Damage Control Party (Level 9)
 
@@ -136,7 +134,7 @@ Designed as a faster and stronger Sandstorm. It originally had the same armor as
 
 Chasm II Heavy Gunship:
 The elite Ares gunship. It combines the anti-capital firepower of the Tundra and the shield killing positron damage of the Chasm. The Chasm II is an Anti-capital gunship but can also be a space superiority gunship. It serves especially well 
-in large fleet battles where it can devestate the enemy fleet without hurting its allies. One of them is not too great of a threat but their threat level increases exponentially with each extra Chasm II as it is possible that they deny an enemy of firing any shots and just nuke them until death.
+in large fleet battles where it can devastate the enemy fleet without hurting its allies. One of them is not too great of a threat but their threat level increases exponentially with each extra Chasm II as it is possible that they deny an enemy of firing any shots and just nuke them until death.
 
 Phobos II Dreadnought (Prototype):
 The prototype of the next generation of Ares dreadnoughts. Originally it had 3 sets of lightning turrets, lightning cannons, 1 Archcannon, 1 omni micronuke cannon, and an Ares spear. It was nerfed to 2 sets of lightning turrtes, lightning cannons, 1 micronuke cannon, and an Ares spear. The phobos II really excels in fleet battles with its no friendly fire.

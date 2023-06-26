@@ -1,4 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <TranscendenceModule>
+    <!-- Level 7: Sandstorm Gunship -->
+    <ShipClass UNID="&scSandstormBlock2;"
+			class=				"Sandstorm II"
+			inherit=			"&scSandstorm;"
+			>
+
+		<Armor
+			armorID=			"&itTharsisPlate;"
+			/>
+	</ShipClass>
+
+    <!-- Level 9: Chasm Heavy Gunship -->
+    <ShipClass UNID="&scChasmBlock2;"
+			class=				"Chasm II"
+			inherit=			"&scChasm;"
+			>
+
+		<Armor
+			armorID=			"&itHeavyTharsisPlate;"
+			/>
+
+        <Devices>
+            <Device deviceID="&itCydonianHeavyShields;"/>
+            <Device deviceID="&it250MWReactor;"/>
+			<Device deviceID="&itAresArchcannon;"/>
+			<Device deviceID="&itLightningCannon;"	posAngle="0" posRadius="0" posZ="8" fireAngle="180" fireArc="150" secondaryWeapon="true"/>
+            <Device deviceID="&itMicronukeCannon;">
+				<Items>
+					<Item count="3d20" item="&itMicronuke;"/>
+				</Items>
+			</Device>
+		</Devices>
+	</ShipClass>
+
+    <!-- Level 10: Phobos-class Dreadnought -->
+    <ShipClass UNID="&scPhobosBlock2;"
+			class=				"Phobos II"
+			inherit=			"&scPhobos;"
+			>
+
+        <Devices>
+            <Device deviceID="&itKaidunShields;"/>
+            <Device deviceID="&it1GWReactor;"/>
+			<Device deviceID="&itAresSpear;" posAngle="0" posRadius="80" posZ="0"/>
+            <Device deviceID="&itAresLauncher;" secondaryWeapon="true" posAngle="0" posRadius="80" posZ="0">
+				<Items>
+					<Item count="12d20" item="&itMicronuke;"/>
+				</Items>
+			</Device>
+			<Device deviceID="&itLightningTurret;" secondaryWeapon="true" posAngle="30"  posRadius="50" posZ="0"/>
+			<Device deviceID="&itLightningTurret;" secondaryWeapon="true" posAngle="330" posRadius="50" posZ="0"/>
+            <Device deviceID="&itLightningTurret;" secondaryWeapon="true" posAngle="0" posRadius="33" posZ="33"/>
+			<Device deviceID="&vtStdDamageControl;"		level="10"/>
+		</Devices>
+	</ShipClass>
+
+    <!-- Level 10: Ares Spear -->
+	<ItemType UNID="&itAresSpear;"
+			name=				"Ares Spear"
+			level=				"10"
+			value=				"1000000"
+			mass=				"100000"
+			frequency=			"notrandom"
+			attributes=			"Ares; Howitzer; MajorItem; Military; NotForSale"
+
+			description=		"Experimental derivative of the plasma archcannon. The compact form is decidedly less impressive, but more than capable of slagging most adversaries."
+			>
+
+		<Image imageID="&rsItems10;" imageX="288" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+				damage=				"plasma:28d24; WMD:7"
+				
+				fireRate=			"60"
+                missileSpeed=		"80"
+				lifetime=			"100"
+				hitPoints=			"50"
+
+				deviceSlots=		"4"
+				powerUse=			"4000"
+				sound=				"&snRecoillessCannon;"
+
+                vaporTrailLength=	"24"
+				vaporTrailWidth=	"150"
+				vaporTrailWidthInc=	"10"
+				vaporTrailColor=	"0x57, 0x38, 0x00"
+				>
+			
+			<FireEffect>
+				<Flare
+						style=				"fadingBlast"
+						lifetime=			"6"
+						radius=				"80"
+						primaryColor=		"0xff, 0xff, 0xf0"
+					/>
+			</FireEffect>
+				<Effect>
+
+				<Shape
+						directional=		"true"
+						scaleLength=		"64" 
+						scaleWidth=			"3"
+
+						color=				"0xff, 0xed, 0xcd"
+						opacity=			"255"
+						>
+					<Point x="0"	y="0"/>
+					<Point x="-25"	y="50"/>
+					<Point x="-100"	y="0"/>
+					<Point x="-25"	y="-50"/>
+				</Shape>
+				
+				<Shape
+						directional=		"true"
+						scaleLength=		"72" 
+						scaleWidth=			"6"
+
+						color=				"0xff, 0xc0, 0x00"
+						opacity=			"140"
+						>
+					<Point x="0"	y="0"/>
+					<Point x="-35"	y="50"/>
+					<Point x="-100"	y="0"/>
+					<Point x="-35"	y="-50"/>
+				</Shape>
+			</Effect>
+		</Weapon>
+    </ItemType>
 </TranscendenceModule>

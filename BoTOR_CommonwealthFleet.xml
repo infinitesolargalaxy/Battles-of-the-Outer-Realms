@@ -72,6 +72,11 @@
     <ShipClass UNID="&scAquilaCruiserBlock2;"
 			class=				"Aquila/II"
 			inherit=			"&scAquilaCruiser;"
+
+			thrustRatio=		"1.1"
+			maxSpeed=			"18"
+
+			cyberDefenseLevel=	"9"
 			>
 
 		<Armor
@@ -79,7 +84,7 @@
 			/>
 
 		<Devices>
-            <Device deviceID="&itR9Deflector;"/>
+            <Device deviceID="&itR13Deflector;"/>
             <Device deviceID="&it500MWReactor;"/>
 			<Device deviceID="&itStarCannon;" secondaryWeapon="true" minFireArc="355" maxFireArc="175" posAngle="90" posRadius="24" posZ="8"/>
 			<Device deviceID="&itStarCannon;" secondaryWeapon="true" minFireArc="160" maxFireArc="5" posAngle="-90" posRadius="24" posZ="8"/>
@@ -92,6 +97,68 @@
 			</Device>
             <Device deviceID="&itBushidoEnhancer;"/>
             <Device deviceID="&vtStdDamageControl;"		level="9"/>
+			<Device deviceID="&itMissileDefense;" omnidirectional="true"/>
 		</Devices>
 	</ShipClass>
+
+	<!-- Level 10: Aquila-class Cruiser -->
+    <ShipClass UNID="&scAquilaCruiserBlock3;"
+			class=				"Aquila/III"
+			inherit=			"&scAquilaCruiser;"
+
+			thrustRatio=		"1.2"
+			maxSpeed=			"20"
+
+			cyberDefenseLevel=	"9"
+			>
+
+		<Armor
+			armorID=			"&itExperimentalIthaliumArmor;"
+			/>
+
+		<Devices>
+            <Device deviceID="&itR13Deflector;"/>
+            <Device deviceID="&it1GWReactor;"/>
+			<Device deviceID="&itStarCannon;" secondaryWeapon="true" minFireArc="355" maxFireArc="175" posAngle="90" posRadius="24" posZ="8"/>
+			<Device deviceID="&itStarCannon;" secondaryWeapon="true" minFireArc="185" maxFireArc="5" posAngle="-90" posRadius="24" posZ="8"/>
+			<Device deviceID="&itStarCannon;" secondaryWeapon="true" minFireArc="355" maxFireArc="175" posAngle="133" posRadius="75"/>
+			<Device deviceID="&itStarCannon;" secondaryWeapon="true" minFireArc="185" maxFireArc="5" posAngle="-133" posRadius="75"/>
+			<Device deviceID="&itThermoCannon;" secondaryWeapon="true" minFireArc="355" maxFireArc="150" posAngle="2" posRadius="100"/>
+			<Device deviceID="&itThermoCannon;" secondaryWeapon="true" minFireArc="190" maxFireArc="5" posAngle="-2" posRadius="100">
+				<Items>
+					<Item count="500" item="&itThermoCannonShell;"/>
+				</Items>
+			</Device>
+            <Device deviceID="&itNAMIHeavyLauncher;" omnidirectional="true">
+				<Items>
+					<Item count="4d20" item="&itM5Missile;"/>
+				</Items>
+			</Device>
+            <Device deviceID="&itBushidoEnhancer;"/>
+            <Device deviceID="&vtStdDamageControl;"		level="10"/>
+			<Device deviceID="&itMissileDefense;" omnidirectional="true"/>
+		</Devices>
+	</ShipClass>
+
+	<ItemType UNID="&itR13Deflector;"
+			name=				"R13 deflector"
+			level=				"9"
+			value=				"150000"
+			mass=				"12000"
+			attributes=			"commonwealth, majorItem, military, pacificDefense"
+			frequency=			"rare"
+
+			description=		"The R13 deflector was announced by Pacific Defense after the scandal over the performance of the original Aquila-class cruisers. Newly revamped military cruisers of the Block 2 program promised better results."
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Shields
+				hitPoints=		"500"
+				hpBonus=		"  +0,  +0,  +0,  +0, +25, +25"
+				regen=			"70"
+				powerUse=		"1800"
+				/>
+
+	</ItemType>
 </TranscendenceModule>
