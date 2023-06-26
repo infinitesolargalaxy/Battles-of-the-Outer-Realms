@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TranscendenceModule>
+	<!-- Level 7: Centurion/M-class Heavy Gunship -->
+    <ShipClass UNID="&scCenturionMinerva;"
+			class=				"Centurion/MINERVA"
+			inherit=			"&scCenturionM;"
+			>
+
+		<Armor
+			armorID=			"&itTharsisPlate;"
+			/>
+
+		<Devices>
+			<Table>
+				<Device chance="75" item="&itR5Deflector;"/>
+				<Device chance="25" item="&itCydonianShields;"/>
+			</Table>
+            <Device deviceID="&it150MWReactor;"/>
+			<Device deviceID="&itDualSAR10Cannon;"/>
+            <Device deviceID="&itNAMIMissileLauncher;" secondaryWeapon="true">
+                <Items>
+					<Item count="10d40" item="&itKM550Missile;"/>
+				</Items>
+            </Device>
+            <Device deviceID="&itArmorRepairDevice;"/>
+		</Devices>
+	</ShipClass>
+
+    <!-- Level 8: Britannia-class Heavy Gunship -->
+    <ShipClass UNID="&scBritanniaMinerva;"
+			class=				"Britannia/MINERVA"
+			inherit=			"&scBritannia;"
+			>
+
+		<Armor
+			armorID=			"&itHeavyTharsisPlate;"
+			/>
+
+		<Devices>
+            <Table>
+				<Device chance="25" item="&itR5Deflector;"/>
+				<Device chance="25" item="&itCydonianShields;"/>
+				<Device chance="50" item="&itCydonianHeavyShields;"/>
+			</Table>
+            <Device deviceID="&it250MWReactor;"/>
+            <Table>
+				<Device chance="75" item="&itStarCannon;"/>
+				<Device chance="25" item="&itLightningTurret;"/>
+			</Table>
+            <Table>
+				<Device chance="75" item="&itNM900MissilePod;" secondaryWeapon="true"/>
+                <Device chance="25" item="&itLightningTurret;" secondaryWeapon="true">
+                    <Items>
+                        <Item count="3d20" item="&itMicronuke;"/>
+                    </Items>
+                </Device>
+			</Table>
+		</Devices>
+	</ShipClass>
+</TranscendenceModule>

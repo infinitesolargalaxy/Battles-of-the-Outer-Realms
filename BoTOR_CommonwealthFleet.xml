@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TranscendenceModule>
+    <!-- Level 7: Centurion/M-class Heavy Gunship -->
+    <ShipClass UNID="&scCenturionBlock4;"
+			class=				"Centurion/M"
+			inherit=			"&scCenturionM;"
+			>
+
+		<Armor
+			armorID=			"&itSuperHeavyBlastPlate;"
+			/>
+
+		<Devices>
+            <Device deviceID="&itR5Deflector;"/>
+            <Device deviceID="&it150MWReactor;"/>
+			<Device deviceID="&itDualSAR10Cannon;"/>
+            <Device deviceID="&itNAMIMissileLauncher;" secondaryWeapon="true">
+                <Items>
+					<Item count="10d40" item="&itKM550Missile;"/>
+				</Items>
+            </Device>
+            <Device deviceID="&itArmorRepairDevice;"/>
+		</Devices>
+	</ShipClass>
+
+    <!-- Level 8: Britannia-class Heavy Gunship -->
+    <ShipClass UNID="&scBritanniaBlock2;"
+			class=				"Britannia/II"
+			inherit=			"&scBritannia;"
+			>
+
+		<Armor
+			armorID=			"&itMassiveIthaliumArmor;"
+			/>
+
+		<Devices>
+            <Device deviceID="&itR9Deflector;"/>
+            <Device deviceID="&it150MWReactor;"/>
+			<Device deviceID="&itStarCannon;"/>
+            <Device deviceID="&itNM900MissilePod;" secondaryWeapon="true"/>
+            <Device deviceID="&itBushidoEnhancer;"/>
+            <Device deviceID="&itTitanFusionDrive;"/>
+            <Device deviceID="&itArmorRepairDevice;"/>
+		</Devices>
+	</ShipClass>
+
+    <!-- Level 7: Aurochs Transport -->
+    <ShipClass UNID="&scAurochsBlock2;"
+			class=				"Aurochs/II"
+			inherit=			"&scAurochs;"
+			>
+
+		<Armor
+			armorID=			"&itSuperHeavyBlastPlate;"
+			/>
+
+		<Devices>
+            <Device deviceID="&itR5Deflector;"/>
+            <Device deviceID="&it150MWReactor;"/>
+            <Device deviceID="&itTeV9Blaster;" omnidirectional="true" posAngle="180" posRadius="12" posZ="10"/>
+            <Device deviceID="&itNAMIMissileLauncher;" secondaryWeapon="true">
+                <Items>
+					<Item count="10d40" item="&itKM550Missile;"/>
+				</Items>
+            </Device>
+            <Device deviceID="&vtStdDamageControl;"		level="7"/>
+		</Devices>
+	</ShipClass>
+
+    <!-- Level 9: Aquila-class Cruiser -->
+    <ShipClass UNID="&scAquilaCruiserBlock2;"
+			class=				"Aquila/II"
+			inherit=			"&scAquilaCruiser;"
+			>
+
+		<Armor
+			armorID=			"&itMassiveIthaliumArmor;"
+			/>
+
+		<Devices>
+            <Device deviceID="&itR9Deflector;"/>
+            <Device deviceID="&it500MWReactor;"/>
+			<Device deviceID="&itStarCannon;" secondaryWeapon="true" minFireArc="355" maxFireArc="175" posAngle="90" posRadius="24" posZ="8"/>
+			<Device deviceID="&itStarCannon;" secondaryWeapon="true" minFireArc="160" maxFireArc="5" posAngle="-90" posRadius="24" posZ="8"/>
+			<Device deviceID="&itStarCannon;" secondaryWeapon="true" minFireArc="355" maxFireArc="175" posAngle="133" posRadius="75"/>
+			<Device deviceID="&itStarCannon;" secondaryWeapon="true" minFireArc="160" maxFireArc="5" posAngle="-133" posRadius="75"/>
+            <Device deviceID="&itNAMIHeavyLauncher;" omnidirectional="true">
+				<Items>
+					<Item count="4d20" item="&itM2Missile;"/>
+				</Items>
+			</Device>
+            <Device deviceID="&itBushidoEnhancer;"/>
+            <Device deviceID="&vtStdDamageControl;"		level="9"/>
+		</Devices>
+	</ShipClass>
+</TranscendenceModule>

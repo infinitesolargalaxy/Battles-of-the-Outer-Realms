@@ -78,11 +78,11 @@ CW Fleet now has:
 Aurochs Frigate: 
 Designed to give the Fleet a fast light capital ship. It originally had a NAMI missile launcher but that made it too powerful. It will likely appear in missions as the mentioned light capital ship and as a freighter on escort
 missions. Because the minotaur now exists, this is more like a q-ship that blends in with regular convoys.
-- P450 Hexphase Armor (Level 8)
+- Super-Heavy Blast Plate (Level 7)
 - R5 Deflector
-- 2 TeV 9 blaster
-- NAMI mine launcher: Static Mine
-- Patcher Arm
+- TeV 9 blaster
+- NAMI Launcher: KM550 Broadsword
+- Damage Control Party (Level 7)
 
 Centurion/M-class Heavy Gunship (Block 4)
 - Super-Heavy Blast Plate (Level 7)
@@ -115,7 +115,7 @@ Britannia-class Heavy Gunship (Block 2)
 The elite fleet gunship more elite than the Britannia. This was designed as the Fleet counterpart to the Ares Chasm II. The Britannia II is a space superiority gunship and excels at destroying enemy gunships. It was originally designed to have several "magazines" of missiles. e.g. It would use its reload ability 2 or so times on each missile pod before running out of missiles. I couldn't code that so I just gave them infinite ammo.
 - Massive Ithalium Armor (Level 8)
 - Katana Star Cannon
-- 2 NM900 Missile Pod
+- NM900 Missile Pod
 - Bushido Enhancer
 - Patcher Arm
 - Titan 440 fusion drive

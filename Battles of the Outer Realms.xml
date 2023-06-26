@@ -14,27 +14,30 @@
 	<!ENTITY unidExtension						"0xD3090000">
 	
 	<!-- Ships -->
-	<!ENTITY scBritannia2						"0xD3090A00">
-	<!ENTITY scBritannia2Mark					"0xD3090A01"> 
-	<!ENTITY scAurochsFrigate					"0xD3090A02">
-	<!ENTITY scPolarCarrier						"0xD3090A03">
-	<!ENTITY scChasm2							"0xD3090A04">
-	<!ENTITY scPhobos2Prototype					"0xD3090A05">
-	<!ENTITY scChasm2AEGIS3B					"0xD3090A06">
-	<!ENTITY scAquilaCruiser2					"0xD3090A07">
-	<!ENTITY scBritanniaM						"0xD3090A08">
-	<!ENTITY scSandstorm2						"0xD3090A09">
-	<!ENTITY scCSCAmerica						"0xD3090A0A">
-	<!ENTITY scCSCIndia							"0xD3090A0B">
-	<!ENTITY scCSCAtlantica						"0xD3090A0C">
-	<!ENTITY scCSCPacifica						"0xD3090A0D">
-	<!ENTITY scCSCAsia							"0xD3090A0E">
+	<!ENTITY scBritanniaBlock2						"0xD3090A00">
+	<!ENTITY scCenturionBlock4						"0xD3090A01">
+	<!ENTITY scAurochsBlock2					    "0xD3090A02">
+	<!ENTITY scAquilaCruiserBlock2					"0xD3090A03">
+	<!ENTITY scAquilaCruiserBlock3					"0xD3090A04">
+	
+	<!ENTITY scSandstormBlock2						"0xD3090A10">
+	<!ENTITY scChasmBlock2							"0xD3090A11">
+	<!ENTITY scPolarCarrier							"0xD3090A12">
+	<!ENTITY scDeimosBlock2							"0xD3090A13">
+	<!ENTITY scPhobosBlock2							"0xD3090A14">
+
+	<!ENTITY scBritanniaMinerva						"0xD3090A20">
+	<!ENTITY scCenturionMinerva						"0xD3090A21">
+
+	<!ENTITY scBritanniaBlock2Mark					"0xD3090A30"> 
+	<!ENTITY scChasm2AEGIS3B						"0xD3090A31">
+	
 	
 	<!-- Stations -->
-	<!ENTITY stCastorStargate					"0xD3090B00">
+	<!-- <!ENTITY stCastorStargate					"0xD3090B00">
 	<!ENTITY stPointMinerva						"0xD3090B01">
 	<!ENTITY stCommonFleetTurret				"0xD3090B02">
-	<!ENTITY stOmegaStation						"0xD3090B03">
+	<!ENTITY stOmegaStation						"0xD3090B03"> -->
 	
 	<!-- Items -->
 	<!ENTITY vtICXTev9							"0xD3090C00">
@@ -46,39 +49,36 @@
 	
 	
 	<!-- Missions -->
-	<!ENTITY msWeakenAresFoothold				"0xD3090D00">
+	<!-- <!ENTITY msWeakenAresFoothold				"0xD3090D00">
 	<!ENTITY msInvestigateColony				"0xD3090D01">
 	<!ENTITY msBlockadeRunning					"0xD3090D02">
 	<!ENTITY msInterceptAresVanguardFleet		"0xD3090D03">
 	<!ENTITY msFortify							"0xD3090D04">
 	<!ENTITY msInterceptAresMainFleet			"0xD3090D05">
 	<!ENTITY msRaidFreighter					"0xD3090D06">
-	<!ENTITY msRendezvous						"0xD3090D07">
+	<!ENTITY msRendezvous						"0xD3090D07"> -->
 		
 	<!-- Systems -->	
-	<!ENTITY unidDenebSegment					"0xD3090E00">
+	<!-- <!ENTITY unidDenebSegment					"0xD3090E00">
 	<!ENTITY unidTopology						"0xD3090E01">
-	<!ENTITY ssDeneb							"0xD3090E02">
+	<!ENTITY ssDeneb							"0xD3090E02"> -->
 	
 	
 ]>
-<TranscendenceExtension UNID="0xD3090000;" apiVersion="28" version="1.1" name="Battles of the Outer Realms" credits="SolarGalaxy">
+<TranscendenceExtension UNID="0xD3090000;" apiVersion="44" version="2.0" name="Battles of the Outer Realms" credits="SolarGalaxy">
 
 	<!-- Libraries -->
 	<Library unid="&unidHumanSpaceLibrary;"/>
 	
 <Modules>
-		<Module filename="BoTOR_CWFleet.xml"/>
-		<Module filename="BoTOR_Ares.xml"/>
+		<Module filename="BoTOR_CommonwealthFleet.xml"/>
+		<Module filename="BoTOR_AresOrthodoxy.xml"/>
 		<Module filename="BoTOR_Minerva.xml"/>
-		<Module filename="BoTOR_Ranx.xml"/>
-		<Module filename="BoTOR_RanxWarlord.xml"/>
-		<Module filename="BoTOR_Blackmarket.xml"/>
 </Modules>
 
 <!-- This grafts the Deneb segment onto the main line -->
 	
-	<SystemMap UNID="&unidTopology;"
+	<!-- <SystemMap UNID="&unidTopology;"
 			displayOn="&smHumanSpace;"
 			>
 
@@ -88,20 +88,17 @@
 		<TopologyCreator>
 			<Node ID="DenebSegment"/>
 		</TopologyCreator>
-	</SystemMap>
+	</SystemMap> -->
 	
-	<!--CEPHEI SEGMENT ================================================ -->
-
-	<SystemMap UNID="&unidDenebSegment;"
+	<!--Deneb SEGMENT ================================================ -->
+	<!-- Connected to Dantalion -->
+	<!-- <SystemMap UNID="&unidDenebSegment;"
 			displayOn="&smHumanSpace;"
 			>
 
 		<NodeGroup ID="DenebSegment">
-		<!-- Connected to Dantalion -->
 			<Stargate from="A7:Edgeward"			to="Deneb:Coreward"/>
 		</NodeGroup>
-		
-		<!-- Deneb -->
 		
 		<Node ID="Deneb" x="-400" y="-281">
 			<System 
@@ -113,7 +110,7 @@
 			</System>
 		</Node>
 		
-	</SystemMap>
+	</SystemMap> -->
 	
 	
 
