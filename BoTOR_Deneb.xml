@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TranscendenceModule>
+    <!-- <SystemType UNID="&ssDeneb;">
+		<SystemGroup>
+			<Lookup table="HumanSpaceStargates"/>
+			<Station type="&stStarClassA0;" name="Deneb"/>
+
+			<Orbitals distance="75-85" angle="random">
+				<Group>
+					<Primary>
+						<Station type="&stVolcanicPlanet;" name="Deneb I"	showOrbit="true"/>
+					</Primary>
+
+					<Orbitals distance="8" angle="random">
+						<Station type="&stAresOutpost;"/>
+					</Orbitals>
+				</Group>
+			</Orbitals>
+
+			<Orbitals distance="155-165" angle="random">
+				<Group>
+					<Primary>
+						<Station type="&stCrateredPlanet;" name="Deneb II" showOrbit="true"/>
+					</Primary>
+					
+					<Orbitals count="4d12" distance="2d6+4" eccentricity="20-40" angle="random">
+						<Table>
+							<Station chance="15" type="&stMediumVolcanicAsteroid;"/>
+							<Station chance="85" type="&stSmallVolcanicAsteroid;" />
+						</Table>
+					</Orbitals>
+					
+					<Orbitals distance="30" angle="random">
+                                <Station type="&stAresShipyard;"/>
+					</Orbitals>
+					
+					<Orbitals distance="18-25" angle="random">
+						<Station type="&stAresShipyard;"/>
+					</Orbitals>
+
+				</Group>
+			</Orbitals>
+
+			<Orbitals distance="240" angle="random">
+				<Group>
+					<Primary>
+						<Station type="&stVolcanicPlanet;" name="Deneb III" showOrbit="true"/>
+					</Primary>
+
+					<Orbitals distance="10-16" angle="random">
+						<Station type="&stAresShipyard;"/>
+					</Orbitals>
+
+				</Group>
+			</Orbitals>
+			
+			<Orbitals distance="240" angle="random">
+                <Group>
+                    <Siblings count="100" distribution="5d45-100">
+                        <Station type="&stVolcanicAsteroidSizeA;"/>
+                    </Siblings>
+
+                    <Siblings count="50" distribution="3d29-42">
+                        <Station type="&stVolcanicAsteroidSizeB;"/>
+                    </Siblings>
+                </Group>
+            </Orbitals>
+
+			<Orbitals distance="360-400" angle="random">
+				<Group>
+					<Primary>
+						<Station type="&stHydrogenGasGiant;" name="Deneb IV" showOrbit="true"/>
+					</Primary>
+
+					<Orbitals count="4d12" distance="2d6+4" eccentricity="20-40" angle="random">
+						<Table>
+							<Station chance="75" type="&stSmallFrostAsteroid;" />
+							<Station chance="25" type="&stMediumFrostAsteroid;" />
+						</Table>
+					</Orbitals>
+
+					<Orbitals distance="8-36" angle="random">
+                        <Table>
+                            <Station chance="50"  type="&stAresShipyard;"/>
+                            <Station chance="30"  type="&stAresOutpost;"/>
+                            <Station chance="20" type="&stAresCommune;"/>
+                        </Table>
+					</Orbitals>
+
+					<Trojan>
+						<Group>
+							<Orbitals count="2d4+4d3" distance="2d8+8" angle="random">
+								<Lookup table="AsteroidSmall"/>
+							</Orbitals>
+
+							<Orbitals count="2d6" distance="2d8+8" angle="random">
+								<Lookup table="AsteroidMedium"/>
+							</Orbitals>
+							
+							<Orbitals distance="8-16" angle="random">
+								<Station type="&stAresOutpost;"/>
+							</Orbitals>
+
+						</Group>
+					</Trojan>
+
+					<AntiTrojan>
+						<Group>
+							<Orbitals count="2d4+4" distance="2d8+8" angle="random">
+								<Lookup table="AsteroidSmall"/>
+							</Orbitals>
+
+							<Orbitals count="2d6" distance="2d8+8" angle="random">
+								<Lookup table="AsteroidMedium"/>
+							</Orbitals>
+							
+							<Orbitals distance="8-16" angle="random">
+								<Station type="&stAresCommune;"/>
+							</Orbitals>
+
+						</Group>
+					</AntiTrojan>
+				</Group>
+			</Orbitals>
+	
+			<Orbitals distance="550-590" angle="random">
+				<Group>
+					<Primary>
+						<Station type="&stHydrogenGasGiant;" name="Deneb V" showOrbit="true"/>
+					</Primary>
+
+					<Orbitals distance="18-20" angle="random">
+						<Lookup table="AsteroidMedium"/>
+					</Orbitals>
+
+					<Orbitals distance="28-32" angle="random">
+						<Station type="&stIcePlanet;"/>
+					</Orbitals>
+
+					<Orbitals distance="40-44" angle="random">
+						<Station type="&stVolcanicPlanet;"/>
+					</Orbitals>
+					
+					<Orbitals count="6d12" distance="2d7+4" eccentricity="20-35" angle="random">
+						<Table>
+							<Station chance="65" type="&stSmallFrostAsteroid;" />
+							<Station chance="35" type="&stMediumFrostAsteroid;" />
+						</Table>
+					</Orbitals>
+					
+					<Orbitals distance="20-25" angle="random">
+                        <Table>
+                            <Station chance="50"  type="&stAresOutpost;"/>
+                            <Station chance="50" type="&stAresCommune;"/>
+                        </Table>
+					</Orbitals>
+					
+					<Orbitals distance="32" angle="random">
+						<Station type="&stAgriculturalStation;"/>
+					</Orbitals> 
+					
+					<Orbitals distance="5-15" angle="random">
+                        <Station type="&stAresShipyard;"/>
+					</Orbitals> 
+
+				</Group>
+			</Orbitals>
+			
+			<Orbitals distance="750" angle="225">
+				<Group>
+					<Primary>
+						<Station type="&stMethaneGasGiant;" name="Deneb VI" showOrbit="true"/>
+					</Primary>
+
+					<Orbitals distance="28-32" angle="random">
+						<Station type="&stPointMinerva;"/>
+					</Orbitals>
+				</Group>
+			</Orbitals>
+			
+			<Orbitals distance="780" angle="random">
+                <Group>
+                    <Siblings count="300" distribution="5d45-100">
+                        <Station type="&stIceAsteroidSizeA;"/>
+                    </Siblings>
+
+                    <Siblings count="100" distribution="3d29-42">
+                        <Station type="&stIceAsteroidSizeB;"/>
+                    </Siblings>
+                </Group>
+            </Orbitals>
+			
+			<Orbitals distance="1000" angle="45">
+				<Group>
+					<Primary>
+						<Station type="&stCastorStargate;" showOrbit="false"/>
+					</Primary>
+				</Group>
+			</Orbitals>
+			<FillLocations
+                percentFull=		"90" 
+                stationCriteria=	"!primary,!debris,++ares" 
+                percentEnemies=		"100"
+                separateEnemies=	"true"
+                />
+
+			<Orbitals count="1d2" distance="3d200+240" angle="random" exclusionRadius="100">
+				<Table>
+					<RandomStation chance="100" stationCriteria="*ares" locationAttribs="void"/>
+				</Table>
+			</Orbitals>
+
+		</SystemGroup>
+	</SystemType> -->
+
+    <!-- <StationType UNID="&stCastorStargate;"
+			name=				"Castor Stargate"
+			sovereign=			"&svAres;"
+			dockingPorts=		"4"
+
+			multiHull=			"true"
+			immutable=			"true"
+
+			attributes=			"castor"
+			gateEffect="&efStargateOut;"
+			definiteArticle=	"true"
+			>
+		<Image imageID="&rsStdStargate;" imageX="0" imageY="0" imageWidth="128" imageHeight="128" imageFrameCount="12" imageTicksPerFrame="3"/>
+
+		<Ships>
+			<Ship	count="1"	class="&scPhobos;"	orders="guard"/>
+		</Ships>
+		
+		<Construction maxConstruction="10" constructionRate="150">
+			<Table>
+				<Ship chance="45" count="1d3" class="&scSandstormBlock2;" orders="patrol" patrolDist="12">
+                    <Escorts>
+                        <Ship count="1d3+1" class="&scSandstorm;" orders="escort"/>
+                    </Escorts>
+				</Ship>
+				<Ship chance="20" count="1d2" class="&scTundra;" orders="patrol" patrolDist="10"/>
+				<Ship chance="10" count="1d2" class="&scChasm;" orders="patrol" patrolDist="10"/>
+				<Ship chance="5" count="1d2" class="&scChasmBlock2;" orders="patrol" patrolDist="10"/>
+				<Ship chance="10" count="1" class="&scDeimos;" orders="patrol" patrolDist="15">
+                    <Escorts>
+                        <Ship count="3d2" class="&scSandstorm;" orders="escort"/>
+                    </Escorts>
+				</Ship>
+				<Ship chance="5" count="1d2" class="&scPolarCarrier;" orders="patrol" patrolDist="15"/>
+					<Ship chance="5" count="1" class="&scPhobos;" orders="guard">
+					<Escorts>
+                        <Ship count="3d2" class="&scTundra;" orders="escort"/>
+                    </Escorts>
+                </Ship>
+			</Table>
+		</Construction>
+		
+		<Encounters frequency="common">
+			<Lookup table="&tbAresEncounters;"/>
+		</Encounters>
+	<Events>
+		<OnCreate>
+	    ; Every 3 minutes (3 hours in game) an Ares Squadron attacks Point Minerva
+		(block Nil
+		(sysAddObjRecurringTimerEvent 5400 gSource 'Attack)
+		)
+		</OnCreate>
+		<Attack>
+		(block (target)
+		(setq target (sysFindObject gSource "tAN +commonwealth;"))
+			(if target
+				(block (roll enemyFleet)
+								; Randomly generate the enemy fleet
+								(setq roll (random 1 100))
+								(switch
+								(leq roll 15)
+										; 16 Sandstorms
+										(setq enemyFleet '(&scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm;))
+
+									(leq roll 30)
+										; A Deimos plus 8 Sandstorms
+										(setq enemyFleet '(&scDeimos; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm; &scSandstorm;))
+
+									(leq roll 55)
+										; 3 Cometfalls
+										(setq enemyFleet '(&scCometfall; &scCometfall; &scCometfall;))
+
+									(leq roll 70)
+										; 8 Chasms
+										(setq enemyFleet '(&scChasm; &scChasm; &scChasm; &scChasm; &scChasm; &scChasm; &scChasm; &scChasm;))
+									(leq roll 85)
+										; 2 Polar Carriers
+										(setq enemyFleet '(&scPolarCarrier; &scPolarCarrier;))
+									(leq roll 100)
+										; 1 Chasm II 6 Tundras
+										(setq enemyFleet '(&scChasmBlock2; &scTundra; &scTundra; &scTundra; &scTundra; &scTundra; &scTundra;))
+									)
+
+								; Create the enemy squadron
+
+								(setq i 0)
+								(enum enemyFleet theEnemyClass
+									(block (theShip)
+										(setq theShip
+											(sysCreateShip 
+												theEnemyClass 
+												gSource
+												&svAres;
+												)
+											)
+
+										; Order to attack Minerva
+										(shpOrder theShip 'attack target)
+										(shpOrder theShip 'attackNearestEnemy)
+										(shpOrder theShip 'gate	gSource)
+										)
+									)
+								)
+							)
+						)
+      </Attack>
+	 </Events>
+	</StationType> -->
+</TranscendenceModule>

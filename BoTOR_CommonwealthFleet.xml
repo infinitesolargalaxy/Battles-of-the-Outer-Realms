@@ -2,6 +2,7 @@
 
 <TranscendenceModule>
     <!-- Level 7: Centurion/M-class Heavy Gunship -->
+	<!-- Refresh of an aging design with off-the-market components -->
     <ShipClass UNID="&scCenturionBlock4;"
 			class=				"Centurion/M"
 			inherit=			"&scCenturionM;"
@@ -36,7 +37,7 @@
 
 		<Devices>
             <Device deviceID="&itR9Deflector;"/>
-            <Device deviceID="&it150MWReactor;"/>
+            <Device deviceID="&it250MWReactor;"/>
 			<Device deviceID="&itStarCannon;"/>
             <Device deviceID="&itNM900MissilePod;" secondaryWeapon="true"/>
             <Device deviceID="&itBushidoEnhancer;"/>

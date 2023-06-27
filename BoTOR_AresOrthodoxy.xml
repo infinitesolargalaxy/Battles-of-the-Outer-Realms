@@ -35,6 +35,23 @@
 		</Devices>
 	</ShipClass>
 
+	<ShipClass UNID="&scPolarCarrier;"
+			type=				"escort carrier"
+			inherit=			"&scPolar;"
+			>
+
+		<Armor
+			armorID=			"&itHeavyTharsisPlate;"
+			/>
+
+        <Devices>
+            <Device deviceID="&itCydonianHeavyShields;"/>
+            <Device deviceID="&it250MWReactor;"/>
+			<Device deviceID="&itLightningCannon;" secondaryWeapon="true" omnidirectional="true" posAngle="0" posRadius="75"/>
+			<Device deviceID="&itLightningCannon;" secondaryWeapon="true" omnidirectional="true" posAngle="180" posRadius="75"/>
+		</Devices>
+	</ShipClass>
+
     <!-- Level 10: Phobos-class Dreadnought -->
     <ShipClass UNID="&scPhobosBlock2;"
 			class=				"Phobos II"
@@ -130,4 +147,21 @@
 			</Effect>
 		</Weapon>
     </ItemType>
+
+    <!-- Ares Encounter Table Override -->
+    <ShipTableOverride unid="&tbAresEncounters;">
+		<LevelTable>
+			<Ship levelFrequency="----- --vuu" count="2d3"	 class="&scSandstormBlock2;" eventHandler="&evStdPatrolEncounterBehavior;">
+				<Escorts>
+					<Ship					   count="1d6+1" class="&scSandstorm;" orders="escort"/>
+				</Escorts>
+			</Ship>
+
+			<Ship levelFrequency="----- ---vv" count="1"	 class="&scChasmBlock2;" eventHandler="&evStdPatrolEncounterBehavior;">
+				<Escorts>
+					<Ship					   count="1d6+1" class="&scSandstorm;" orders="escort"/>
+				</Escorts>
+			</Ship>
+		</LevelTable>
+	</ShipTableOverride>
 </TranscendenceModule>

@@ -58,4 +58,148 @@
 			</Table>
 		</Devices>
 	</ShipClass>
+
+	<!-- <StationType UNID="&stPointMinerva;"
+			name=				"Point Minerva"
+			sovereign=			"&svCommonwealth;"
+			inherit=			"&svCommonwealthFleet;"
+				 
+			attributes=			"commonwealth, commonwealthFleet, commonwealthMilitary, fleetDelivery, fleetLaw, friendly, generic, human, majorStation, populated"
+				 
+			dockScreen=			"Main"
+			abandonedScreen=	"&dsRPGAbandonedStation;"
+			
+			size=				"390"
+			armorID=			"&itP1000HexphaseArmor;"
+			hitPoints=			"2400"
+			multiHull=			"true"
+			regen=              "20"
+			shipRegen=			"10"
+				 
+			ignoreFriendlyFire=	"true"
+			explosionType=		"&vtThermoExplosion3;"
+			ejectaType=			"&vtWreckEjecta;"
+			fireRateAdj=		"10"
+			>
+
+		<Trade currency="credit">
+			<Sell	criteria="m +commonwealth; +military; -defective; -illegal; -notForSale; -notStandard;" priceAdj="100" inventoryAdj="500" levelFrequency="systemLevel:ruc|c|cur" noDescription="true"/>
+			<Sell	criteria="*NU -defective; -Illegal; -ID; -NotForSale;"	priceAdj="100" noDescription="true"/>
+			<Buy	criteria="amdNU -Illegal; -NotForSale;"		priceAdj="50"/>
+			<Buy	criteria="*NU -Illegal; -ID; -NotForSale;"	priceAdj="90"/>
+			<Buy	criteria="*NU -Illegal; -ID;"				priceAdj="10"/>
+			
+			<Refuel			criteria="f +BasicFuel; L:1-9;" priceAdj="100"/>
+			<RepairArmor	criteria="a L:1-10;" priceAdj="100"/>
+			<ReplaceArmor	criteria="a L:1-10;" priceAdj="100"/>
+			<InstallDevice	criteria="d L:1-9;" priceAdj="100"/>
+			<RemoveDevice	criteria="d L:1-9;" priceAdj="100"/>
+			<Decontaminate	criteria="*"		priceAdj="100"/>
+
+			<ConsumeTrade	criteria="{core.antimatterFuel}"	impact="2"/>
+			<ConsumeTrade	criteria="{human.basicFood}"	impact="5"/>
+			<ConsumeTrade	criteria="{human.lux}"		impact="3"/>
+			<ConsumeTrade	criteria="{human.meds}"		impact="2"/>
+			<ConsumeTrade	criteria="{human.res}"		impact="1"/>
+			<ConsumeTrade	criteria="{core.ore}"			impact="2"/>
+		</Trade>
+
+		<Items>
+			<RandomItem count="10" 
+					criteria=		"ad L:1-8; +commonwealth; -defective; -Illegal; -Military; -Alien; -Specialty; -NotStandard; -NotForSale;"
+					levelFrequency=	"systemLevel:r|c|cur"
+					/>
+			<RandomItem count="10" 
+					criteria=		"*~adm -defective; -Illegal; -Military; -Alien; -Specialty; -NotStandard; -NotForSale;"
+					levelFrequency=	"systemLevel:ru|c|cur"
+					/>
+
+			<Item count="4d12"	item="&itPteracniumFuelRod;" />
+			<RandomItem count="1d6" criteria="r +commonwealth; -defective; -illegal; -notForSale; -notStandard; L:6-9;"		levelFrequency="systemLevel:ru|c|curv"/>
+			<Lookup count="12-16" table="&tbCommonwealthFleetItems;"/>
+		</Items>
+
+		<Devices>
+			<Device deviceID="&itStarCannon;" secondaryWeapon="true" omnidirectional="true" posAngle="45" posRadius="45"/>
+			<Device deviceID="&itStarCannon;" secondaryWeapon="true" omnidirectional="true" posAngle="135" posRadius="45"/>
+			<Device deviceID="&itStarCannon;" secondaryWeapon="true" omnidirectional="true"  posAngle="225" posRadius="45"/>
+			<Device deviceID="&itStarCannon;" secondaryWeapon="true" omnidirectional="true" posAngle="315" posRadius="45"/>
+			<Device deviceID="&itPlasmaCannon;" secondaryWeapon="true" omnidirectional="true" posAngle="90" posRadius="45"/>
+			<Device deviceID="&itPlasmaCannon;" secondaryWeapon="true" omnidirectional="true" posAngle="270" posRadius="45"/>
+			<Device deviceID="&itPlasmaCannon;" secondaryWeapon="true" omnidirectional="true" posAngle="180" posRadius="45"/>
+			<Device deviceID="&itPlasmaCannon;" secondaryWeapon="true" omnidirectional="true" posAngle="0" posRadius="45"/>
+		</Devices>
+
+		<Satellites overlapCheck="asteroids">
+			<Orbitals distance="12" angle="45">
+				<Station type="&stCommonwealthTurret;" imageVariant="2"/>
+			</Orbitals>
+
+			<Orbitals distance="12" angle="135">
+				<Station type="&stCommonwealthTurret;" imageVariant="1"/>
+			</Orbitals>
+
+			<Orbitals distance="12" angle="225">
+				<Station type="&stCommonwealthTurret;" imageVariant="0"/>
+			</Orbitals>
+
+			<Orbitals distance="12" angle="315">
+				<Station type="&stCommonwealthTurret;" imageVariant="3"/>
+			</Orbitals>
+		</Satellites>
+
+		<Ships>
+			<Ship					count="1"	class="&scBritannia;"	orders="guard" controller="fleetcommand">
+				<Escorts>
+					<Ship			count="8"	class="&scCenturionM;"	orders="escort" controller="fleet"/>
+				</Escorts>
+			</Ship>
+			<Ship					count="1"	class="&scBritannia;"	orders="guard" controller="fleetcommand">
+				<Escorts>
+					<Ship			count="8"	class="&scCenturionM;"	orders="escort" controller="fleet"/>
+				</Escorts>
+			</Ship>
+		</Ships>
+
+		<Image imageID="&rsCommonwealthSettlement;" imageWidth="320" imageHeight="290" viewportRatio="0.05"/>
+
+		<DockingPorts
+				portCount=		"10"
+				portRadius=		"175"
+				>
+		</DockingPorts>
+		
+		<DockScreens>
+			<Main>
+				<Panes>
+					<Default descID="descWelcome">
+						<Actions>
+							<Action id="actionCommoditiesExchange">
+								(scrShowScreen gScreen &dsRPGCommoditiesExchange;)
+							</Action>
+
+							<Action id="actionDockServices">
+								(rpgDockServices gPlayerShip)
+							</Action>
+
+							<Action id="actionUndock" cancel="1">
+								<Exit/>
+							</Action>
+						</Actions>
+					</Default>
+				</Panes>
+			</Main>
+		</DockScreens>
+		
+		<Language>
+			<Text id="descWelcome">
+
+				You are in the docking bay of a Commonwealth settlement. Except 
+				for a few shuttles, the docking bay of this station is deserted.
+				
+				A few stationers in flight suits wander around on various tasks.
+
+			</Text>
+		</Language>
+	</StationType> -->
 </TranscendenceModule>

@@ -31,12 +31,14 @@
 
 	<!ENTITY scBritanniaBlock2Mark					"0xD3090A30"> 
 	<!ENTITY scChasm2AEGIS3B						"0xD3090A31">
+	<!ENTITY scCenturionBlock4PlayerL7				"0xD3090A3A">
+	
 
 	<!-- Stations -->
-	<!-- <!ENTITY stCastorStargate					"0xD3090B00">
+	<!ENTITY stCastorStargate					"0xD3090B00">
 	<!ENTITY stPointMinerva						"0xD3090B01">
-	<!ENTITY stCommonFleetTurret				"0xD3090B02">
-	<!ENTITY stOmegaStation						"0xD3090B03"> -->
+	<!-- <!ENTITY stCommonFleetTurret				"0xD3090B02"> -->
+	<!-- <!ENTITY stOmegaStation						"0xD3090B03"> -->
 
 	<!-- Items -->
 	<!ENTITY itR13Deflector						"0xD3090C00">
@@ -57,9 +59,9 @@
 	<!ENTITY msRendezvous						"0xD3090D07"> -->
 		
 	<!-- Systems -->	
-	<!-- <!ENTITY unidDenebSegment					"0xD3090E00">
+	<!ENTITY unidDenebSegment					"0xD3090E00">
 	<!ENTITY unidTopology						"0xD3090E01">
-	<!ENTITY ssDeneb							"0xD3090E02"> -->
+	<!ENTITY ssDeneb							"0xD3090E02">
 	
 	
 ]>
@@ -68,14 +70,14 @@
 	<!-- Libraries -->
 	<Library unid="&unidHumanSpaceLibrary;"/>
 	
-<Modules>
+	<Modules>
 		<Module filename="BoTOR_CommonwealthFleet.xml"/>
 		<Module filename="BoTOR_AresOrthodoxy.xml"/>
 		<Module filename="BoTOR_Minerva.xml"/>
-</Modules>
+		<Module filename="BoTOR_Deneb.xml"/>
+	</Modules>
 
-<!-- This grafts the Deneb segment onto the main line -->
-	
+	<!-- This grafts the Deneb segment onto the main line -->
 	<!-- <SystemMap UNID="&unidTopology;"
 			displayOn="&smHumanSpace;"
 			>
@@ -110,6 +112,28 @@
 		
 	</SystemMap> -->
 	
-	
+	<ShipClass UNID="&scCenturionBlock4PlayerL7;"
+			attributes=			"commonwealth, military, pacificDefense, playerClass, startingClass, 00200000_PlayerShip"
+			inherit=			"&scCenturionBlock4;"
+			characterClass=		"&unidPilgrimClass;"
+			>
+
+		<Equipment>
+			<Install equipment="SRSEnhancer"/>
+			<Install equipment="targetingComputer"/>
+		</Equipment>
+
+		<PlayerSettings
+			desc=				"The updated Centurion/X was never produced in large numbers due to the introduction of the Britannia class."
+			largeImage=			"&rsCenturionMDualHero;"
+			initialClass=		"true"
+
+			startingCredits=	"50000"
+
+			startingSystem=		"A7"
+			startingPos=		"Outbound"
+			/>
+		
+	</ShipClass>
 
 </TranscendenceExtension>
