@@ -60,7 +60,7 @@
 			fireRateAdj=		"15"
 			fireAccuracy=		"95"
 			perception=			"4"
-			ignoreShieldDown=	"true"
+			ignoreShieldsDown=	"true"
 
 			/>
 
